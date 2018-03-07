@@ -1,0 +1,17 @@
+<body class="text-center">
+<form (submit)="signUpClick()" class="form-signin">
+
+  <h1 class="h3 mb-3 font-weight-normal">Sign up</h1>
+  <div class="container">
+    <div class="form-group">
+      <input type="text" class="form-control" [(ngModel)]="name" name="name"    placeholder="Name" autofocus><br><br>
+      <input type="text" class="form-control"  [(ngModel)]="email" name="email" placeholder="CSE Email" autofocus><br><br>
+      <input type="password" class="form-control"  [(ngModel)]="password" name="password" placeholder="Password" autofocus><br><br>
+    </div>
+  </div>
+
+
+  <input type="submit" class="btn btn-primary " value="Sign Up">
+  <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+</form>
+</body>

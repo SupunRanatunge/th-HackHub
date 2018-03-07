@@ -1,0 +1,19 @@
+<div class="container">
+
+
+  <h1 class="h1">Hackathons</h1>
+  <button (click)="onClick()" class="btn btn-default" [ngStyle]="{color: 'blue'}"  routerLink="/createHackathons">Create Hackathon</button>
+  <button (click)="onClicked()" class="btn btn-default" [ngStyle]="{color: 'blue'}"  routerLink="/updateHackathons">Update Hackathon</button>
+  <button (click)="Clicked()" class="btn btn-default" [ngStyle]="{color: 'red'}"  routerLink="/deleteHackathons">Delete Hackathon</button>
+
+
+
+
+  <div id="tab-group">
+    <div id="tab-group-1" class="ready">
+      <h3 id="hackathon-1"><strong>{{hackathon}}</strong></h3><br>
+      <p id="content-1"> {{hackathon}} is going to happen at {{place}} on {{date}} at {{time}} onwards</p>
+
+    </div>
+  </div>
+</div>
