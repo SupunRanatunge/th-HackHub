@@ -14,15 +14,17 @@ import {SignupComponent} from './pages/signup/signup.component';
 import {ProfileComponent} from './pages/profile/profile.component';
 import {FormsModule} from '@angular/forms';
 import {ValidationsService} from './services/validations.service';
+import {FlashMessagesModule, FlashMessagesService} from 'angular2-flash-messages';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
-  imports:      [ BrowserModule, routing, FormsModule ],
+  imports:      [ BrowserModule, routing, FormsModule, FlashMessagesModule.forRoot(), HttpClientModule ],
   declarations: [ AppComponent, NavbarComponent, CarouselComponent, HomeComponent, HackathonComponent, CreateHackathonComponent,
     UpdateHackathonComponent, DeleteHackathonComponent, LoginComponent, SignupComponent, ProfileComponent  ],
   bootstrap:    [ AppComponent ],
   providers: [
-    appRoutingProviders, ValidationsService
+    appRoutingProviders, ValidationsService, FlashMessagesService
   ]
 })
 export class AppModule { }

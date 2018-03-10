@@ -39,3 +39,10 @@
   background: white;
   border-bottom-color: white;
 }
+.flash-message{
+  z-index: 10000;
+  position: center;
+  width: 100%;
+  opacity: 1.5;
+  background-color: salmon;
+}

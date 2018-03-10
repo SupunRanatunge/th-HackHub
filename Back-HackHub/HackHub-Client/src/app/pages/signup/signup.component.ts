@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import {ValidationsService} from '../../services/validations.service';
-
-
+import {FlashMessagesService} from 'angular2-flash-messages';
 
 
 @Component({
@@ -14,7 +13,7 @@ export class SignupComponent {
   email: String;
   password: String;
 
-  constructor(private validateService: ValidationsService){
+  constructor(private validateService: ValidationsService, private flashMessage: FlashMessagesService){
 
   }
   signUpClick() {
@@ -24,11 +23,12 @@ export class SignupComponent {
       password: this.password
     };
     if(!this.validateService.validateSignUp(user)) {
-        console.log("Please fill in all the blanks")
+        this.flashMessage.show("Please fill in all the blanks", {cssClass: 'alert-danger',timeout: 3000});
         return false;
     }
     if(!this.validateService.validateEmail(user.email)){
-      console.log("Your email is not valid")
+      this.flashMessage.show("Your email is not valid", {cssClass: 'alert-danger',timeout: 3000});
+
     }
   }
 
