@@ -35,8 +35,10 @@ router.post('/authenticate', (req, res, next) => {
             if (err) throw err;
             if(isMatch){
                 const token = jwt.sign(user.toJSON(), config.secret,{
+
                     expiresIn: 604800 //1 week
                 });
+                console.log(token);
                 res.json ({
                     success: true,
                     token: 'JWT '+ token,
@@ -57,7 +59,7 @@ router.post('/authenticate', (req, res, next) => {
     })
 });
 
-router.get('/profile', passport.authenticate('jwt',{session: false}), (req, res, next) => {
+router.get('/profile', passport.authenticate('jwt',{ session: false}), (req, res, next) => {
     res.json({user: req.user});
 });
 

@@ -13,6 +13,7 @@ import {LoginComponent} from './pages/login/login.component';
 import {SignupComponent} from './pages/signup/signup.component';
 import {ProfileComponent} from './pages/profile/profile.component';
 import {FormsModule} from '@angular/forms';
+import {ValidationsService} from './services/validations.service';
 
 
 @NgModule({
@@ -21,7 +22,7 @@ import {FormsModule} from '@angular/forms';
     UpdateHackathonComponent, DeleteHackathonComponent, LoginComponent, SignupComponent, ProfileComponent  ],
   bootstrap:    [ AppComponent ],
   providers: [
-    appRoutingProviders,
+    appRoutingProviders, ValidationsService
   ]
 })
 export class AppModule { }
