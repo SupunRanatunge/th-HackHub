@@ -9,6 +9,8 @@ import {DeleteHackathonComponent} from './pages/deleteHackathon/deleteHackathon.
 import {LoginComponent} from './pages/login/login.component';
 import {SignupComponent} from './pages/signup/signup.component';
 import {ProfileComponent} from './pages/profile/profile.component';
+import {CreateEventComponent} from './pages/createEvent/createEvent.component';
+import {EventsComponent} from './pages/events/events.component';
 
 const appRoutes: Routes = [
   {
@@ -18,6 +20,10 @@ const appRoutes: Routes = [
   {
     path: 'hackathons',
     component: HackathonComponent
+  },
+  {
+    path: 'events',
+    component: EventsComponent
   },
   {
     path: 'createHackathons',
@@ -31,6 +37,18 @@ const appRoutes: Routes = [
     path: 'deleteHackathons',
     component: DeleteHackathonComponent
   },
+  {
+    path: 'createEvents',
+    component: CreateEventComponent
+  },
+  // {
+  //   path: 'updateEvents',
+  //   component: UpdateEventComponent
+  // },
+  // {
+  //   path: 'deleteHackathons',
+  //   component: DeleteEventComponent
+  // },
   {
     path: 'LoginHackHub',
     component: LoginComponent
