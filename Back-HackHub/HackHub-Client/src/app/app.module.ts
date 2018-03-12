@@ -10,13 +10,15 @@ import {CreateHackathonComponent} from './pages/createHackathon/createHackathon.
 import {UpdateHackathonComponent} from './pages/updateHackathon/updateHackathon.component';
 import {DeleteHackathonComponent} from './pages/deleteHackathon/deleteHackathon.component';
 import {CreateEventComponent} from './pages/createEvent/createEvent.component';
+import {UpdateEventComponent} from './pages/updateEvent/updateEvent.component';
+import {DeleteEventComponent} from './pages/deleteEvent/deleteEvent.component';
 import {LoginComponent} from './pages/login/login.component';
 import {SignupComponent} from './pages/signup/signup.component';
 import {ProfileComponent} from './pages/profile/profile.component';
 import {FormsModule} from '@angular/forms';
 import {ValidationsService} from './services/validations.service';
 import {FlashMessagesModule, FlashMessagesService} from 'angular2-flash-messages';
-import { EventsComponent } from './pages/events/events.component';
+import {EventsComponent} from './pages/events/events.component';
 
 
 // import {HttpModule} from '@angular/http';
@@ -25,10 +27,13 @@ import { EventsComponent } from './pages/events/events.component';
 
 @NgModule({
   imports:      [ BrowserModule, routing, FormsModule, FlashMessagesModule.forRoot() ],
+
   declarations: [ AppComponent, NavbarComponent, CarouselComponent, HomeComponent, HackathonComponent, CreateHackathonComponent,
-    UpdateHackathonComponent, DeleteHackathonComponent, LoginComponent, SignupComponent, ProfileComponent, EventsComponent,
-     CreateEventComponent, EventsComponent  ],
+    UpdateHackathonComponent, DeleteHackathonComponent, LoginComponent, SignupComponent, ProfileComponent, DeleteEventComponent,
+    UpdateEventComponent, CreateEventComponent, EventsComponent  ],
+
   bootstrap:    [ AppComponent ],
+
   providers: [
     appRoutingProviders, ValidationsService, FlashMessagesService
   ]

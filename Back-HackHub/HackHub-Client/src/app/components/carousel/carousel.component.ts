@@ -5,4 +5,14 @@ import { Component } from '@angular/core';
   selector: 'app-carousel',
   templateUrl: `carousel.component.html`,
 })
-export class CarouselComponent  {}
+export class CarouselComponent  {
+  fullImagePath1: String;
+  fullImagePath2: String;
+
+
+  constructor() {
+    this.fullImagePath1 = "/assets/images/hackhub-banner-sr.png";
+    this.fullImagePath2 = "/assets/images/hackhub2.png";
+
+  }
+}

@@ -8,11 +8,14 @@
   margin-bottom: 0px;
 }
 
-.carousel-inner img {
+.carousel-inner img{
   width: 100%; /* Set width to 100% */
   margin:auto;
 
   min-height:200px;
+}
+.carousel-inner {
+  margin-top: -24px;
 }
 
 
@@ -25,6 +28,7 @@
 .as-banner {
   width: 100%;
   height: 500px;
+
 
 }
 #tab-group{

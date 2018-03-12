@@ -10,6 +10,8 @@ import {LoginComponent} from './pages/login/login.component';
 import {SignupComponent} from './pages/signup/signup.component';
 import {ProfileComponent} from './pages/profile/profile.component';
 import {CreateEventComponent} from './pages/createEvent/createEvent.component';
+import {UpdateEventComponent} from './pages/updateEvent/updateEvent.component';
+import {DeleteEventComponent} from './pages/deleteEvent/deleteEvent.component';
 import {EventsComponent} from './pages/events/events.component';
 
 const appRoutes: Routes = [
@@ -41,14 +43,14 @@ const appRoutes: Routes = [
     path: 'createEvents',
     component: CreateEventComponent
   },
-  // {
-  //   path: 'updateEvents',
-  //   component: UpdateEventComponent
-  // },
-  // {
-  //   path: 'deleteHackathons',
-  //   component: DeleteEventComponent
-  // },
+  {
+    path: 'updateEvents',
+    component: UpdateEventComponent
+  },
+  {
+    path: 'deleteEvents',
+    component: DeleteEventComponent
+  },
   {
     path: 'LoginHackHub',
     component: LoginComponent
