@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   templateUrl: `updateHackathon.component.html`,
   styles: [`
     .form-group {
-      margin-top: 60px;
+      margin-top: 40px;
     }
     .form-control {
       margin-bottom: -25px;
