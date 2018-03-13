@@ -17,12 +17,13 @@ router.post('/register', (req, res, next) => {
       if(err){
           res.json({success: false, msg: "failed to register"})
       }else{
-          res.json({success: true, msg: "User registered"})
+          res.json({success: true, msg: "User registered"+ user})
       }
   })
 });
 
 router.post('/authenticate', (req, res, next) => {
+    console.log(req.body);
     const name = req.body.name;
     const password = req.body.password;
 

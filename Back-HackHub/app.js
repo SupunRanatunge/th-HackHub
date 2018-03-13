@@ -5,6 +5,8 @@ const cors = require("cors");
 const passport = require("passport");
 const mongoose = require("mongoose");
 const config = require("./config/database");
+const users = require("./routes/users");
+const hackathons = require("./routes/hackathons");
 
 mongoose.connect(config.database);
 
@@ -14,7 +16,7 @@ mongoose.connection.on('connected', () => {
 mongoose.connection.on('error', (err) => {
     console.log("Error in Database "+err);
 });
-const users = require("./routes/users");
+
 const app = express();
 const port = 3000;
 
@@ -31,6 +33,7 @@ require("./config/passport")(passport);
 
 app.use(express.static(path.join(__dirname,'HackHub-Client/src')));
 app.use('/users', users);
+app.use('/hackathons', hackathons);
 
 
 

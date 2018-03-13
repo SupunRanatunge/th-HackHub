@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-// import {HttpService} from './http.service';
+import {Component} from '@angular/core';
+
 
 
 
@@ -10,7 +10,7 @@ import {Component, OnInit} from '@angular/core';
   templateUrl: `createHackathon.component.html`,
   styles: [`
     .form-group {
-      margin-top: 60px;
+      margin-top: 40px;
     }
     .form-control {
       margin-bottom: -25px;
@@ -22,10 +22,8 @@ import {Component, OnInit} from '@angular/core';
 })
 export class CreateHackathonComponent {
   constructor() {}
-  onClickCreate() {
+  hackathonCreate() {
     console.log('Hackathon is created');
-    // this.httpService.getDate()
-    //   .subscribe(
-    //     (data)
+
   }
 }
