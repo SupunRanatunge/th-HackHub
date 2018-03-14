@@ -19,14 +19,12 @@ import {FormsModule} from '@angular/forms';
 import {ValidationsService} from './services/validations.service';
 import {FlashMessagesModule, FlashMessagesService} from 'angular2-flash-messages';
 import {EventsComponent} from './pages/events/events.component';
-
-
-// import {HttpModule} from '@angular/http';
-// import {AuthService} from './services/auth.service';
+import {HttpModule} from '@angular/http';
+import {AuthService} from './services/auth.service';
 
 
 @NgModule({
-  imports:      [ BrowserModule, routing, FormsModule, FlashMessagesModule.forRoot() ],
+  imports:      [ BrowserModule, routing, FormsModule, FlashMessagesModule.forRoot(), HttpModule ],
 
   declarations: [ AppComponent, NavbarComponent, CarouselComponent, HomeComponent, HackathonComponent, CreateHackathonComponent,
     UpdateHackathonComponent, DeleteHackathonComponent, LoginComponent, SignupComponent, ProfileComponent, DeleteEventComponent,
@@ -35,7 +33,7 @@ import {EventsComponent} from './pages/events/events.component';
   bootstrap:    [ AppComponent ],
 
   providers: [
-    appRoutingProviders, ValidationsService, FlashMessagesService
+    appRoutingProviders, ValidationsService, FlashMessagesService, AuthService
   ]
 })
 export class AppModule { }

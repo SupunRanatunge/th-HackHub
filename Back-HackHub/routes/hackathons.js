@@ -82,4 +82,8 @@ router.put('/updateHackathon', (req, res, next) =>{
         }
     })
 });
+router.get('/hackathons', (req, res, next) =>{
+    console.log("djhfsdhfjdhfdhfasgvfhag");
+    console.log(res);
+});
 module.exports = router;

@@ -1,23 +1,26 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
+
 
 @Component({
   moduleId: module.id,
   selector: 'app-hackathon',
   templateUrl: `hackathon.component.html`,
 })
-export class HackathonComponent  {
+export class HackathonComponent {
   hackathon = 'Hacktitude';
   place = 'Malabe Virtusa firm';
   date = '16th Feb';
   time = '10am';
 
-  onClick() {
+
+  createHackathon() {
     alert('Now Create your Hackathon');
   }
-  onClicked() {
+  updateHackathon() {
     alert('Now Update your Hackathons');
   }
-  Clicked() {
+  deleteHackathon() {
     alert('Delete your Hackathon');
   }
+
 }

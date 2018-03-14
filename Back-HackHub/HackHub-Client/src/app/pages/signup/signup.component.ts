@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import {ValidationsService} from '../../services/validations.service';
 import {FlashMessagesService} from 'angular2-flash-messages';
-// import {AuthService} from '../../services/auth.service';
-// import {Router} from '@angular/router';
+
+import {AuthService} from '../../services/auth.service';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -18,8 +19,8 @@ export class SignupComponent {
   constructor(
     private validateService: ValidationsService,
     private flashMessage: FlashMessagesService,
-    // private authService: AuthService,
-    // private router: Router
+    private authService: AuthService,
+    private router: Router
   ){
 
   }
@@ -34,18 +35,20 @@ export class SignupComponent {
         return false;
     }
     if(!this.validateService.validateEmail(user.email)){
-      this.flashMessage.show("Your email is not valid", {cssClass: 'alert-danger',timeout: 3000});
-
+        this.flashMessage.show("Your email is not valid", {cssClass: 'alert-danger',timeout: 3000});
+        return false;
     }
-    // this.authService.registerUser(user).subscribe(data =>{
-    //   if(data.success){
-    //     this.flashMessage.show("You are now registered", {cssClass: 'alert-success',timeout: 3000});
-    //     this.router.navigate(['/LoginHackHub'])
-    //   }else{
-    //     this.flashMessage.show("Something went wrong", {cssClass: 'alert-danger',timeout: 3000});
-    //     this.router.navigate(['/register'])
-    //   }
-    // })
+    this.authService.registerUser(user).subscribe(data =>{
+      if(data.success){
+
+        this.router.navigate(['/LoginHackHub'])
+        // this.flashMessage.show("You are now registered", {cssClass: 'alert-success',timeout: 3000});
+      }else{
+        this.flashMessage.show("Something went wrong", {cssClass: 'alert-danger',timeout: 3000});
+        this.router.navigate(['/register'])
+      }
+    })
+
 
   }
 
