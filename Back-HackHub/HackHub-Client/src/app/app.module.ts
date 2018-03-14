@@ -21,6 +21,7 @@ import {FlashMessagesModule, FlashMessagesService} from 'angular2-flash-messages
 import {EventsComponent} from './pages/events/events.component';
 import {HttpModule} from '@angular/http';
 import {AuthService} from './services/auth.service';
+import {HackathonService} from './services/hackathon.service';
 
 
 @NgModule({
@@ -33,7 +34,7 @@ import {AuthService} from './services/auth.service';
   bootstrap:    [ AppComponent ],
 
   providers: [
-    appRoutingProviders, ValidationsService, FlashMessagesService, AuthService
+    appRoutingProviders, ValidationsService, FlashMessagesService, AuthService, HackathonService
   ]
 })
 export class AppModule { }

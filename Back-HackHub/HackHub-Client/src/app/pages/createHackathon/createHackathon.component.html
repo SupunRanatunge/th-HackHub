@@ -3,15 +3,16 @@
   <h1 class="h1">Create a Hackathon</h1>
   <div class="form-group">
     <!--inserting details for Hackathon-->
+    <flash-messages></flash-messages>
 
-    <input class="form-control input-lg" placeholder="Hackathon name" autofocus><br><br>
-    <input class="form-control input-lg" placeholder="Host Company" autofocus><br><br>
-    <input class="form-control input-lg" placeholder="Starting Date" autofocus><br><br>
-    <input class="form-control input-lg" placeholder="Closing Date" autofocus><br><br>
-    <input class="form-control input-lg" placeholder="Happening Place" autofocus><br><br>
-    <input class="form-control input-lg" placeholder="Winning price" autofocus><br><br>
-    <input class="form-control input-lg" placeholder="Number of group members" autofocus><br><br>
-    <input class="form-control input-lg" placeholder="Special notes" autofocus><br><br>
+    <input class="form-control input-lg" [(ngModel)]="name" name="name" placeholder="Hackathon name" autofocus><br><br>
+    <input class="form-control input-lg" [(ngModel)]="host" name="host" placeholder="Host Company" autofocus><br><br>
+    <input class="form-control input-lg" [(ngModel)]="staDate" name="staDate" placeholder="Starting Date" autofocus><br><br>
+    <input class="form-control input-lg" [(ngModel)]="cloDate" name="cloDate" placeholder="Closing Date" autofocus><br><br>
+    <input class="form-control input-lg" [(ngModel)]="place" name="place" placeholder="Happening Place" autofocus><br><br>
+    <input class="form-control input-lg" [(ngModel)]="price" name="price" placeholder="Winning price" autofocus><br><br>
+    <input class="form-control input-lg" [(ngModel)]="numOfMems" name="NumOfMems" placeholder="Number of group members" autofocus><br><br>
+    <input class="form-control input-lg" [(ngModel)]="spNotes" name="SpecialNotes" placeholder="Special notes" autofocus><br><br>
 
 
     <button (click)="hackathonCreate()" class="btn btn-primary btn-block">Create Hackathon</button>

@@ -16,4 +16,12 @@ export class ValidationsService {
       const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
       return re.test(email);
   }
+  validateHackathon(hackathon){
+
+    if(hackathon.name == undefined || hackathon.host == undefined || hackathon.staDate == undefined || hackathon.cloDate == undefined || hackathon.place == undefined || hackathon.price == undefined || hackathon.numOfMems == undefined || hackathon.spNotes == undefined){
+      return false;
+    }else{
+      return true;
+    }
+  }
 }
