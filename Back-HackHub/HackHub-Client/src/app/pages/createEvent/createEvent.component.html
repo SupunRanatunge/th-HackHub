@@ -4,12 +4,12 @@
   <div class="form-group">
     <!--inserting details for Event-->
 
-    <input class="form-control input-lg" placeholder="Event name" autofocus><br><br>
-    <input class="form-control input-lg" placeholder="Host Company" autofocus><br><br>
-    <input class="form-control input-lg" placeholder="Date" autofocus><br><br>
-    <input class="form-control input-lg" placeholder="Time" autofocus><br><br>
-    <input class="form-control input-lg" placeholder="Happening Place" autofocus><br><br>
-    <input class="form-control input-lg" placeholder="Special notes" autofocus><br><br>
+    <input class="form-control input-lg" [(ngModel)]="name" name="name" placeholder="Event name" autofocus><br><br>
+    <input class="form-control input-lg" [(ngModel)]="host" name="host" placeholder="Host Company" autofocus><br><br>
+    <input class="form-control input-lg" [(ngModel)]="date" name="date" placeholder="Date" autofocus><br><br>
+    <input class="form-control input-lg" [(ngModel)]="time" name="time" placeholder="Time" autofocus><br><br>
+    <input class="form-control input-lg" [(ngModel)]="place" name="place" placeholder="Happening Place" autofocus><br><br>
+    <input class="form-control input-lg" [(ngModel)]="specialNotes" name="specialNotes" placeholder="Special notes" autofocus><br><br>
     <button (click)="eventCreate()" class="btn btn-primary btn-block">Create Event</button>
 
 

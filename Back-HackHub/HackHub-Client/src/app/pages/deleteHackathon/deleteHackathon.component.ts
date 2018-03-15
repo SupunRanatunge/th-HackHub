@@ -7,7 +7,7 @@ import {Router} from '@angular/router';
 @Component({
   moduleId: module.id,
   selector: 'app-delete-hackathon',
-  templateUrl: `deleteHackathon.component.html`,
+  templateUrl: 'deleteHackathon.component.html',
   styles: [`
     .form-group {
       margin-top: 60px;
@@ -27,15 +27,17 @@ export class DeleteHackathonComponent  {
 
 
   } deleteHackathon() {
-    const hackathon = {
+
+    const hackName = {
       name: this.name
     };
-    console.log(name);
-    if(!this.validateService.validateName(hackathon)){
+
+    if(!this.validateService.validateName(hackName)){
       this.flashMessage.show("Enter the Hackathon name you want to delete",{cssClass: 'alert-danger',timeout: 3000})
       return false;
     }
-    this.hackService.deleteHackathon(hackathon).subscribe(data =>{
+    this.hackService.deleteHackathon(hackName).subscribe(data =>{
+      console.log("data: "+data);
       if(data.success){
         alert("Hackathon is deleted");
         this.router.navigate(['/hackathons'])

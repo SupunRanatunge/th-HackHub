@@ -10,7 +10,7 @@ const hackathonSchema = mongoose.Schema({
         type: String,
 
     },
-    stateDate: {
+    startDate: {
         type: String,
 
     },
