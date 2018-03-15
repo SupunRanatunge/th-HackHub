@@ -22,6 +22,7 @@ import {EventsComponent} from './pages/events/events.component';
 import {HttpModule} from '@angular/http';
 import {AuthService} from './services/auth.service';
 import {HackathonService} from './services/hackathon.service';
+import {EventService} from './services/event.service';
 
 
 @NgModule({
@@ -34,7 +35,7 @@ import {HackathonService} from './services/hackathon.service';
   bootstrap:    [ AppComponent ],
 
   providers: [
-    appRoutingProviders, ValidationsService, FlashMessagesService, AuthService, HackathonService
+    appRoutingProviders, ValidationsService, FlashMessagesService, AuthService, HackathonService, EventService
   ]
 })
 export class AppModule { }

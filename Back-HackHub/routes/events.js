@@ -9,8 +9,8 @@ router.post('/createEvent', (req, res, next) => {
 
         name: req.body.name,
         host: req.body.host,
-        Date: req.body.Date,
-        Time: req.body.Time,
+        date: req.body.date,
+        time: req.body.time,
         place: req.body.place,
         specialNotes: req.body.specialNotes
 
@@ -50,11 +50,11 @@ router.put('/updateEvent', (req, res, next) =>{
                 if (req.body.host) {
                     eventObj.host = req.body.host;
                 }
-                if (req.body.startDate) {
-                    eventObj.startDate = req.body.startDate;
+                if (req.body.date) {
+                    eventObj.date = req.body.date;
                 }
-                if (req.body.closeDate) {
-                    eventObj.closeDate = req.body.closeDate;
+                if (req.body.time) {
+                    eventObj.time = req.body.time;
                 }
                 if (req.body.place) {
                     eventObj.place = req.body.place;
@@ -64,9 +64,9 @@ router.put('/updateEvent', (req, res, next) =>{
                 }
                 eventObj.save(function(err, updatedObj){
                     if(err){
-                        res.json({msg: "Event could not be updated"})
+                        console.log("Event could not be updated");
                     }else{
-                        res.json(updatedObj)
+                        console.log(updatedObj);
                     }
                 })
             }

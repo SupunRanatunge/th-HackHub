@@ -30,5 +30,13 @@ export class ValidationsService {
     }else{
       return true;
     }
-}
+  }
+  validateEvent(event){
+
+    if(event.name == undefined || event.host == undefined || event.date == undefined || event.time == undefined || event.place == undefined || event.specialNotes == undefined){
+      return false;
+    }else{
+      return true;
+    }
+  }
 }

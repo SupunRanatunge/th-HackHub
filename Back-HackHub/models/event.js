@@ -3,24 +3,19 @@ const config = require("../config/database");
 
 const eventSchema = mongoose.Schema({
     name: {
-        type: String,
-        required: true
+        type: String
     },
     host: {
-        type: String,
-        required: true
+        type: String
     },
-    Date: {
-        type: String,
-        required: true
+    date: {
+        type: String
     },
-    Time: {
-        type: String,
-        required: true
+    time: {
+        type: String
     },
     place: {
-        type: String,
-        required: true
+        type: String
     },
     specialNotes: {
         type: String

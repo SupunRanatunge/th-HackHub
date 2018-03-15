@@ -1,4 +1,9 @@
 import {Component} from '@angular/core';
+import {ValidationsService} from '../../services/validations.service';
+import {FlashMessagesService} from 'angular2-flash-messages';
+import {Router} from '@angular/router';
+import {EventService} from '../../services/event.service';
+
 
 
 @Component({
@@ -18,9 +23,44 @@ import {Component} from '@angular/core';
   `]
 })
 export class CreateEventComponent {
-  constructor() {}
+  name: String;
+  host: String;
+  date: String;
+  time: String;
+  place: String;
+  specialNotes: String;
+
+  constructor( private validateService: ValidationsService,
+               private flashMessage: FlashMessagesService,
+               private eventService: EventService,
+               private router: Router) {}
+
   eventCreate() {
-    console.log('Event is created');
+    const event = {
+
+      name: this.name,
+      host: this.host,
+      date: this.date,
+      time: this.time,
+      place: this.place,
+      specialNotes: this.specialNotes
+    };
+    if(!this.validateService.validateEvent(event)){
+
+      this.flashMessage.show("Please fill all required blanks", {cssClass: 'alert-danger',timeout: 3000});
+      return false;
+    }
+    this.eventService.createEvent(event).subscribe(data =>{
+
+      if(data.success){
+        alert("New Event is created");
+        this.router.navigate(['/events'])
+        // this.flashMessage.show("Hackathon is created", {cssClass: 'alert-success',timeout: 3000});
+      }else{
+        this.flashMessage.show("Something went wrong", {cssClass: 'alert-danger',timeout: 3000});
+        this.router.navigate(['/createEvent'])
+      }
+    });
 
   }
 }
