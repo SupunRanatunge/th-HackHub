@@ -24,4 +24,11 @@ export class ValidationsService {
       return true;
     }
   }
+  validateName(hackathon){
+    if (hackathon.name == undefined){
+      return false;
+    }else{
+      return true;
+    }
+}
 }

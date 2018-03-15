@@ -4,34 +4,34 @@ const config = require("../config/database");
 const hackathonSchema = mongoose.Schema({
     name: {
         type: String,
-        required: true
+
     },
     host: {
         type: String,
-        required: true
+
     },
-    staDate: {
+    stateDate: {
         type: String,
-        required: true
+
     },
-    cloDate: {
+    closeDate: {
         type: String,
-        required: true
+
     },
     place: {
         type: String,
-        required: true
+
     },
     price: {
         type: String,
-        required: true
+
     },
 
-    numOfMems: {
+    numbOfMems: {
         type: String,
-        required: true
+
     },
-    spNotes: {
+    specialNotes: {
         type: String
     }
 

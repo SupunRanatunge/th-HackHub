@@ -4,15 +4,15 @@
 
   <h4>Enter the Hackathon name and relevant fields to be updated</h4>
   <div class="form-group">
-
-    <input class="form-control input-lg" placeholder="Add Hackathon Name you want to update about" autofocus><br><br>
-    <input class="form-control input-lg" placeholder="Hosting Company" autofocus><br><br>
-    <input class="form-control input-lg" placeholder="Starting Date" autofocus><br><br>
-    <input class="form-control input-lg" placeholder="Closing Date" autofocus><br><br>
-    <input class="form-control input-lg" placeholder="Happening Place" autofocus><br><br>
-    <input class="form-control input-lg" placeholder="Winning Price" autofocus><br><br>
-    <input class="form-control input-lg" placeholder="Number of group members" autofocus><br><br>
-    <input class="form-control input-lg" placeholder="Special notes" autofocus><br><br>
+    <flash-messages></flash-messages>
+    <input class="form-control input-lg" [(ngModel)]="name" name="name" placeholder="Add Hackathon Name you want to update about" autofocus><br><br>
+    <input class="form-control input-lg" [(ngModel)]="host" name="host" placeholder="Hosting Company" autofocus><br><br>
+    <input class="form-control input-lg" [(ngModel)]="startDate" name="startDate" placeholder="Starting Date" autofocus><br><br>
+    <input class="form-control input-lg" [(ngModel)]="closeDate" name="closeDate" placeholder="Closing Date" autofocus><br><br>
+    <input class="form-control input-lg" [(ngModel)]="place" name="place" placeholder="Happening Place" autofocus><br><br>
+    <input class="form-control input-lg" [(ngModel)]="price" name="price" placeholder="Winning Price" autofocus><br><br>
+    <input class="form-control input-lg" [(ngModel)]="numbOfMems" name="numbOfMems" placeholder="Number of group members" autofocus><br><br>
+    <input class="form-control input-lg" [(ngModel)]="specialNotes" name="specialNotes" placeholder="Special notes" autofocus><br><br>
 
 
     <button (click)="updateHackathon()" class="btn btn-primary">Update Hackathon</button>

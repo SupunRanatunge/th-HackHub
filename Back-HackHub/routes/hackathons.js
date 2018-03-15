@@ -31,12 +31,12 @@ router.post('/createHackathon', (req, res, next) => {
 router.delete('/deleteHackathon', (req, res, next) => {
 
     const name = req.body.name;
+    console.log('from routes hackathons'+name);
     Hackathon.deleteHackathon(name, (err, hackathon) => {
         if(err) {
-            res.json({success: false, msg: "failed to delete the Hackathon"})
+            console.log("failed to delete the Hackathon");
         }else{
-
-            res.json({success: true, msg: "Hackathon was deleted"+ hackathon})
+            console.log("Hackathon was deleted"+ hackathon.name);
         }
     })
 
@@ -45,19 +45,19 @@ router.put('/updateHackathon', (req, res, next) =>{
     const name = req.body.name;
     Hackathon.findOne({name: name}, (err, hackObj) =>{
         if(err){
-            res.json({msg: "Error has occurred"})
+            console.log("Error has occurred")
         }else {
             if (!hackObj) {
-                res.json({msg: "Hackathon in that name is not found"})
+                console.log("Hackathon in that name is not found")
             } else {
                 if (req.body.host) {
                     hackObj.host = req.body.host;
                 }
-                if (req.body.startDate) {
-                    hackObj.startDate = req.body.startDate;
+                if (req.body.staDate) {
+                    hackObj.staDate = req.body.staDate;
                 }
-                if (req.body.closeDate) {
-                    hackObj.closeDate = req.body.closeDate;
+                if (req.body.cloDate) {
+                    hackObj.cloDate = req.body.cloDate;
                 }
                 if (req.body.place) {
                     hackObj.place = req.body.place;
@@ -65,17 +65,17 @@ router.put('/updateHackathon', (req, res, next) =>{
                 if (req.body.price) {
                     hackObj.place = req.body.place;
                 }
-                if (req.body.numbOfMems) {
-                    hackObj.numbOfMems = req.body.numbOfMems;
+                if (req.body.numOfMems) {
+                    hackObj.numOfMems = req.body.numOfMems;
                 }
-                if (req.body.specialNotes) {
-                    hackObj.specialNotes = req.body.specialNotes;
+                if (req.body.spNotes) {
+                    hackObj.spNotes = req.body.spNotes;
                 }
                hackObj.save(function(err, updatedObj){
                    if(err){
-                       res.json({msg: "Hackathon could not be updated"})
+                       console.log("Hackathon could not be updated"+ err);
                    }else{
-                       res.json(updatedObj)
+                       console.log(updatedObj);
                    }
                })
             }

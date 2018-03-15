@@ -24,12 +24,12 @@ import {Router} from '@angular/router';
 export class CreateHackathonComponent {
   name: String;
   host: String;
-  staDate: String;
-  cloDate: String;
+  startDate: String;
+  closeDate: String;
   place: String;
   price: String;
-  numOfMems: String;
-  spNotes: String;
+  numbOfMems: String;
+  specialNotes: String;
 
   constructor( private validateService: ValidationsService,
                private flashMessage: FlashMessagesService,
@@ -42,12 +42,12 @@ export class CreateHackathonComponent {
     const hackathon = {
       name: this.name,
       host: this.host,
-      staDate: this.staDate,
-      cloDate: this.cloDate,
+      startDate: this.startDate,
+      closeDate: this.closeDate,
       place: this.place,
       price: this.price,
-      numOfMems: this.numOfMems,
-      spNotes: this.spNotes
+      numbOfMems: this.numbOfMems,
+      specialNotes: this.specialNotes
     };
     if(!this.validateService.validateHackathon(hackathon)){
 
