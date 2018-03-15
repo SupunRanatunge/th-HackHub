@@ -9,12 +9,12 @@ router.post('/createHackathon', (req, res, next) => {
 
         name: req.body.name,
         host: req.body.host,
-        startDate: req.body.startDate,
-        closeDate: req.body.closeDate,
+        staDate: req.body.staDate,
+        cloDate: req.body.cloDate,
         place: req.body.place,
         price: req.body.price,
-        numbOfMems: req.body.numbOfMems,
-        specialNotes: req.body.specialNotes
+        numOfMems: req.body.numOfMems,
+        spNotes: req.body.spNotes
 
     });
     Hackathon.createHackathon(newHackathon, (err, hackathon) =>{

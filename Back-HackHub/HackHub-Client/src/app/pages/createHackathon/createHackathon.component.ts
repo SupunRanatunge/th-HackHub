@@ -38,6 +38,7 @@ export class CreateHackathonComponent {
 
 
   }  hackathonCreate() {
+
     const hackathon = {
       name: this.name,
       host: this.host,
@@ -49,16 +50,16 @@ export class CreateHackathonComponent {
       spNotes: this.spNotes
     };
     if(!this.validateService.validateHackathon(hackathon)){
-      console.log(hackathon);
-      console.log(this.validateService.validateHackathon(hackathon));
+
       this.flashMessage.show("Please fill all required blanks", {cssClass: 'alert-danger',timeout: 3000});
       return false;
     }
     this.hackService.createHackathon(hackathon).subscribe(data =>{
-      if(data.success){
 
-        this.router.navigate(['/createHackathon'])
-        // this.flashMessage.show("You are now registered", {cssClass: 'alert-success',timeout: 3000});
+      if(data.success){
+        alert("New Hackathon is created");
+        this.router.navigate(['/hackathons'])
+        // this.flashMessage.show("Hackathon is created", {cssClass: 'alert-success',timeout: 3000});
       }else{
         this.flashMessage.show("Something went wrong", {cssClass: 'alert-danger',timeout: 3000});
         this.router.navigate(['/createHackathon'])

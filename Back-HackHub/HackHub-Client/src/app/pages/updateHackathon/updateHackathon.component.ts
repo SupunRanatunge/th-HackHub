@@ -14,7 +14,7 @@ import { Component } from '@angular/core';
   `]
 })
 export class UpdateHackathonComponent  {
-  onClickUpdate() {
+  updateHackathon() {
     console.log('Hackathon is updated');
   }
 }

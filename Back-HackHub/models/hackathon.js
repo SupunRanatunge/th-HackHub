@@ -10,11 +10,11 @@ const hackathonSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    startDate: {
+    staDate: {
         type: String,
         required: true
     },
-    closeDate: {
+    cloDate: {
         type: String,
         required: true
     },
@@ -27,11 +27,11 @@ const hackathonSchema = mongoose.Schema({
         required: true
     },
 
-    numbOfMems: {
+    numOfMems: {
         type: String,
         required: true
     },
-    specialNotes: {
+    spNotes: {
         type: String
     }
 
