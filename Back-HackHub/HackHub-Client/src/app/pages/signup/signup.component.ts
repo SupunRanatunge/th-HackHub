@@ -30,11 +30,11 @@ export class SignupComponent {
       email: this.email,
       password: this.password
     };
-    if(!this.validateService.validateSignUp(user)) {
+    if(!this.validateService.validateSignUp(user)) {      //Make sure name, email and password are entered
         this.flashMessage.show("Please fill in all the blanks", {cssClass: 'alert-danger',timeout: 3000});
         return false;
     }
-    if(!this.validateService.validateEmail(user.email)){
+    if(!this.validateService.validateEmail(user.email)){        //validate the email
         this.flashMessage.show("Your email is not valid", {cssClass: 'alert-danger',timeout: 3000});
         return false;
     }

@@ -49,7 +49,7 @@ export class CreateHackathonComponent {
       numbOfMems: this.numbOfMems,
       specialNotes: this.specialNotes
     };
-    if(!this.validateService.validateHackathon(hackathon)){
+    if(!this.validateService.validateHackathon(hackathon)){           //Make sure all the blanks are filled
 
       this.flashMessage.show("Please fill all required blanks", {cssClass: 'alert-danger',timeout: 3000});
       return false;
@@ -58,7 +58,7 @@ export class CreateHackathonComponent {
 
       if(data.success){
         alert("New Hackathon is created");
-        this.router.navigate(['/hackathons'])
+        this.router.navigate(['/hackathons'])           //redirect to hackathons page after successful Hackathon create
         // this.flashMessage.show("Hackathon is created", {cssClass: 'alert-success',timeout: 3000});
       }else{
         this.flashMessage.show("Something went wrong", {cssClass: 'alert-danger',timeout: 3000});

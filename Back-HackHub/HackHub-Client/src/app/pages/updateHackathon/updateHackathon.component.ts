@@ -45,7 +45,7 @@ export class UpdateHackathonComponent  {
       numbOfMems: this.numbOfMems,
       specialNotes: this.specialNotes
     };
-    if(!this.validateService.validateName(hackathon)){
+    if(!this.validateService.validateName(hackathon)){     //Make sure the name of updating hackathon is given
       this.flashMessage.show("Please enter the Hackathon name you want to update", {cssClass: 'alert-danger',timeout: 3000});
       return false;
     }

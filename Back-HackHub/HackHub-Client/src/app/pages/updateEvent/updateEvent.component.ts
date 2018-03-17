@@ -40,7 +40,7 @@ export class UpdateEventComponent  {
       place: this.place,
       specialNotes: this.specialNotes
     };
-    if(!this.validateService.validateName(event)){
+    if(!this.validateService.validateName(event)){           //Make sure the name of updating Event is entered
       this.flashMessage.show("Please enter the Event name you want to update", {cssClass: 'alert-danger',timeout: 3000});
       return false;
     }

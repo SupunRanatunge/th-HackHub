@@ -45,7 +45,7 @@ export class CreateEventComponent {
       place: this.place,
       specialNotes: this.specialNotes
     };
-    if(!this.validateService.validateEvent(event)){
+    if(!this.validateService.validateEvent(event)){                     //Make sure all the blanks are filled
 
       this.flashMessage.show("Please fill all required blanks", {cssClass: 'alert-danger',timeout: 3000});
       return false;
@@ -54,7 +54,7 @@ export class CreateEventComponent {
 
       if(data.success){
         alert("New Event is created");
-        this.router.navigate(['/events'])
+        this.router.navigate(['/events'])                 //redirect to events page after successful event create
         // this.flashMessage.show("Hackathon is created", {cssClass: 'alert-success',timeout: 3000});
       }else{
         this.flashMessage.show("Something went wrong", {cssClass: 'alert-danger',timeout: 3000});
