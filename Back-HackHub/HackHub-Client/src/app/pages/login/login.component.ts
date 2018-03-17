@@ -20,12 +20,18 @@ export class LoginComponent  {
 
   loginClick() {
     const user ={
+
        email: this.email,
     password: this.password
     };
+
     this.authService.authenticateUser(user).subscribe(data => {
+      // console.log(data);
       if(data.success){
+
         this.authService.storeUserData(data.token, data.user);
+        console.log(data.token);
+        alert("You are now logged in");
         // this.flashMessageService.show("You are now logged in", {
         //   cssClass: 'alert-success',
         //   timeout:  5000});
@@ -34,7 +40,7 @@ export class LoginComponent  {
       }else{
         this.flashMessageService.show(data.msg, {
           cssClass: 'alert-danger',
-          timeout:  5000})
+          timeout:  5000});
         this.router.navigate(['LoginHackHub']);
       }
 
