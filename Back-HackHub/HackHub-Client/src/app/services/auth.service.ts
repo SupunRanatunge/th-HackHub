@@ -33,6 +33,7 @@ export class AuthService {
       console.log("loaded token"+ this.authToken)
       headers.append('Authorization', this.authToken);
       headers.append('Content-type','application/json');
+      console.log(headers);
       return this.http.get('http://localhost:3000/users/profile', {headers: headers})
         .map(res => res.json());
     }

@@ -39,10 +39,10 @@ router.post('/authenticate', (req, res, next) => {
 
                     expiresIn: 604800 //1 week
                 });
-                console.log(token);
+
                 res.json ({
                     success: true,
-                    token: 'JWT '+ token,
+                    token:  token,
                     user: {
                         id: user._id,
                         name: user.name,
@@ -62,6 +62,7 @@ router.post('/authenticate', (req, res, next) => {
 
 router.get('/profile', passport.authenticate('jwt',{ session: false}), (req, res, next) => {
     res.json({user: req.user});
+    console.log(req.user);
 });
 
 module.exports = router;
