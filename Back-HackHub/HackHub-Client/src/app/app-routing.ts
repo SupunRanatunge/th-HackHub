@@ -13,6 +13,7 @@ import {CreateEventComponent} from './pages/createEvent/createEvent.component';
 import {UpdateEventComponent} from './pages/updateEvent/updateEvent.component';
 import {DeleteEventComponent} from './pages/deleteEvent/deleteEvent.component';
 import {EventsComponent} from './pages/events/events.component';
+import {AuthGuardService} from './guards/auth-guard.service';
 
 const appRoutes: Routes = [
   {
@@ -29,7 +30,8 @@ const appRoutes: Routes = [
   },
   {
     path: 'createHackathons',
-    component: CreateHackathonComponent
+    component: CreateHackathonComponent,
+    canActivate: [AuthGuardService]
   },
   {
     path: 'updateHackathons',
@@ -61,7 +63,8 @@ const appRoutes: Routes = [
   },
   {
     path: 'Profile',
-    component: ProfileComponent
+    component: ProfileComponent,
+    canActivate: [AuthGuardService]
   }
   ];
 export const appRoutingProviders: any[] = [];

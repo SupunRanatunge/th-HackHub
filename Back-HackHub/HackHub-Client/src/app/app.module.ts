@@ -23,6 +23,7 @@ import {HttpModule} from '@angular/http';
 import {AuthService} from './services/auth.service';
 import {HackathonService} from './services/hackathon.service';
 import {EventService} from './services/event.service';
+import {AuthGuardService} from './guards/auth-guard.service';
 
 
 @NgModule({
@@ -35,7 +36,7 @@ import {EventService} from './services/event.service';
   bootstrap:    [ AppComponent ],
 
   providers: [
-    appRoutingProviders, ValidationsService, FlashMessagesService, AuthService, HackathonService, EventService
+    appRoutingProviders, ValidationsService, FlashMessagesService, AuthService, HackathonService, EventService, AuthGuardService
   ]
 })
 export class AppModule { }

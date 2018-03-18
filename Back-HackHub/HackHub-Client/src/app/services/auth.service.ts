@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Http} from '@angular/http';
 import {Headers} from '@angular/http';
 import 'rxjs/add/operator/map';
+import {tokenNotExpired} from 'angular2-jwt';
 
 @Injectable()
 export class AuthService {
@@ -30,10 +31,10 @@ export class AuthService {
     getProfile(){
       let headers = new Headers();
       this.loadToken();
-      console.log("loaded token"+ this.authToken)
+
       headers.append('Authorization', this.authToken);
       headers.append('Content-type','application/json');
-      console.log(headers);
+
       return this.http.get('http://localhost:3000/users/profile', {headers: headers})
         .map(res => res.json());
     }
@@ -44,7 +45,7 @@ export class AuthService {
       localStorage.setItem('user', JSON.stringify(user));
       this.authToken = token;
       this.user = user;
-      console.log('inside storeUserData'+ this.authToken+' '+this.user);
+
 
 
     }
@@ -52,6 +53,11 @@ export class AuthService {
     loadToken(){
       const token = localStorage.getItem('id_token');
       this.authToken = token
+    }
+
+    loggedIn(){
+      return tokenNotExpired('id_token');
+
     }
 
     logout(){

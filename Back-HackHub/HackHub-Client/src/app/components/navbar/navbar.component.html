@@ -18,15 +18,15 @@
     </ul>
 
     <ul  class="nav navbar-nav navbar-right">
-      <li [routerLinkActive]="['active']"  [routerLinkActiveOptions]="{exact: true}">
+      <li *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']"  [routerLinkActiveOptions]="{exact: true}">
         <a class="nav-link" routerLink="/LoginHackHub">Log In <span class="sr-only">(current)</span></a>
       </li>
 
-      <li [routerLinkActive]="['active']"  [routerLinkActiveOptions]="{exact: true}">
+      <li *ngIf = "!authService.loggedIn()" [routerLinkActive]="['active']"  [routerLinkActiveOptions]="{exact: true}">
         <a class="nav-link" routerLink="/SignupHackHub">Sign Up <span class="sr-only">(current)</span></a>
       </li>
-      <li>
-        <a class="nav-link" (click)="logoutClick()" href="#">Log Out<span class="sr-only">(current)</span></a>
+      <li *ngIf="authService.loggedIn()"  [routerLinkActive]="['active']"  [routerLinkActiveOptions]="{exact: true}">
+        <a  class="nav-link" (click)="logoutClick()" href="#">Log Out<span class="sr-only">(current)</span></a>
       </li>
     </ul>
   </div>
