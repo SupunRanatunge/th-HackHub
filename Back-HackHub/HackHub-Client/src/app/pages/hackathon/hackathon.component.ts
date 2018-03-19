@@ -1,4 +1,5 @@
-import { Component} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
+import {HackathonService} from '../../services/hackathon.service';
 
 
 
@@ -7,12 +8,9 @@ import { Component} from '@angular/core';
   selector: 'app-hackathon',
   templateUrl: `hackathon.component.html`,
 })
-export class HackathonComponent {
-  hackathon = 'Hacktitude';
-  place = 'Malabe Virtusa firm';
-  date = '16th Feb';
-  time = '10am';
-
+export class HackathonComponent implements OnInit{
+  hackathon: any;
+  constructor(private hackService: HackathonService){}
 
   createHackathon() {
     alert('Now Create your Hackathon');
@@ -22,6 +20,16 @@ export class HackathonComponent {
   }
   deleteHackathon() {
     alert('Delete your Hackathon');
+  }
+  ngOnInit(){
+    this.hackService.getHackathon().subscribe(profile => {
+        this.hackathon = profile.hackathon;
+
+      },
+      err => {
+        console.log(err);
+        return false;
+      });
   }
 
 }

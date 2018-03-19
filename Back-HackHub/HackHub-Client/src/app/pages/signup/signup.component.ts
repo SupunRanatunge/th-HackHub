@@ -6,6 +6,7 @@ import {AuthService} from '../../services/auth.service';
 import {Router} from '@angular/router';
 
 
+
 @Component({
   moduleId: module.id,
   selector: 'app-signup',
@@ -15,6 +16,7 @@ export class SignupComponent {
   name : String;
   email: String;
   password: String;
+  userType: String;
 
   constructor(
     private validateService: ValidationsService,
@@ -25,10 +27,14 @@ export class SignupComponent {
 
   }
   signUpClick() {
+
+
+
     const user = {
       name: this.name,
       email: this.email,
       password: this.password
+
     };
     if(!this.validateService.validateSignUp(user)) {      //Make sure name, email and password are entered
         this.flashMessage.show("Please fill in all the blanks", {cssClass: 'alert-danger',timeout: 3000});

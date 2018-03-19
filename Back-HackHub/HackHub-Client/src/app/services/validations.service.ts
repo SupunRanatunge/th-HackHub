@@ -18,7 +18,7 @@ export class ValidationsService {
   }
   validateHackathon(hackathon){
 
-    if(hackathon.name == undefined || hackathon.host == undefined || hackathon.staDate == undefined || hackathon.cloDate == undefined || hackathon.place == undefined || hackathon.price == undefined || hackathon.numOfMems == undefined || hackathon.spNotes == undefined){
+    if(hackathon.name == undefined || hackathon.host == undefined || hackathon.startDate == undefined || hackathon.closeDate == undefined || hackathon.place == undefined || hackathon.price == undefined || hackathon.numbOfMems == undefined || hackathon.specialNotes == undefined){
       return false;
     }else{
       return true;

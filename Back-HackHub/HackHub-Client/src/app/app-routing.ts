@@ -35,23 +35,28 @@ const appRoutes: Routes = [
   },
   {
     path: 'updateHackathons',
-    component: UpdateHackathonComponent
+    component: UpdateHackathonComponent,
+    canActivate: [AuthGuardService]
   },
   {
     path: 'deleteHackathons',
-    component: DeleteHackathonComponent
+    component: DeleteHackathonComponent,
+    canActivate: [AuthGuardService]
   },
   {
     path: 'createEvents',
-    component: CreateEventComponent
+    component: CreateEventComponent,
+    canActivate: [AuthGuardService]
   },
   {
     path: 'updateEvents',
-    component: UpdateEventComponent
+    component: UpdateEventComponent,
+    canActivate: [AuthGuardService]
   },
   {
     path: 'deleteEvents',
-    component: DeleteEventComponent
+    component: DeleteEventComponent,
+    canActivate: [AuthGuardService]
   },
   {
     path: 'LoginHackHub',

@@ -26,7 +26,7 @@ export class LoginComponent  {
     };
 
     this.authService.authenticateUser(user).subscribe(data => {
-      // console.log(data);
+
       if(data.success){
 
         this.authService.storeUserData(data.token, data.user);

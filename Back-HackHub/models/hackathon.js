@@ -54,9 +54,22 @@ module.exports.createHackathon = function(newHackathon, callback) {
 };
 
 module.exports.deleteHackathon = function(name, callback) {
-    if( Hackathon.findOne({name : name})) {
-        Hackathon.deleteOne({name: name}, callback);
+    console.log("inside hackathon model"+ name);
+    if(Hackathon.find({name: name})){
+        console.log("found one")
+        Hackathon.remove({name: name})
     }else{
-        console.log("No Hackathon in that name");
+        console.log("could not find")
     }
+
+
 };
+
+
+
+
+
+
+
+
+

@@ -5,9 +5,17 @@
   <div class="container">
     <div class="form-group">
       <flash-messages></flash-messages>
-      <input type="text" class="form-control" [(ngModel)]="name" name="name"    placeholder="Name" autofocus><br><br>
-      <input type="text" class="form-control"  [(ngModel)]="email" name="email" placeholder="CSE Email" autofocus><br><br>
+      <input type="text" class="form-control" [(ngModel)]="name" name="name" placeholder="Name" autofocus style="margin-bottom: -30px"><br><br>
+      <div class="row">
+
+        <div class="col-sm-6"><input type="radio" value="cse"   name="user" ngModel> CSE Undergraduate</div>
+        <div class="col-sm-6"><input type="radio" value="admin" name="user" ngModel> Administrator<br/></div>
+
+      </div>
+
+      <input type="text" class="form-control"  [(ngModel)]="email" name="email" placeholder="CSE Email" autofocus style="margin-top: 10px"><br><br>
       <input type="password" class="form-control"  [(ngModel)]="password" name="password" placeholder="Password" autofocus><br><br>
+
     </div>
   </div>
 
