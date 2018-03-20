@@ -24,6 +24,7 @@ import {AuthService} from './services/auth.service';
 import {HackathonService} from './services/hackathon.service';
 import {EventService} from './services/event.service';
 import {AuthGuardService} from './guards/auth-guard.service';
+import {AddAdminComponent} from './pages/addAdmin/addAdmin.component';
 
 
 @NgModule({
@@ -31,7 +32,7 @@ import {AuthGuardService} from './guards/auth-guard.service';
 
   declarations: [ AppComponent, NavbarComponent, CarouselComponent, HomeComponent, HackathonComponent, CreateHackathonComponent,
     UpdateHackathonComponent, DeleteHackathonComponent, LoginComponent, SignupComponent, ProfileComponent, DeleteEventComponent,
-    UpdateEventComponent, CreateEventComponent, EventsComponent  ],
+    UpdateEventComponent, CreateEventComponent, EventsComponent, AddAdminComponent  ],
 
   bootstrap:    [ AppComponent ],
 

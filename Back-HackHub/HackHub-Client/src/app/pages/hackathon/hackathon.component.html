@@ -1,4 +1,4 @@
-<div class="container">
+<div  class="container">
 
 
   <h1 class="h1">Hackathons</h1>
@@ -10,10 +10,10 @@
 
 
 
-  <div id="tab-group">
-    <div id="tab-group-1" class="ready">
-      <h3 id="hackathon-1"><strong>{{hackathon}}</strong></h3><br>
-      <p id="content-1"> {{hackathon}} is going to happen at {{place}} on {{date}} at {{time}} onwards</p>
+  <div *ngIf="user" id="tab-group">
+    <div  id="tab-group-1" class="ready">
+      <h3 id="hackathon-1"><strong>{{user.name}}</strong></h3><br>
+      <p id="content-1"> {{user.name}} is going to happen at {{user.email}} from {{user.name}} to {{user.name}}</p>
 
     </div>
   </div>

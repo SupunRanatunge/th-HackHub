@@ -53,15 +53,25 @@ module.exports.createHackathon = function(newHackathon, callback) {
     );
 };
 
-module.exports.deleteHackathon = function(name, callback) {
-    console.log("inside hackathon model"+ name);
-    if(Hackathon.find({name: name})){
-        console.log("found one")
-        Hackathon.remove({name: name})
-    }else{
-        console.log("could not find")
-    }
-};
+
+
+// module.exports.getHackathon = function(req,res,next) {
+//     Hackathon.findOne({name: "Ideathon"}, (err, hackObj) => {
+//         if (err) {
+//             console.log(err)
+//         } else {
+//             if (!hackObj) {
+//                 console.log("there is no such Hackathon")
+//             } else {
+//                 console.log(hackObj)
+//                 res.json(hackObj)
+//
+//             }
+//         }
+//
+//
+//     })
+// };
 
 
 

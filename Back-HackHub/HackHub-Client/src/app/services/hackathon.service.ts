@@ -37,11 +37,11 @@ export class HackathonService {
       .map(res => res.json())
   }
 
-  // getHackathon(){
-  //   let headers = new Headers();
-  //   headers.append('Content-type','application/json');
-  //   return this.http.get('http://localhost:3000/hackathons/hackathons', {headers: headers})
-  //     .map(res => res.json());
-  // }
+  getHackathon(){
+    let headers = new Headers();
+    headers.append('Content-type','application/json');
+    return this.http.get('http://localhost:3000/hackathons/hackathons', {headers: headers})
+      .map(res => res.json());
+  }
 
 }

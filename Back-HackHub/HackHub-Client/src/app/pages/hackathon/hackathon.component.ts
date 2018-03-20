@@ -1,5 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import {HackathonService} from '../../services/hackathon.service';
+import {AuthService} from '../../services/auth.service';
 
 
 
@@ -10,7 +11,9 @@ import {HackathonService} from '../../services/hackathon.service';
 })
 export class HackathonComponent implements OnInit{
   hackathon: any;
-  constructor(private hackService: HackathonService){}
+  user: Object;
+  constructor(private hackService: HackathonService,
+              private authService: AuthService){}
 
   createHackathon() {
     alert('Now Create your Hackathon');
@@ -24,12 +27,21 @@ export class HackathonComponent implements OnInit{
   ngOnInit(){
     // this.hackService.getHackathon().subscribe(profile => {
     //     this.hackathon = profile.hackathon;
-    //
+    //     console.log(this.hackathon+"inside ngOnInit")
     //   },
     //   err => {
     //     console.log(err);
     //     return false;
     //   });
+    this.authService.getProfile().subscribe(profile => {
+        this.user = profile.user;
+        console.log(this.user)
+
+      },
+      err => {
+        console.log(err);
+        return false;
+      });
   }
 
 }

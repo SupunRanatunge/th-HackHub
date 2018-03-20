@@ -39,12 +39,3 @@ module.exports.createEvent = function(newEvent, callback) {
     );
 };
 
-module.exports.deleteEvent = function(name, callback) {
-    console.log("inside event model"+ name);
-    if(Event.find({name: name})){
-        console.log("found one")
-        Event.remove({name: name})
-    }else{
-        console.log("could not find")
-    }
-};

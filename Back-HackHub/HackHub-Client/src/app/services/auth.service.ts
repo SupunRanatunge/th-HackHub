@@ -10,6 +10,7 @@ export class AuthService {
 
   authToken: any;
   user: any;
+  admin: any;
 
   constructor(private http: Http) { }
 
@@ -22,12 +23,27 @@ export class AuthService {
         .map(res => res.json());
 
     }
+    registerAdmin(admin){
+      let headers = new Headers();
+      headers.append('Content-type','application/json');
+      return this.http.post('http://localhost:3000/admins/register', admin, {headers: headers})
+        .map(res => res.json());
+
+    }
     authenticateUser(user){
       let headers = new Headers();
       headers.append('Content-type','application/json');
       return this.http.post('http://localhost:3000/users/authenticate', user, {headers: headers})
         .map(res => res.json());
     }
+
+    authenticateAdmin(admin){
+      let headers = new Headers();
+      headers.append('Content-type','application/json');
+      return this.http.post('http://localhost:3000/admins/authenticate', admin, {headers: headers})
+        .map(res => res.json());
+    }
+
     getProfile(){
       let headers = new Headers();
       this.loadToken();
@@ -45,9 +61,12 @@ export class AuthService {
       localStorage.setItem('user', JSON.stringify(user));
       this.authToken = token;
       this.user = user;
-
-
-
+    }
+    storeAdminData(token, admin){
+      localStorage.setItem('id_token', token);
+      localStorage.setItem('user', JSON.stringify(admin));
+      this.authToken = token;
+      this.user = admin;
     }
 
     loadToken(){
@@ -63,6 +82,11 @@ export class AuthService {
     logout(){
       this.authToken = null;
       this.user = null;
+      localStorage.clear();
+    }
+    adminlogout(){
+      this.authToken = null;
+      this.admin = null;
       localStorage.clear();
     }
 }

@@ -37,15 +37,15 @@ export class DeleteHackathonComponent  {
       return false;
     }
     this.hackService.deleteHackathon(hackName).subscribe(data =>{
-      console.log("data: "+data);
-      if(data.success){
-        alert("Hackathon is deleted");
-        this.router.navigate(['/hackathons'])
-        // this.flashMessage.show("Hackathon is created", {cssClass: 'alert-success',timeout: 3000});
-      }else{
-        this.flashMessage.show("Something went wrong", {cssClass: 'alert-danger',timeout: 3000});
-        this.router.navigate(['/deleteHackathon'])
-      }
+      // console.log("data: "+data);
+      // if(data.success){
+      //   alert("Hackathon is deleted");
+      //   this.router.navigate(['/hackathons'])
+      //   // this.flashMessage.show("Hackathon is created", {cssClass: 'alert-success',timeout: 3000});
+      // }else{
+      //   this.flashMessage.show("Something went wrong", {cssClass: 'alert-danger',timeout: 3000});
+      //   this.router.navigate(['/deleteHackathon'])
+      // }
     })
 
 

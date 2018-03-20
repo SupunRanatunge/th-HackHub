@@ -6,6 +6,7 @@ const passport = require("passport");
 const mongoose = require("mongoose");
 const config = require("./config/database");
 const users = require("./routes/users");
+const admins= require("./routes/admins");
 const hackathons = require("./routes/hackathons");
 const events = require("./routes/events");
 
@@ -36,6 +37,7 @@ app.use(express.static(path.join(__dirname,'HackHub-Client/src')));
 app.use('/users', users);
 app.use('/hackathons', hackathons);
 app.use('/events', events);
+app.use('/admins', admins);
 
 
 

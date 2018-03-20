@@ -51,20 +51,8 @@ router.delete('/deleteHackathon', (req, res, next) => {
             }
         }
     })
-
-
-
-    // const name = req.body.name;
-    // console.log('from routes hackathons '+name);
-    // Hackathon.deleteHackathon(name, (err, hackathon) => {
-    //     if(err) {
-    //         console.log("failed to delete the Hackathon");
-    //     }else{
-    //         console.log("Hackathon was deleted "+ hackathon.name);
-    //     }
-    // })
-
 });
+
 router.put('/updateHackathon',  (req, res, next) =>{
     const name = req.body.name;
     Hackathon.findOne({name: name}, (err, hackObj) =>{
@@ -107,15 +95,9 @@ router.put('/updateHackathon',  (req, res, next) =>{
     })
 });
 
-// router.get('/hackathons', (req, res, next) =>{
-//     // console.log("djhfsdhfjdhfdhfasgvfhag");
-//     // console.log("req - aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"+req);
-//     // console.log("res-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"+res);
-//     // console.log("res.json-ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"+res.json);
-//     Hackathon.getHackathon(req,res,next)
-//         res.json({})
-//
-//
-//
-// });
+router.get('/hackathons', (req, res, next) => {
+
+    res.json({user: "Ideathon"});
+});
+
 module.exports = router;

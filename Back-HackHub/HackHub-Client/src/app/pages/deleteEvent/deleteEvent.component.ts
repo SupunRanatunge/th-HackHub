@@ -36,15 +36,15 @@ export class DeleteEventComponent  {
       return false;
     }
     this.eventService.deleteEvent(eventName).subscribe(data =>{
-      console.log("data: "+data);
-      if(data.success){
-        alert("Event is deleted");
-        this.router.navigate(['/events'])
-
-      }else{
-        this.flashMessage.show("Something went wrong", {cssClass: 'alert-danger',timeout: 3000});
-        this.router.navigate(['/deleteEvent'])
-      }
+    //   console.log("data: "+data);
+    //   if(data.success){
+    //     alert("Event is deleted");
+    //     this.router.navigate(['/events'])
+    //
+    //   }else{
+    //     this.flashMessage.show("Something went wrong", {cssClass: 'alert-danger',timeout: 3000});
+    //     this.router.navigate(['/deleteEvent'])
+    //   }
     })
   }
 
