@@ -40,9 +40,11 @@ module.exports.createEvent = function(newEvent, callback) {
 };
 
 module.exports.deleteEvent = function(name, callback) {
-    if( Event.findOne({name : name})) {
-        Event.deleteOne({name: name}, callback);
+    console.log("inside event model"+ name);
+    if(Event.find({name: name})){
+        console.log("found one")
+        Event.remove({name: name})
     }else{
-        console.log("No Event in that name");
+        console.log("could not find")
     }
 };

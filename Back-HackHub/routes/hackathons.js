@@ -32,25 +32,26 @@ router.post('/createHackathon', (req, res, next) => {
 router.delete('/deleteHackathon', (req, res, next) => {
 
     const name = req.body.name;
-    Hackathon.findOne({name: name}, (err, hackObj) =>{
-        if(err){
+    Hackathon.findOne({name: name}, (err, hackObj) => {
+        if (err) {
             console.log("Error has occurred")
-        }else {
+        } else {
             if (!hackObj) {
                 console.log("Hackathon in that name is not found")
             } else {
 
-                hackObj.remove(function(err, updatedObj){
-                    if(err){
-                        console.log("Hackathon could not be "+ err);
-                    }else{
+                hackObj.remove(function (err, updatedObj) {
+                    if (err) {
+                        console.log("Hackathon could not be " + err);
+                    } else {
                         console.log(updatedObj);
-                        
+
                     }
-                    })
-                }
+                })
             }
-        })
+        }
+    })
+
 
 
     // const name = req.body.name;

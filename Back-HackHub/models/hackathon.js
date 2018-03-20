@@ -61,8 +61,6 @@ module.exports.deleteHackathon = function(name, callback) {
     }else{
         console.log("could not find")
     }
-
-
 };
 
 

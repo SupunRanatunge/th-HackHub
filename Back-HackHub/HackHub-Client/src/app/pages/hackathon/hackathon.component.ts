@@ -22,14 +22,14 @@ export class HackathonComponent implements OnInit{
     alert('Delete your Hackathon');
   }
   ngOnInit(){
-    this.hackService.getHackathon().subscribe(profile => {
-        this.hackathon = profile.hackathon;
-
-      },
-      err => {
-        console.log(err);
-        return false;
-      });
+    // this.hackService.getHackathon().subscribe(profile => {
+    //     this.hackathon = profile.hackathon;
+    //
+    //   },
+    //   err => {
+    //     console.log(err);
+    //     return false;
+    //   });
   }
 
 }
