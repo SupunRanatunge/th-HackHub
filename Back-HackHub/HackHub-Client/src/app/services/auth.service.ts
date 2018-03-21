@@ -45,14 +45,27 @@ export class AuthService {
     }
 
     getProfile(){
-      let headers = new Headers();
-      this.loadToken();
+      if(this.user){
+        let headers = new Headers();
+        this.loadToken();
 
-      headers.append('Authorization', this.authToken);
-      headers.append('Content-type','application/json');
+        headers.append('Authorization', this.authToken);
+        headers.append('Content-type','application/json');
 
-      return this.http.get('http://localhost:3000/users/profile', {headers: headers})
-        .map(res => res.json());
+        return this.http.get('http://localhost:3000/users/profile', {headers: headers})
+          .map(res => res.json());
+      }
+      else if(this.admin){
+        let headers = new Headers();
+        this.loadToken();
+
+        headers.append('Authorization', this.authToken);
+        headers.append('Content-type','application/json');
+
+        return this.http.get('http://localhost:3000/admins/profile', {headers: headers})
+          .map(res => res.json());
+      }
+
     }
 
 
@@ -81,12 +94,20 @@ export class AuthService {
 
     logout(){
       this.authToken = null;
-      this.user = null;
+      if(this.user){
+        alert(this.user.name+" ,you are logged out");
+        this.user = null;
+      }
+      if(this.admin){
+        alert(this.admin.name+" ,you are logged out");
+        this.admin = null;
+      }
+
       localStorage.clear();
     }
-    adminlogout(){
-      this.authToken = null;
-      this.admin = null;
-      localStorage.clear();
-    }
+    // adminlogout(){
+    //   this.authToken = null;
+    //   this.admin = null;
+    //   localStorage.clear();
+    // }
 }

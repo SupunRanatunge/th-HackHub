@@ -33,15 +33,15 @@ export class HackathonComponent implements OnInit{
     //     console.log(err);
     //     return false;
     //   });
-    this.authService.getProfile().subscribe(profile => {
-        this.user = profile.user;
-        console.log(this.user)
-
-      },
-      err => {
-        console.log(err);
-        return false;
-      });
+    // this.authService.getProfile().subscribe(profile => {
+    //     this.user = profile.user;
+    //     console.log(this.user)
+    //
+    //   },
+    //   err => {
+    //     console.log(err);
+    //     return false;
+    //   });
   }
 
 }

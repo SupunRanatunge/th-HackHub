@@ -9,7 +9,7 @@
       <li [routerLinkActive]="['active']"  [routerLinkActiveOptions]="{exact: true}">
         <a class="nav-link" routerLink="/">Home<span class="sr-only">(current)</span></a>
       </li>
-      <li [routerLinkActive]="['active']"  [routerLinkActiveOptions]="{exact: true}">
+      <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']"  [routerLinkActiveOptions]="{exact: true}">
         <a class="nav-link" routerLink="/Profile">Profile<span class="sr-only">(current)</span></a>
       </li>
       <li [routerLinkActive]="['active']"  [routerLinkActiveOptions]="{exact: true}">

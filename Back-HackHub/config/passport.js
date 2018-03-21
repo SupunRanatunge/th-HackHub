@@ -3,6 +3,7 @@ const ExtractJwt = require("passport-jwt").ExtractJwt;
 const User = require("../models/user");
 const config = require("../config/database");
 
+
 module.exports = function(passport){
     let opts = {};
     opts.jwtFromRequest = ExtractJwt.fromHeader("authorization");
@@ -20,3 +21,4 @@ module.exports = function(passport){
         });
     }));
 };
+
