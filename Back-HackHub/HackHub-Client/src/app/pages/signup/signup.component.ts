@@ -16,7 +16,7 @@ export class SignupComponent {
   name : String;
   email: String;
   password: String;
-  userType: String;
+
 
   constructor(
     private validateService: ValidationsService,
@@ -34,6 +34,7 @@ export class SignupComponent {
       name: this.name,
       email: this.email,
       password: this.password
+
 
     };
     if(!this.validateService.validateSignUp(user)) {      //Make sure name, email and password are entered

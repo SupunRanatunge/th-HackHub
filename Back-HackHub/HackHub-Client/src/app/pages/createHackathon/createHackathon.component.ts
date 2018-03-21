@@ -1,8 +1,9 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ValidationsService} from '../../services/validations.service';
 import {FlashMessagesService} from 'angular2-flash-messages';
 import {HackathonService} from '../../services/hackathon.service';
 import {Router} from '@angular/router';
+
 
 
 @Component({
@@ -21,7 +22,8 @@ import {Router} from '@angular/router';
     }
   `]
 })
-export class CreateHackathonComponent {
+export class CreateHackathonComponent implements OnInit{
+
   name: String;
   host: String;
   startDate: String;
@@ -72,4 +74,6 @@ export class CreateHackathonComponent {
     console.log('Hackathon is created');
 
   }
+  ngOnInit(){}
+
 }

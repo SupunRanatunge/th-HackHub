@@ -9,8 +9,8 @@ import {Router} from '@angular/router';
   templateUrl: `profile.component.html`,
 })
 export class ProfileComponent implements OnInit {
-  user: any;
-  admin: any;
+  user: Object;
+
 
   constructor(private authService: AuthService,
               private router: Router) {
@@ -20,14 +20,10 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
 
     this.authService.getProfile().subscribe(profile => {
-      if (profile.user) {
+
         this.user = profile.user;
         console.log(this.user);
-      }else if( profile.admin){
-        this.admin = profile.admin;
-        console.log(this.admin);
-      }
-    },err =>{
+        },err =>{
       console.log(err);
       return false;
     })

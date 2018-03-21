@@ -1,11 +1,9 @@
-import {require} from "./HackHub-Client/src/test";
-
 const express = require("express");
 const path = require('path');
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const passport = require("passport");
-const passportAdmin = require("passportAdmin");
+const passport2 = require("passport");
+
 const mongoose = require("mongoose");
 const config = require("./config/database");
 const users = require("./routes/users");
@@ -31,13 +29,13 @@ app.use(cors());
 //body parser
 app.use(bodyParser.json());
 
-app.use(passport.initialize());
-app.use(passport.session());
-app.use(passportAdmin.initialize());
-app.use(passportAdmin.session());
 
-require("./config/passport")(passport);
-require("./config/passportAdmin")(passportAdmin);
+app.use(passport2.initialize());
+app.use(passport2.session());
+
+
+require("./config/passport")(passport2);
+
 
 app.use(express.static(path.join(__dirname,'HackHub-Client/src')));
 app.use('/users', users);

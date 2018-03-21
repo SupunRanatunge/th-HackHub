@@ -2,17 +2,19 @@
   <div class="container"> <h2 class="page-header">{{user.name}}</h2>
     <ul class="list-group">
       <li class="list-group-item">Username: {{user.name}}</li>
+      <li *ngIf="user.userType===2" class="list-group-item">Username: {{user.name}}</li>
       <li class="list-group-item">Email: {{user.email}}</li>
     </ul>
   </div>
 </div>
-<div *ngIf="admin">
-  <div class="container"> <h2 class="page-header">{{admin.name}}</h2>
-    <ul class="list-group">
-      <li class="list-group-item">Username: {{admin.name}}</li>
-      <li class="list-group-item">Email: {{admin.email}}</li>
-    </ul>
-  </div>
-</div>
+
+<!--<div *ngIf="admin">-->
+  <!--<div class="container"> <h2 class="page-header">{{admin.name}}</h2>-->
+    <!--<ul class="list-group">-->
+      <!--<li class="list-group-item">Username: {{admin.name}}</li>-->
+      <!--<li class="list-group-item">Email: {{admin.email}}</li>-->
+    <!--</ul>-->
+  <!--</div>-->
+<!--</div>-->
 
 

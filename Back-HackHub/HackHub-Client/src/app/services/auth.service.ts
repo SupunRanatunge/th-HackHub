@@ -45,7 +45,7 @@ export class AuthService {
     }
 
     getProfile(){
-      if(this.user){
+
         let headers = new Headers();
         this.loadToken();
 
@@ -54,17 +54,17 @@ export class AuthService {
 
         return this.http.get('http://localhost:3000/users/profile', {headers: headers})
           .map(res => res.json());
-      }
-      else if(this.admin){
-        let headers = new Headers();
-        this.loadToken();
 
-        headers.append('Authorization', this.authToken);
-        headers.append('Content-type','application/json');
-
-        return this.http.get('http://localhost:3000/admins/profile', {headers: headers})
-          .map(res => res.json());
-      }
+      // else if(this.admin){
+      //   let headers = new Headers();
+      //   this.loadToken();
+      //
+      //   headers.append('Authorization', this.authToken);
+      //   headers.append('Content-type','application/json');
+      //
+      //   return this.http.get('http://localhost:3000/admins/profile', {headers: headers})
+      //     .map(res => res.json());
+      // }
 
     }
 
@@ -79,7 +79,7 @@ export class AuthService {
       localStorage.setItem('id_token', token);
       localStorage.setItem('user', JSON.stringify(admin));
       this.authToken = token;
-      this.user = admin;
+      this.admin = admin;
     }
 
     loadToken(){

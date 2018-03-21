@@ -11,7 +11,8 @@ router.post('/register', (req, res, next) => {
 
       name: req.body.name,
       email: req.body.email,
-      password: req.body.password
+      password: req.body.password,
+      userType: 1
   });
   User.addUser(newUser, (err, user) =>{
       if(err){
@@ -46,7 +47,8 @@ router.post('/authenticate', (req, res, next) => {
                     user: {
                         id: user._id,
                         name: user.name,
-                        email: user.email
+                        email: user.email,
+                        userType: user.userType
 
                     }
                 });
@@ -62,7 +64,9 @@ router.post('/authenticate', (req, res, next) => {
 
 router.get('/profile', passport.authenticate('jwt',{ session: false}), (req, res, next) => {
 
+
     res.json({user: req.user});
+
 
 
 });

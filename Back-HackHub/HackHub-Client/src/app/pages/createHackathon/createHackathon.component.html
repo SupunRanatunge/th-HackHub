@@ -15,7 +15,7 @@
     <input class="form-control input-lg" [(ngModel)]="specialNotes" name="specialNotes" placeholder="Special notes" autofocus><br><br>
 
 
-    <button (click)="hackathonCreate()" class="btn btn-primary btn-block">Create Hackathon</button>
+    <button *ngIf="user" (click)="hackathonCreate()" class="btn btn-primary btn-block">Create Hackathon</button>
 
 
 
