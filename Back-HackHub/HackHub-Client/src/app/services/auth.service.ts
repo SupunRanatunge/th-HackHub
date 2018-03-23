@@ -55,16 +55,7 @@ export class AuthService {
         return this.http.get('http://localhost:3000/users/profile', {headers: headers})
           .map(res => res.json());
 
-      // else if(this.admin){
-      //   let headers = new Headers();
-      //   this.loadToken();
-      //
-      //   headers.append('Authorization', this.authToken);
-      //   headers.append('Content-type','application/json');
-      //
-      //   return this.http.get('http://localhost:3000/admins/profile', {headers: headers})
-      //     .map(res => res.json());
-      // }
+
 
     }
 

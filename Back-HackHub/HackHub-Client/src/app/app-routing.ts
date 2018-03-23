@@ -75,7 +75,7 @@ const appRoutes: Routes = [
   {
     path: 'AddAdmin',
     component: AddAdminComponent,
-    canActivate: [AuthGuardService]
+    // canActivate: [AuthGuardService]
   }
   ];
 export const appRoutingProviders: any[] = [];

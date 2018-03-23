@@ -1,20 +1,19 @@
 <div *ngIf="user">
-  <div class="container"> <h2 class="page-header">{{user.name}}</h2>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6"><h2 class="page-header">{{user.name}}</h2></div>
+      <div class="col-sm-3"></div>
+      <div *ngIf="user.userType===2" class="col-sm-3"><button class="btn btn-default" [ngStyle]="{color: 'red'}"  routerLink="/AddAdmin">Add New Admin</button></div>
+    </div><br>
+    <!--only admin can add an admin-->
     <ul class="list-group">
       <li class="list-group-item">Username: {{user.name}}</li>
-      <li *ngIf="user.userType===2" class="list-group-item">Username: {{user.name}}</li>
       <li class="list-group-item">Email: {{user.email}}</li>
+      <li class="list-group-item">Contact: {{user.contact}}</li>
     </ul>
   </div>
 </div>
 
-<!--<div *ngIf="admin">-->
-  <!--<div class="container"> <h2 class="page-header">{{admin.name}}</h2>-->
-    <!--<ul class="list-group">-->
-      <!--<li class="list-group-item">Username: {{admin.name}}</li>-->
-      <!--<li class="list-group-item">Email: {{admin.email}}</li>-->
-    <!--</ul>-->
-  <!--</div>-->
-<!--</div>-->
+
 
 

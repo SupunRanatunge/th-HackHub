@@ -27,7 +27,7 @@ module.exports = function(passport1){
                             return done(null, admin);
 
                         }else{
-
+                            return done(null, false);
                         }
                     })
                 }

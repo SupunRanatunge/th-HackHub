@@ -9,7 +9,7 @@ import {Router} from '@angular/router';
   templateUrl: `profile.component.html`,
 })
 export class ProfileComponent implements OnInit {
-  user: Object;
+  user: any;
 
 
   constructor(private authService: AuthService,
@@ -22,7 +22,7 @@ export class ProfileComponent implements OnInit {
     this.authService.getProfile().subscribe(profile => {
 
         this.user = profile.user;
-        console.log(this.user);
+        console.log(profile +"ggggggggggggggggggg");
         },err =>{
       console.log(err);
       return false;
@@ -31,13 +31,4 @@ export class ProfileComponent implements OnInit {
 }
 
 
-    // this.authService.getAdminProfile().subscribe(profile => {
-    //     this.admin = profile.admin;
-    //     console.log(this.admin)
-    //
-    //   },
-    //   err => {
-    //     console.log(err);
-    //     return false;
-    //   });
 
