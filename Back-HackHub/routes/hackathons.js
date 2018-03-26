@@ -95,9 +95,16 @@ router.put('/updateHackathon',  (req, res, next) =>{
     })
 });
 
-router.get('/hackathons', (req, res, next) => {
+router.get('/', (req, res, next) => {
+    Hackathon.find({}, function(err, hackathons){
+        if(err){
+            console.log(err)
+        }else{
+            res.send(hackathons);
+        }
+    });
 
-    res.json({user: "Ideathon"});
+
 });
 
 module.exports = router;

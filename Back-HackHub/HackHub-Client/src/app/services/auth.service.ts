@@ -44,20 +44,29 @@ export class AuthService {
         .map(res => res.json());
     }
 
-    getProfile(){
+    getProfile() {
 
-        let headers = new Headers();
-        this.loadToken();
+      let headers = new Headers();
+      this.loadToken();
 
-        headers.append('Authorization', this.authToken);
-        headers.append('Content-type','application/json');
+      headers.append('Authorization', this.authToken);
+      headers.append('Content-type', 'application/json');
 
-        return this.http.get('http://localhost:3000/users/profile', {headers: headers})
-          .map(res => res.json());
-
-
+      return this.http.get('http://localhost:3000/users/profile', {headers: headers})
+        .map(res => res.json());
 
     }
+
+    getHackathon(){
+      let headers = new Headers();
+
+      headers.append('Content-type','application/json');
+
+      return this.http.get('http://localhost:3000/hackathons', {headers: headers})
+        .map(res => res.json());
+    }
+
+
 
 
     storeUserData(token, user){

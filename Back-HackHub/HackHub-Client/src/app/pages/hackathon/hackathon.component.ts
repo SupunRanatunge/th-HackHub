@@ -25,15 +25,24 @@ export class HackathonComponent implements OnInit{
     alert('Delete your Hackathon');
   }
   ngOnInit(){
-    // this.hackService.getHackathon().subscribe(profile => {
-    //     this.hackathon = profile.hackathon;
-    //     console.log(this.hackathon+"inside ngOnInit")
-    //   },
-    //   err => {
-    //     console.log(err);
-    //     return false;
-    //   });
 
-  }
+    this.authService.getHackathon().subscribe(profile => {
+      console.log(profile);
+      console.log(profile);
+      
+      this.hackathon = profile.hackathon;
+    },err =>{
+      console.log(err);
+      return false;
+    })
+      // this.authService.getProfile().subscribe(profile => {
+      //
+      //   this.user = profile.user;
+      //
+      // },err =>{
+      //   console.log(err);
+      //   return false;
+      // })
+    }
 
 }

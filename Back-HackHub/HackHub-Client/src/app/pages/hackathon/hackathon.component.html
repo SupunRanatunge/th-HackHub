@@ -1,7 +1,7 @@
 <div  class="container">
 
 
-  <h1 class="h1">Hackathons</h1>
+  <h1  class="h1">Hackathons</h1>
   <flash-messages></flash-messages>
   <button   (click)="createHackathon()" class="btn btn-default" [ngStyle]="{color: 'blue'}"  routerLink="/createHackathons">Create Hackathon</button>
   <button (click)="updateHackathon()" class="btn btn-default" [ngStyle]="{color: 'blue'}"  routerLink="/updateHackathons">Update Hackathon</button>
@@ -10,10 +10,10 @@
 
 
 
-  <div *ngIf="user" id="tab-group">
+  <div *ngIf="hackathon" id="tab-group">
     <div  id="tab-group-1" class="ready">
-      <h3 id="hackathon-1"><strong>{{user.name}}</strong></h3><br>
-      <p id="content-1"> {{user.name}} is going to happen at {{user.email}} from {{user.name}} to {{user.name}}</p>
+      <h3 id="hackathon-1"><strong>{{hackathon.name}}</strong></h3><br>
+      <p id="content-1"> {{hackathon.name}} is going to happen at {{hackathon.email}} from {{hackathon.name}} to {{hackathon.name}}</p>
 
     </div>
   </div>
