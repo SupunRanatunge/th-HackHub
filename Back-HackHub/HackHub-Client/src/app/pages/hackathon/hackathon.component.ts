@@ -10,7 +10,7 @@ import {AuthService} from '../../services/auth.service';
   templateUrl: `hackathon.component.html`,
 })
 export class HackathonComponent implements OnInit{
-  hackathon: any;
+  hackathons: any[];
   user: Object;
   constructor(private hackService: HackathonService,
               private authService: AuthService){}
@@ -27,22 +27,12 @@ export class HackathonComponent implements OnInit{
   ngOnInit(){
 
     this.authService.getHackathon().subscribe(profile => {
-      console.log(profile);
-      console.log(profile);
-      
-      this.hackathon = profile.hackathon;
+      this.hackathons = profile;
     },err =>{
       console.log(err);
       return false;
     })
-      // this.authService.getProfile().subscribe(profile => {
-      //
-      //   this.user = profile.user;
-      //
-      // },err =>{
-      //   console.log(err);
-      //   return false;
-      // })
+
     }
 
 }
