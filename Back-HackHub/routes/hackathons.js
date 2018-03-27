@@ -40,11 +40,11 @@ router.delete('/deleteHackathon', (req, res, next) => {
                 console.log("Hackathon in that name is not found")
             } else {
 
-                hackObj.remove(function (err, updatedObj) {
+                hackObj.remove(function (err, removedObj) {
                     if (err) {
                         console.log("Hackathon could not be " + err);
                     } else {
-                        console.log(updatedObj);
+                        console.log(removedObj);
 
                     }
                 })

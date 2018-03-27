@@ -82,5 +82,16 @@ router.put('/updateEvent', (req, res, next) => {
             }
         })
 });
+router.get('/', (req, res, next) => {
+    Event.find({}, function(err, events){
+        if(err){
+            console.log(err)
+        }else{
+            res.send(events);
+        }
+    });
+
+
+});
 
 module.exports = router;

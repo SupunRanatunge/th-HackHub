@@ -37,6 +37,7 @@ export class DeleteHackathonComponent  {
       return false;
     }
     this.hackService.deleteHackathon(hackName).subscribe(data =>{
+
       // console.log("data: "+data);
       // if(data.success){
       //   alert("Hackathon is deleted");

@@ -10,7 +10,7 @@ import {AuthService} from '../../services/auth.service';
   templateUrl: `hackathon.component.html`,
 })
 export class HackathonComponent implements OnInit{
-  hackathons: any[];
+  hackathons: any;
   user: Object;
   constructor(private hackService: HackathonService,
               private authService: AuthService){}

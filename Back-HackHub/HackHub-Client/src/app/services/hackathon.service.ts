@@ -30,18 +30,15 @@ export class HackathonService {
     let headers4 = new Headers();
     headers4.append('Content-type', 'application/json');
     alert("Hackathon is deleted");
+    this.router.navigate(['/hackathons'])
     return this.http.delete('http://localhost:3000/hackathons/deleteHackathon', new RequestOptions({
       headers: headers4,
       body: hackName
     }) )
+
       .map(res => res.json())
   }
 
-  getHackathon(){
-    let headers = new Headers();
-    headers.append('Content-type','application/json');
-    return this.http.get('http://localhost:3000/hackathons/hackathons', {headers: headers})
-      .map(res => res.json());
-  }
+
 
 }

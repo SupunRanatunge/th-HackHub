@@ -65,6 +65,14 @@ export class AuthService {
       return this.http.get('http://localhost:3000/hackathons', {headers: headers})
         .map(res => res.json());
     }
+  getEvent(){
+    let headers = new Headers();
+
+    headers.append('Content-type','application/json');
+
+    return this.http.get('http://localhost:3000/events', {headers: headers})
+      .map(res => res.json());
+  }
 
 
 

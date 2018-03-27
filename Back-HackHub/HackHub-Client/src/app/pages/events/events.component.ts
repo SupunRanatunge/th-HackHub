@@ -1,14 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AuthService} from '../../services/auth.service';
 
 @Component({
   selector: 'app-events',
   templateUrl: './events.component.html'
 })
-export class EventsComponent {
-  event = 'Meeting';
-  eventPlace = 'MIT Lobby';
-  eventDate = '16th March';
-  eventTime = '3pm';
+export class EventsComponent implements OnInit{
+  events: any;
+  constructor(private authService: AuthService){
+
+  }
 
   eventCreate() {
     alert('Now Create your Events');
@@ -18,6 +19,17 @@ export class EventsComponent {
   }
   eventDelete() {
     alert('Delete your Event');
+  }
+
+  ngOnInit(){
+
+    this.authService.getEvent().subscribe(profile => {
+      this.events = profile;
+    },err =>{
+      console.log(err);
+      return false;
+    })
+
   }
 
 
