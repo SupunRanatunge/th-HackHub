@@ -11,22 +11,15 @@ import {AuthService} from '../../services/auth.service';
 })
 export class HackathonComponent implements OnInit{
   hackathons: any;
-  user: Object;
-  constructor(private hackService: HackathonService,
-              private authService: AuthService){}
 
-  createHackathon() {
-    alert('Now Create your Hackathon');
-  }
-  updateHackathon() {
-    alert('Now Update your Hackathons');
-  }
-  deleteHackathon() {
-    alert('Delete your Hackathon');
-  }
+  constructor(private hackService: HackathonService,
+              private authService: AuthService
+              ){}
+
+
   ngOnInit(){
 
-    this.authService.getHackathon().subscribe(profile => {
+    this.hackService.getHackathon().subscribe(profile => {
       this.hackathons = profile;
     },err =>{
       console.log(err);

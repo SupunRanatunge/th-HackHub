@@ -12,6 +12,20 @@
       <li class="list-group-item">Contact: {{user.contact}}</li>
     </ul>
   </div>
+  <div *ngIf="authService.loggedIn() && user.userType===2" class="container">
+    <div class="row">
+      <div class="col-sm-6"><br><br><h1 class="h1">Hackathons</h1>
+        <button   (click)="createHackathon()" class="btn btn-default" [ngStyle]="{color: 'blue'}"  routerLink="/createHackathons">Create Hackathon</button><br><br>
+        <button  (click)="updateHackathon()" class="btn btn-default" [ngStyle]="{color: 'blue'}"  routerLink="/updateHackathons">Update Hackathon</button><br><br>
+        <button  (click)="deleteHackathon()" class="btn btn-default" [ngStyle]="{color: 'red'}"  routerLink="/deleteHackathons">Delete Hackathon</button>
+      </div>
+      <div class="col-sm-6"><br><br><h1 class="h1">Events</h1>
+        <button  (click)="eventCreate()" class="btn btn-default" [ngStyle]="{color: 'blue'}"  routerLink="/createEvents">Create Event</button><br><br>
+        <button  (click)="eventUpdate()" class="btn btn-default" [ngStyle]="{color: 'blue'}"  routerLink="/updateEvents">Update Event</button><br><br>
+        <button   (click)="eventDelete()" class="btn btn-default" [ngStyle]="{color: 'red'}"  routerLink="/deleteEvents">Delete Event</button>
+      </div>
+    </div>
+  </div>
 </div>
 
 

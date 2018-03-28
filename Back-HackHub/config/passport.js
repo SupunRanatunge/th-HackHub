@@ -36,20 +36,4 @@ module.exports = function(passport1){
 
     }));
 };
-// module.exports = function(passportAdmin){
-//     let opts = {};
-//     opts.jwtFromRequest = ExtractJwt.fromHeader("authorization");
-//     opts.secretOrKey = config.secret;
-//     passportAdmin.use(new JwtStrategy(opts, function(jwt_payload, done){
-//         Admin.getAdminById(jwt_payload._id, (err, admin) => {
-//             if(err){
-//                 return done(err, false);
-//             }
-//             if(admin){
-//                 return done(null, admin);
-//             }else{
-//                 return done(null, false);
-//             }
-//         });
-//     }));
-// };
+

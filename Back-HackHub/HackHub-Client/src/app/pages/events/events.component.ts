@@ -11,15 +11,7 @@ export class EventsComponent implements OnInit{
 
   }
 
-  eventCreate() {
-    alert('Now Create your Events');
-  }
-  eventUpdate() {
-    alert('Now Update your Events');
-  }
-  eventDelete() {
-    alert('Delete your Event');
-  }
+
 
   ngOnInit(){
 
