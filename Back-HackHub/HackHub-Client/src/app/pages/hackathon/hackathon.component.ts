@@ -11,6 +11,8 @@ import {AuthService} from '../../services/auth.service';
 })
 export class HackathonComponent implements OnInit{
   hackathons: any;
+  user: any;
+  token: any;
 
   constructor(private hackService: HackathonService,
               private authService: AuthService
@@ -24,8 +26,23 @@ export class HackathonComponent implements OnInit{
     },err =>{
       console.log(err);
       return false;
-    })
+    });
+
+    this.token = localStorage.getItem('id_token');
+    if(this.token){
+      console.log(this.token);
+      this.authService.getProfile().subscribe(profile => {
+
+        this.user = profile.user;
+        console.log(this.user);
+      },err =>{
+        console.log(err);
+        return false;
+      })
+    }
+
 
     }
+
 
 }
