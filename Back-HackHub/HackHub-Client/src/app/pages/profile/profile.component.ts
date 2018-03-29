@@ -16,15 +16,7 @@ export class ProfileComponent implements OnInit {
               private router: Router) {
 
   }
-  createHackathon() {
-    alert('Now Create your Hackathon');
-  }
-  updateHackathon() {
-    alert('Now Update your Hackathons');
-  }
-  deleteHackathon() {
-    alert('Delete your Hackathon');
-  }
+
   eventCreate() {
     alert('Now Create your Events');
   }

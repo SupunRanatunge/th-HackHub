@@ -1,6 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import {HackathonService} from '../../services/hackathon.service';
 import {AuthService} from '../../services/auth.service';
+import {Popup} from 'ng2-opd-popup'
 
 
 
@@ -13,11 +14,22 @@ export class HackathonComponent implements OnInit{
   hackathons: any;
   user: any;
   token: any;
+  email: String;
+  password: String;
 
   constructor(private hackService: HackathonService,
-              private authService: AuthService
+              private authService: AuthService,
+              private popup: Popup
               ){}
-
+  createHackathon() {
+    alert('Now Create your Hackathon');
+  }
+  updateHackathon() {
+    alert('Now Update your Hackathons');
+  }
+  deleteHackathon() {
+    alert('Delete your Hackathon');
+  }
 
   ngOnInit(){
 
@@ -43,6 +55,29 @@ export class HackathonComponent implements OnInit{
 
 
     }
+  showPopup5(){
+    this.popup.options = {
+      cancleBtnClass: "btn btn-default",
+      confirmBtnClass: "btn btn-mbe-attack",
+      color: "#A0DE4F",
+      header: "Login...",
+      widthProsentage:50,
+      animation: "bounceInDown",
+      confirmBtnContent: "Login"}
+    this.popup.show(this.popup.options);
+  }
+
+  YourConfirmEvent(){
+    alert('You cliked confirm');
+    this.popup.hide();
+  }
+
+  login(){
+    alert('Email: ' + this.email + '  Password: ' + this.password);
+    this.popup.hide();
+  }
+
+
 
 
 }
