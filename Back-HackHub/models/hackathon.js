@@ -41,6 +41,9 @@ const hackathonSchema = mongoose.Schema({
     },
     specialNotes: {
         type: String
+    },
+    news: {
+        type: String
     }
 
 });

@@ -17,7 +17,8 @@ router.post('/createHackathon', (req, res, next) => {
         price: req.body.price,
         numbOfMems: req.body.numbOfMems,
         regLink: req.body.regLink,
-        specialNotes: req.body.specialNotes
+        specialNotes: req.body.specialNotes,
+        news: null
 
     });
     Hackathon.createHackathon(newHackathon, (err, hackathon) =>{
