@@ -14,6 +14,10 @@ const hackathonSchema = mongoose.Schema({
         type: String,
 
     },
+    startTime: {
+        type: String,
+
+    },
     closeDate: {
         type: String,
 
@@ -28,6 +32,10 @@ const hackathonSchema = mongoose.Schema({
     },
 
     numbOfMems: {
+        type: String,
+
+    },
+    regLink: {
         type: String,
 
     },
@@ -55,23 +63,7 @@ module.exports.createHackathon = function(newHackathon, callback) {
 
 
 
-// module.exports.getHackathon = function(req,res,next) {
-//     Hackathon.findOne({name: "Ideathon"}, (err, hackObj) => {
-//         if (err) {
-//             console.log(err)
-//         } else {
-//             if (!hackObj) {
-//                 console.log("there is no such Hackathon")
-//             } else {
-//                 console.log(hackObj)
-//                 res.json(hackObj)
-//
-//             }
-//         }
-//
-//
-//     })
-// };
+
 
 
 

@@ -25,17 +25,16 @@ import {HackathonService} from './services/hackathon.service';
 import {EventService} from './services/event.service';
 import {AuthGuardService} from './guards/auth-guard.service';
 import {AddAdminComponent} from './pages/addAdmin/addAdmin.component';
-import {PopupModule} from 'ng2-opd-popup';
-
-
+import {PopupComponent} from './components/popupTest/popup.component';
+import {AddnewsComponent} from './pages/addNews/addnews.component';
 
 
 @NgModule({
-  imports:      [ BrowserModule, routing, FormsModule, FlashMessagesModule.forRoot(), HttpModule, PopupModule.forRoot() ],
+  imports:      [ BrowserModule, routing, FormsModule, FlashMessagesModule.forRoot(), HttpModule ],
 
   declarations: [ AppComponent, NavbarComponent, CarouselComponent, HomeComponent, HackathonComponent, CreateHackathonComponent,
     UpdateHackathonComponent, DeleteHackathonComponent, LoginComponent, SignupComponent, ProfileComponent, DeleteEventComponent,
-    UpdateEventComponent, CreateEventComponent, EventsComponent, AddAdminComponent  ],
+    UpdateEventComponent, CreateEventComponent, EventsComponent, AddAdminComponent, PopupComponent, AddnewsComponent  ],
 
   bootstrap:    [ AppComponent ],
 

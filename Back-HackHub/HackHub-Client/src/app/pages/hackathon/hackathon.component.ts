@@ -1,26 +1,37 @@
 import { Component, OnInit} from '@angular/core';
 import {HackathonService} from '../../services/hackathon.service';
 import {AuthService} from '../../services/auth.service';
-import {Popup} from 'ng2-opd-popup'
-
-
+// import { AddnewsComponent} from '../addNews/addnews.component';
 
 @Component({
   moduleId: module.id,
   selector: 'app-hackathon',
   templateUrl: `hackathon.component.html`,
+
 })
 export class HackathonComponent implements OnInit{
   hackathons: any;
   user: any;
   token: any;
-  email: String;
-  password: String;
+
+
 
   constructor(private hackService: HackathonService,
-              private authService: AuthService,
-              private popup: Popup
+              private authService: AuthService
+              // private popup: Popup
               ){}
+
+
+    // showSample(){
+    //   this.popup.options = {
+    //     cancleBtnClass: "btn btn-default",
+    //     confirmBtnClass: "btn btn-default",
+    //     color: "#4180ab",
+    //     header: "Single Popup on a page"}
+    //   this.popup.show();
+    // }
+
+
   createHackathon() {
     alert('Now Create your Hackathon');
   }
@@ -55,27 +66,7 @@ export class HackathonComponent implements OnInit{
 
 
     }
-  showPopup5(){
-    this.popup.options = {
-      cancleBtnClass: "btn btn-default",
-      confirmBtnClass: "btn btn-mbe-attack",
-      color: "#A0DE4F",
-      header: "Login...",
-      widthProsentage:50,
-      animation: "bounceInDown",
-      confirmBtnContent: "Login"}
-    this.popup.show(this.popup.options);
-  }
 
-  YourConfirmEvent(){
-    alert('You cliked confirm');
-    this.popup.hide();
-  }
-
-  login(){
-    alert('Email: ' + this.email + '  Password: ' + this.password);
-    this.popup.hide();
-  }
 
 
 

@@ -15,6 +15,7 @@ import {DeleteEventComponent} from './pages/deleteEvent/deleteEvent.component';
 import {EventsComponent} from './pages/events/events.component';
 import {AuthGuardService} from './guards/auth-guard.service';
 import {AddAdminComponent} from './pages/addAdmin/addAdmin.component';
+import {AddnewsComponent} from './pages/addNews/addnews.component';
 
 const appRoutes: Routes = [
   {
@@ -75,8 +76,14 @@ const appRoutes: Routes = [
   {
     path: 'AddAdmin',
     component: AddAdminComponent,
-    // canActivate: [AuthGuardService]
+    canActivate: [AuthGuardService]
+  },
+  {
+    path: 'AddNews',
+    component: AddnewsComponent,
+    canActivate: [AuthGuardService]
   }
+
   ];
 export const appRoutingProviders: any[] = [];
 

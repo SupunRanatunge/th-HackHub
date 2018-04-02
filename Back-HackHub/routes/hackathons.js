@@ -11,10 +11,12 @@ router.post('/createHackathon', (req, res, next) => {
         name: req.body.name,
         host: req.body.host,
         startDate: req.body.startDate,
+        startTime: req.body.startTime,
         closeDate: req.body.closeDate,
         place: req.body.place,
         price: req.body.price,
         numbOfMems: req.body.numbOfMems,
+        regLink: req.body.regLink,
         specialNotes: req.body.specialNotes
 
     });
@@ -65,11 +67,14 @@ router.put('/updateHackathon',  (req, res, next) =>{
                 if (req.body.host) {
                     hackObj.host = req.body.host;
                 }
-                if (req.body.staDate) {
-                    hackObj.staDate = req.body.staDate;
+                if (req.body.startDate) {
+                    hackObj.startDate = req.body.startDate;
                 }
-                if (req.body.cloDate) {
-                    hackObj.cloDate = req.body.cloDate;
+                if (req.body.startTime) {
+                    hackObj.startTime = req.body.startTime;
+                }
+                if (req.body.closeDate) {
+                    hackObj.closeDate = req.body.closeDate;
                 }
                 if (req.body.place) {
                     hackObj.place = req.body.place;
@@ -77,11 +82,14 @@ router.put('/updateHackathon',  (req, res, next) =>{
                 if (req.body.price) {
                     hackObj.place = req.body.place;
                 }
-                if (req.body.numOfMems) {
-                    hackObj.numOfMems = req.body.numOfMems;
+                if (req.body.numbOfMems) {
+                    hackObj.numbOfMems = req.body.numbOfMems;
                 }
-                if (req.body.spNotes) {
-                    hackObj.spNotes = req.body.spNotes;
+                if (req.body.regLink) {
+                    hackObj.regLink = req.body.regLink;
+                }
+                if (req.body.specialNotes) {
+                    hackObj.specialNotes = req.body.specialNotes;
                 }
                hackObj.save(function(err, updatedObj){
                    if(err){

@@ -27,10 +27,12 @@ export class CreateHackathonComponent implements OnInit{
   name: String;
   host: String;
   startDate: String;
+  startTime: String;
   closeDate: String;
   place: String;
   price: String;
   numbOfMems: String;
+  regLink: String;
   specialNotes: String;
 
   constructor( private validateService: ValidationsService,
@@ -45,10 +47,12 @@ export class CreateHackathonComponent implements OnInit{
       name: this.name,
       host: this.host,
       startDate: this.startDate,
+      startTime: this.startTime,
       closeDate: this.closeDate,
       place: this.place,
       price: this.price,
       numbOfMems: this.numbOfMems,
+      regLink: this.regLink,
       specialNotes: this.specialNotes
     };
     if(!this.validateService.validateHackathon(hackathon)){           //Make sure all the blanks are filled
