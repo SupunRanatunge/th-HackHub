@@ -32,12 +32,13 @@
 
 }
 #tab-group{
-  margin-top:50px;
-  background: #b9c6aa;
-  border: 1px solid #999;
+  margin-top:30px;
+  /*background: #b9c6aa;*/
+  /*border: 1px solid #999;*/
 }
 #tab-group-1{
-  padding:15px;
+  padding-bottom:15px;
+  padding-right: 100%;
 }
 .ready.active{
   background: white;

@@ -27,6 +27,7 @@ import {AuthGuardService} from './guards/auth-guard.service';
 import {AddAdminComponent} from './pages/addAdmin/addAdmin.component';
 import {PopupComponent} from './components/popupTest/popup.component';
 import {AddnewsComponent} from './pages/addNews/addnews.component';
+import {ClickHackathonComponent} from './pages/clickHackathon/clickHackathon.component';
 
 
 @NgModule({
@@ -34,7 +35,7 @@ import {AddnewsComponent} from './pages/addNews/addnews.component';
 
   declarations: [ AppComponent, NavbarComponent, CarouselComponent, HomeComponent, HackathonComponent, CreateHackathonComponent,
     UpdateHackathonComponent, DeleteHackathonComponent, LoginComponent, SignupComponent, ProfileComponent, DeleteEventComponent,
-    UpdateEventComponent, CreateEventComponent, EventsComponent, AddAdminComponent, PopupComponent, AddnewsComponent  ],
+    UpdateEventComponent, CreateEventComponent, EventsComponent, AddAdminComponent, PopupComponent, AddnewsComponent, ClickHackathonComponent  ],
 
   bootstrap:    [ AppComponent ],
 

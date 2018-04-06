@@ -16,6 +16,7 @@ import {EventsComponent} from './pages/events/events.component';
 import {AuthGuardService} from './guards/auth-guard.service';
 import {AddAdminComponent} from './pages/addAdmin/addAdmin.component';
 import {AddnewsComponent} from './pages/addNews/addnews.component';
+import {ClickHackathonComponent} from './pages/clickHackathon/clickHackathon.component';
 
 const appRoutes: Routes = [
   {
@@ -81,6 +82,11 @@ const appRoutes: Routes = [
   {
     path: 'AddNews',
     component: AddnewsComponent,
+    canActivate: [AuthGuardService]
+  },
+  {
+    path: 'ClickHackathon',
+    component: ClickHackathonComponent,
     canActivate: [AuthGuardService]
   }
 

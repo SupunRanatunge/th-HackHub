@@ -116,4 +116,9 @@ router.get('/', (req, res, next) => {
 
 });
 
+router.put('/addNews',  (req, res, next) => {
+    const name = req.body.name;
+    Hackathon.findOneAndUpdate({name: name}, {$push: {date: new Date(), news: "jdhfgsjdfhgidsfhgidsuh"}});
+});
+
 module.exports = router;
