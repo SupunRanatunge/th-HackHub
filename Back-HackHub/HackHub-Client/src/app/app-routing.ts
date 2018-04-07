@@ -1,4 +1,4 @@
-import { ModuleWithProviders} from '@angular/core';
+import {ModuleWithProviders} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 
 import {HomeComponent} from './pages/home/home.component';
@@ -17,6 +17,8 @@ import {AuthGuardService} from './guards/auth-guard.service';
 import {AddAdminComponent} from './pages/addAdmin/addAdmin.component';
 import {AddnewsComponent} from './pages/addNews/addnews.component';
 import {ClickHackathonComponent} from './pages/clickHackathon/clickHackathon.component';
+import {CreateTeamsComponent} from './pages/createTeams/createTeams.component';
+import {MailingListComponent} from './pages/mailingList.component/mailingList.component';
 
 const appRoutes: Routes = [
   {
@@ -88,9 +90,19 @@ const appRoutes: Routes = [
     path: 'ClickHackathon',
     component: ClickHackathonComponent,
     canActivate: [AuthGuardService]
+  },
+  {
+    path: 'CreateYourTeam',
+    component: CreateTeamsComponent,
+    canActivate: [AuthGuardService]
+  },
+  {
+    path: 'MailingList',
+    component: MailingListComponent,
+    canActivate: [AuthGuardService]
   }
 
-  ];
+];
 export const appRoutingProviders: any[] = [];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);

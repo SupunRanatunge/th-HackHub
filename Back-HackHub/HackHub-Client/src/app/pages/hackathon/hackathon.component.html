@@ -1,33 +1,37 @@
-<div  class="container">
+<div class="container">
 
 
-  <h1  class="h1">Hackathons</h1>
+  <h1 class="h1">Hackathons</h1>
   <flash-messages></flash-messages>
 
-  <button *ngIf="authService.loggedIn() && user && user.userType===2" (click)="createHackathon()" class="btn btn-default" [ngStyle]="{color: 'blue'}"  routerLink="/createHackathons">Create Hackathon</button>
-  <button  *ngIf="authService.loggedIn() && user && user.userType===2" (click)="updateHackathon()" class="btn btn-default" [ngStyle]="{color: 'blue'}"  routerLink="/updateHackathons">Update Hackathon</button>
-  <button  *ngIf="authService.loggedIn() && user && user.userType===2" (click)="deleteHackathon()" class="btn btn-default" [ngStyle]="{color: 'red'}"  routerLink="/deleteHackathons">Delete Hackathon</button>
+  <button *ngIf="authService.loggedIn() && user && user.userType===2" (click)="createHackathon()"
+          class="btn btn-default" [ngStyle]="{color: 'blue'}" routerLink="/createHackathons">Create Hackathon
+  </button>
+  <button *ngIf="authService.loggedIn() && user && user.userType===2" (click)="updateHackathon()"
+          class="btn btn-default" [ngStyle]="{color: 'blue'}" routerLink="/updateHackathons">Update Hackathon
+  </button>
+  <button *ngIf="authService.loggedIn() && user && user.userType===2" (click)="deleteHackathon()"
+          class="btn btn-default" [ngStyle]="{color: 'red'}" routerLink="/deleteHackathons">Delete Hackathon
+  </button>
 
 
-
-
-
-    <div *ngFor="let hackathon of hackathons" id="tab-group" >
-      <button class="btn btn-default" routerLink="/ClickHackathon">
-      <div  id="tab-group-1"  >
+  <div *ngFor="let hackathon of hackathons" id="tab-group">
+    <button class="btn btn-default" routerLink="/ClickHackathon">
+      <div id="tab-group-1">
         <h3 id="hackathon-1"><strong>{{hackathon.name}}</strong></h3><br>
         <p id="content-1"> {{hackathon.name}} is organized by {{hackathon.host}}. It starts at {{hackathon.place}} on
-          {{hackathon.startDate}} at {{hackathon.startTime}}. Price for the winners: {{hackathon.price}}.<br> Maximum number of members
+          {{hackathon.startDate}} at {{hackathon.startTime}}. Price for the winners: {{hackathon.price}}.<br> Maximum
+          number of members
           to one team is {{hackathon.numbOfMems}}.</p>
         <p style="color: red">
           Special Notice : {{hackathon.specialNotes}}
         </p>
 
         <button *ngIf="authService.loggedIn() && user && user.userType===1">Subscribe</button>
-        <button *ngIf="authService.loggedIn() && user && user.userType===2"  routerLink="/AddNews" >News</button>
+        <button *ngIf="authService.loggedIn() && user && user.userType===2" routerLink="/AddNews">News</button>
       </div>
-      </button>
-    </div>
+    </button>
+  </div>
 
 
 </div>
