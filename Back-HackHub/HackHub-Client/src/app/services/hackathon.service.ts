@@ -6,6 +6,7 @@ import {Router} from '@angular/router';
 
 @Injectable()
 export class HackathonService {
+  public sharedData: Object;
 
   constructor(private http: Http, private router: Router) { }
 
@@ -47,6 +48,11 @@ export class HackathonService {
       .map(res => res.json());
   }
 
+  setData(data) {
+    this.sharedData = data;
+  }
 
-
+  getData() {
+    return this.sharedData;
+  }
 }

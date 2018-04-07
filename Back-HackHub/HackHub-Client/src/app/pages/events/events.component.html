@@ -4,16 +4,22 @@
   <h1 class="h1">Events</h1>
   <flash-messages></flash-messages>
 
-  <button  (click)="eventCreate()" class="btn btn-default" [ngStyle]="{color: 'blue'}"  routerLink="/createEvents">Create Event</button>
-  <button  (click)="eventUpdate()" class="btn btn-default" [ngStyle]="{color: 'blue'}"  routerLink="/updateEvents">Update Event</button>
-  <button   (click)="eventDelete()" class="btn btn-default" [ngStyle]="{color: 'red'}"  routerLink="/deleteEvents">Delete Event</button>
+  <button (click)="eventCreate()" class="btn btn-default" [ngStyle]="{color: 'blue'}" routerLink="/createEvents">Create
+    Event
+  </button>
+  <button (click)="eventUpdate()" class="btn btn-default" [ngStyle]="{color: 'blue'}" routerLink="/updateEvents">Update
+    Event
+  </button>
+  <button (click)="eventDelete()" class="btn btn-default" [ngStyle]="{color: 'red'}" routerLink="/deleteEvents">Delete
+    Event
+  </button>
 
   <div *ngFor="let event of events" id="tab-group">
-    <div  id="tab-group-1" class="ready">
+    <div id="tab-group-1" class="ready">
       <h3 id="hackathon-1"><strong>{{event.name}}</strong></h3><br>
       <p id="content-1"> {{event.name}} is organized by {{event.host}}. It starts at {{event.place}} on
         {{event.Date}} at {{event.Time}}.
-        </p>
+      </p>
       <p style="color: red">
         Special Notice : {{event.specialNotes}}
       </p>
