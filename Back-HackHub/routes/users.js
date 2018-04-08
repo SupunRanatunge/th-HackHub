@@ -68,5 +68,17 @@ router.get('/profile', passport.authenticate('jwt',{ session: false}), (req, res
     res.json({user: req.user});
 });
 
+router.get('/mailingList', (req, res, next) => {
+    User.find({}, function (err, users) {
+        if (err) {
+            console.log(err)
+        } else {
+            res.send(users);
+        }
+    });
+
+
+});
+
 
 module.exports = router;

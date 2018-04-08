@@ -42,6 +42,8 @@ export class HackathonComponent implements OnInit{
     alert('Delete your Hackathon');
   }
 
+
+
   ngOnInit(){
 
     this.hackService.getHackathon().subscribe(profile => {
