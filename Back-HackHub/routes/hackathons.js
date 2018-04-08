@@ -18,16 +18,16 @@ router.post('/createHackathon', (req, res, next) => {
         numbOfMems: req.body.numbOfMems,
         regLink: req.body.regLink,
         specialNotes: req.body.specialNotes,
-        news: null
+        news: Array
 
     });
-    Hackathon.createHackathon(newHackathon, (err, hackathon) =>{
+    Hackathon.createHackathon(newHackathon, (err, hackathon) => {
 
-        if(err) {
+        if (err) {
             res.json({success: false, msg: "failed to create Hackathon"})
-        }else{
+        } else {
 
-            res.json({success: true, msg: "new Hackathon created"+ hackathon})
+            res.json({success: true, msg: "new Hackathon created" + hackathon})
         }
     });
 
@@ -56,12 +56,12 @@ router.delete('/deleteHackathon', (req, res, next) => {
     })
 });
 
-router.put('/updateHackathon',  (req, res, next) =>{
+router.put('/updateHackathon', (req, res, next) => {
     const name = req.body.name;
-    Hackathon.findOne({name: name}, (err, hackObj) =>{
-        if(err){
+    Hackathon.findOne({name: name}, (err, hackObj) => {
+        if (err) {
             console.log("Error has occurred")
-        }else {
+        } else {
             if (!hackObj) {
                 console.log("Hackathon in that name is not found")
             } else {
@@ -92,23 +92,23 @@ router.put('/updateHackathon',  (req, res, next) =>{
                 if (req.body.specialNotes) {
                     hackObj.specialNotes = req.body.specialNotes;
                 }
-               hackObj.save(function(err, updatedObj){
-                   if(err){
-                       console.log("Hackathon could not be updated"+ err);
-                   }else{
-                       console.log(updatedObj);
-                   }
-               })
+                hackObj.save(function (err, updatedObj) {
+                    if (err) {
+                        console.log("Hackathon could not be updated" + err);
+                    } else {
+                        console.log(updatedObj);
+                    }
+                })
             }
         }
     })
 });
 
 router.get('/', (req, res, next) => {
-    Hackathon.find({}, function(err, hackathons){
-        if(err){
+    Hackathon.find({}, function (err, hackathons) {
+        if (err) {
             console.log(err)
-        }else{
+        } else {
             res.send(hackathons);
         }
     });
@@ -116,9 +116,31 @@ router.get('/', (req, res, next) => {
 
 });
 
-router.put('/addNews',  (req, res, next) => {
+router.put('/addNews', (req, res, next) => {
     const name = req.body.name;
-    Hackathon.findOneAndUpdate({name: name}, {$push: {date: new Date(), news: "jdhfgsjdfhgidsfhgidsuh"}});
+    console.log(name);
+    var news1 = {
+        date: new Date(),
+        news: req.body.news.news
+    }
+    // console.log(req);
+    // console.log(req.body.news);
+    console.log(req.body.news.news);
+    Hackathon.findOneAndUpdate({name: name},
+        {
+            $push:
+                {
+                    news: news1
+                }},
+        {upsert : true },
+        function(err, data){
+            if(err) {
+                res.json(err)
+            }else{
+                res.send(data)
+            }
+
+        });
 });
 
 module.exports = router;
