@@ -1,0 +1,20 @@
+<body class="text-center">
+<form (submit)="addAdmin()" class="form-signin">
+
+  <h1 class="h3 mb-3 font-weight-normal">Add Administrator</h1>
+  <div class="container">
+    <div class="form-group">
+      <flash-messages></flash-messages>
+      <input type="text" class="form-control" [(ngModel)]="name" name="name" placeholder="Name" autofocus style="margin-bottom: -30px"><br><br>
+      <input type="text" class="form-control"  [(ngModel)]="email" name="email" placeholder="CSE Email" autofocus style="margin-top: 10px"><br><br>
+      <input type="text" class="form-control"  [(ngModel)]="contact" name="contact" placeholder="Contact Number" autofocus style="margin-top: 10px"><br><br>
+      <input type="password" class="form-control"  [(ngModel)]="password" name="password" placeholder="Password" autofocus><br><br>
+
+    </div>
+  </div>
+
+
+  <input type="submit" class="btn btn-primary " value="Add Admin">
+  <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+</form>
+</body>

@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="row">
+
+    <div class="col-sm-6">
+      <h3 class="page-header">
+        <h1 class="page-deader">
+          {{hackService.getData().name}}
+        </h1>
+
+
+        Host Company : {{hackService.getData().host}}<br><br>
+
+        Starting Date : {{hackService.getData().startDate}}<br><br>
+
+        Starting Time : {{hackService.getData().startTime}}<br><br>
+
+        Closing Date: {{hackService.getData().startDate}}<br><br>
+
+        Place : {{hackService.getData().place}}<br><br>
+
+
+      </h3>
+    </div>
+    <div class="col-sm-6">
+      <button class="btn btn-default" routerLink="/CreateYourTeam">Create Teams</button>
+      <br><br>
+      <h3>
+
+        Register Here : <a href={{hackService.getData().regLink}}>{{hackService.getData().regLink}}</a><br><br>
+
+        Award : {{hackService.getData().price}}<br><br>
+
+        Number of members to a team : {{hackService.getData().numbOfMems}}<br><br>
+
+        Special Notes : {{hackService.getData().specialNotes}}
+
+      </h3>
+
+    </div>
+    <div>
+      <h1 class="page-header">
+        Hackathon News :
+      </h1>
+    </div>
+  </div>
+
+
+</div>
