@@ -4,15 +4,16 @@
   </h1>
   <div class="row">
     <div class="col-sm-8">
-      <textarea class="form-control input-lg" placeholder="Compose Your Email Here" style="height: 300px" autofocus></textarea><br><br>
-      <button class="btn btn-primary">Send</button>
+      <textarea class="form-control input-lg" placeholder="Compose Your Email Here" style="height: 300px"
+                autofocus></textarea><br><br>
+      <button class="btn btn-primary" (click)="sendEmails()">Send</button>
     </div>
 
     <div class="col-sm-4">
       <h2>User Emails</h2>
       <ul class="list-group" *ngFor="let user of users">
-        
-        <li class="list-group-item">Email: {{user.email}}</li>
+
+        <li class="list-group-item"><input type="checkbox"> {{user.email}}</li>
 
       </ul>
 

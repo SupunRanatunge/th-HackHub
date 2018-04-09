@@ -14,6 +14,10 @@ export class MailingListComponent implements OnInit{
 
   constructor(private authService: AuthService){}
 
+  sendEmails() {
+    console.log('Your email was sent')
+  }
+
   ngOnInit(){
     this.authService.getUsers().subscribe(profile => {
       this.users = profile;
