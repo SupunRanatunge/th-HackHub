@@ -4,7 +4,7 @@
   </h1>
   <div class="row">
     <div class="col-sm-8">
-      <textarea class="form-control input-lg" placeholder="Compose Your Email Here" style="height: 300px"
+      <textarea class="form-control input-lg" placeholder="Compose Your Email Here" style="height: 300px" [(ngModel)]="email" name="email"
                 autofocus></textarea><br><br>
       <button class="btn btn-primary" (click)="sendEmails()">Send</button>
     </div>

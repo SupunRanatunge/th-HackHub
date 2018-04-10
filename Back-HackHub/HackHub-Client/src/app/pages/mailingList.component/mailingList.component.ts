@@ -11,11 +11,13 @@ import {AuthService} from '../../services/auth.service';
 })
 export class MailingListComponent implements OnInit{
   users: any;
+  email: String;
 
   constructor(private authService: AuthService){}
 
   sendEmails() {
-    console.log('Your email was sent')
+    const email = this.email;
+    console.log('Your email was sent  \n'+ email)
   }
 
   ngOnInit(){
