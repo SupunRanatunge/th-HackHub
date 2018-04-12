@@ -122,9 +122,8 @@ router.put('/addNews', (req, res, next) => {
     var news1 = {
         date: new Date(),
         news: req.body.news.news
-    }
-    // console.log(req);
-    // console.log(req.body.news);
+    };
+
     console.log(req.body.news.news);
     Hackathon.findOneAndUpdate({name: name},
         {

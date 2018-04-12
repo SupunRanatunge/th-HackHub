@@ -91,6 +91,16 @@ export class AuthService {
     this.admin = admin;
   }
 
+  addEmailPassword(adminEmail) {
+    console.log("in the suth service "+ adminEmail.email);
+    let headers = new Headers();
+    headers.append('Content-type', 'application/json');
+    return this.http.put('http://localhost:3000/admins/addEmailPassword', adminEmail, {headers: headers})
+      .map(result => result.json());
+
+  }
+
+
   loadToken() {
     const token = localStorage.getItem('id_token');
     this.authToken = token;

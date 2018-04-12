@@ -46,6 +46,14 @@ export class ValidationsService {
       return false;
     }else{
       return true;
+
+    }
+  }
+  validateEmailPassword(adminEmail){
+    if(adminEmail.emailPassword == undefined){
+      return false;
+    }else{
+      return true;
     }
   }
 }

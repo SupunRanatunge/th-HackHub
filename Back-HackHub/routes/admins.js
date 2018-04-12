@@ -11,7 +11,7 @@ router.post('/register', (req, res, next) => {
 
         name: req.body.name,
         email: req.body.email,
-        emailPassword: "test",
+        emailPassword: "",
         contact: req.body.contact,
         password: req.body.password,
         userType: 2
@@ -63,6 +63,24 @@ router.post('/authenticate', (req, res, next) => {
         });
 
     })
+});
+
+router.put('/addEmailPassword', (req, res, next) => {
+    const email = req.body.email;
+    console.log(email);
+
+    console.log(req.body.email);
+    Admin.findOneAndUpdate({email: email},
+        {$set :{emailPassword: req.body.emailPassword}},
+
+        function(err, data){
+            if(err) {
+                res.json(err)
+            }else{
+                res.send(data)
+            }
+
+        });
 });
 
 // router.get('/profile', passportAdmin.authenticate('jwt',{ session: false}), (req, res, next) => {
