@@ -27,6 +27,7 @@ export class CreateEventComponent {
   host: String;
   date: String;
   time: String;
+  regLink: String;
   place: String;
   specialNotes: String;
 
@@ -42,6 +43,7 @@ export class CreateEventComponent {
       host: this.host,
       date: this.date,
       time: this.time,
+      regLink: this.regLink,
       place: this.place,
       specialNotes: this.specialNotes
     };

@@ -12,6 +12,10 @@ const adminSchema = mongoose.Schema({
         type: String,
         required: true
     },
+    emailPassword: {
+        type: String
+    },
+
     contact: {
         type: String,
         required: true
@@ -43,6 +47,7 @@ module.exports.addAdmin = function(newAdmin, callback){
     bcrypt.genSalt(10, (err, salt) =>{
         bcrypt.hash(newAdmin.password, salt, (err, hash)=> {
             newAdmin.password = hash;
+
             newAdmin.save(callback)
         })
     });

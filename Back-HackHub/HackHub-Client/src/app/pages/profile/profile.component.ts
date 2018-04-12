@@ -26,6 +26,11 @@ export class ProfileComponent implements OnInit {
   eventDelete() {
     alert('Delete your Event');
   }
+  mail(){
+    if(this.user.emailPassword === ''){
+      alert("If You want to email someone You first need to enter your email password here")
+    }
+  }
 
   ngOnInit() {
 

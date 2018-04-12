@@ -42,7 +42,7 @@ export class ValidationsService {
   }
   validateEvent(event){
 
-    if(event.name == undefined || event.host == undefined || event.date == undefined || event.time == undefined || event.place == undefined || event.specialNotes == undefined){
+    if(event.name == undefined || event.host == undefined || event.date == undefined || event.time == undefined  || event.place == undefined ){
       return false;
     }else{
       return true;

@@ -6,7 +6,7 @@
       <div *ngIf="user.userType===2" class="btn-group">
 
         <button class="btn btn-default" [ngStyle]="{color: 'red'}" routerLink="/AddAdmin">Add New Admin</button>
-        <button class="btn btn-default" [ngStyle]="{color: 'black'}" routerLink="/MailingList">Mailing List</button>
+        <button class="btn btn-default" [ngStyle]="{color: 'black'}" (click)="mail()" routerLink="/MailingList">Mailing List</button>
 
       </div>
     </div>

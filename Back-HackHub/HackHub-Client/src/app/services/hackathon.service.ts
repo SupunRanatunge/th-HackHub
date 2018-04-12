@@ -7,7 +7,7 @@ import {Router} from '@angular/router';
 @Injectable()
 export class HackathonService {
   public sharedData: Object;
-  hackathon: any;
+  // hackathon: any;
 
   constructor(private http: Http, private router: Router) {
   }
@@ -58,13 +58,13 @@ export class HackathonService {
     return this.sharedData;
   }
 
-  storeHackathonData(hackathon) {
-    localStorage.setItem('hackathon', JSON.stringify(hackathon));
-    this.hackathon = hackathon;
-  }
-
-  loadHackathonData() {
-    const hackathon = localStorage.getItem('hackathon');
-    this.hackathon = hackathon;
-  }
+  // storeHackathonData(hackathon) {
+  //   localStorage.setItem('hackathon', JSON.stringify(hackathon));
+  //   this.hackathon = hackathon;
+  // }
+  //
+  // loadHackathonData() {
+  //   const hackathon = localStorage.getItem('hackathon');
+  //   this.hackathon = hackathon;
+  // }
 }

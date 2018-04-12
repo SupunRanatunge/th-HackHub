@@ -19,6 +19,7 @@ import {AddnewsComponent} from './pages/addNews/addnews.component';
 import {ClickHackathonComponent} from './pages/clickHackathon/clickHackathon.component';
 import {CreateTeamsComponent} from './pages/createTeams/createTeams.component';
 import {MailingListComponent} from './pages/mailingList.component/mailingList.component';
+import {ClickEventComponent} from './pages/clickEvent/clickEvent.component';
 
 const appRoutes: Routes = [
   {
@@ -99,6 +100,11 @@ const appRoutes: Routes = [
   {
     path: 'MailingList',
     component: MailingListComponent,
+    canActivate: [AuthGuardService]
+  },
+  {
+    path: 'ClickEvent',
+    component: ClickEventComponent,
     canActivate: [AuthGuardService]
   }
 

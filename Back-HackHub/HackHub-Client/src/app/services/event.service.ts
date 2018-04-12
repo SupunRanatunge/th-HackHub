@@ -5,6 +5,7 @@ import {Router} from '@angular/router';
 
 @Injectable()
 export class EventService {
+  public sharedData: Object;
 
   constructor(private http: Http, private router: Router) { }
   createEvent(event) {
@@ -33,6 +34,14 @@ export class EventService {
       body: eventName
     }) )
       .map(res => res.json())
+  }
+
+  setData(data) {
+    this.sharedData = data;
+  }
+
+  getData() {
+    return this.sharedData;
   }
 
 

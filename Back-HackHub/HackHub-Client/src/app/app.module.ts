@@ -28,6 +28,7 @@ import {AddAdminComponent} from './pages/addAdmin/addAdmin.component';
 import {PopupComponent} from './components/popupTest/popup.component';
 import {AddnewsComponent} from './pages/addNews/addnews.component';
 import {ClickHackathonComponent} from './pages/clickHackathon/clickHackathon.component';
+import {ClickEventComponent} from './pages/clickEvent/clickEvent.component';
 import {CreateTeamsComponent} from './pages/createTeams/createTeams.component';
 import {MailingListComponent} from './pages/mailingList.component/mailingList.component';
 
@@ -38,7 +39,7 @@ import {MailingListComponent} from './pages/mailingList.component/mailingList.co
   declarations: [ AppComponent, NavbarComponent, CarouselComponent, HomeComponent, HackathonComponent, CreateHackathonComponent,
     UpdateHackathonComponent, DeleteHackathonComponent, LoginComponent, SignupComponent, ProfileComponent, DeleteEventComponent,
     UpdateEventComponent, CreateEventComponent, EventsComponent, AddAdminComponent, PopupComponent, AddnewsComponent, ClickHackathonComponent,
-  CreateTeamsComponent, MailingListComponent],
+  CreateTeamsComponent, MailingListComponent, ClickEventComponent ],
 
   bootstrap:    [ AppComponent ],
 

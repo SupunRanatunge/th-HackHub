@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+
+    <div class="col-sm-6">
+      <h3 class="page-header">
+        <h1 class="page-deader">
+          {{eventService.getData().name}}
+        </h1>
+
+
+        Host Company : {{eventService.getData().host}}<br><br>
+
+         Date : {{eventService.getData().Date}}<br><br>
+
+        Starting Time : {{eventService.getData().Time}}<br><br>
+
+        Place : {{eventService.getData().place}}<br><br>
+
+
+      </h3>
+    </div>
+    <div class="col-sm-6">
+
+      <h3>
+
+        Register Here : <a href={{eventService.getData().regLink}}>{{eventService.getData().regLink}}</a><br><br>
+
+        Special Notes : {{eventService.getData().specialNotes}}
+
+      </h3>
+
+    </div>
+    <div>
+      <h1 class="page-header">
+        Event News :
+      </h1>
+    </div>
+  </div>
+
+
+</div>

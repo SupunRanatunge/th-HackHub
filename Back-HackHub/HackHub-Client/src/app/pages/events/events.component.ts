@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService} from '../../services/auth.service';
+import { EventService} from '../../services/event.service';
 
 @Component({
   selector: 'app-events',
@@ -7,8 +8,20 @@ import { AuthService} from '../../services/auth.service';
 })
 export class EventsComponent implements OnInit{
   events: any;
-  constructor(private authService: AuthService){
+  user: any;
+  token: any;
+  constructor(private authService: AuthService,
+              private eventService: EventService){
 
+  }
+  eventCreate(){
+    alert("Now Create Your Event")
+  }
+  eventUpdate(){
+    alert("Update Your Event")
+  }
+  eventDelete(){
+    alert("Delete Your Event")
   }
 
 
@@ -22,7 +35,21 @@ export class EventsComponent implements OnInit{
       return false;
     })
 
+    this.token = localStorage.getItem('id_token');
+    if(this.token){
+      console.log(this.token);
+      this.authService.getProfile().subscribe(profile => {
+
+        this.user = profile.user;
+        console.log(this.user);
+      },err =>{
+        console.log(err);
+        return false;
+      })
+    }
+
   }
+
 
 
 }

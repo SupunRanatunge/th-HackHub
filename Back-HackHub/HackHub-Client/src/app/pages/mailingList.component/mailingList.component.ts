@@ -12,12 +12,17 @@ import {AuthService} from '../../services/auth.service';
 export class MailingListComponent implements OnInit{
   users: any;
   email: String;
+  user: any;
+  mailPassword: String;
 
   constructor(private authService: AuthService){}
 
   sendEmails() {
     const email = this.email;
     console.log('Your email was sent  \n'+ email)
+  }
+  enterMailPassword(){
+    const mailPassword = this.mailPassword
   }
 
   ngOnInit(){
@@ -27,6 +32,13 @@ export class MailingListComponent implements OnInit{
       console.log(err);
       return false;
     });
+    this.authService.getProfile().subscribe(profile => {
+
+      this.user = profile.user;
+    },err =>{
+      console.log(err);
+      return false;
+    })
   }
 
 
