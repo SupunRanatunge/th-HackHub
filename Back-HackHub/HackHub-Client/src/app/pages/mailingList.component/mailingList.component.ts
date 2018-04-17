@@ -5,6 +5,7 @@ import {FlashMessagesService} from 'angular2-flash-messages';
 import {ValidationsService} from '../../services/validations.service';
 
 
+
 @Component({
   moduleId: module.id,
   selector: 'app-mailingList',
@@ -26,7 +27,12 @@ export class MailingListComponent implements OnInit{
   sendEmails() {
     const email = this.email;
     console.log('Your email was sent  \n'+ email)
+    this.authService.sendEmail(this.user, this.users, email)
+    console.log(this.user.email + 'component ts')
+    console.log(this.users[0].email + 'component ts')
+
   }
+
   enterMailPassword(){
     const adminEmail = {
       email: this.user.email,

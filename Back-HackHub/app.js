@@ -10,6 +10,7 @@ const users = require("./routes/users");
 const admins= require("./routes/admins");
 const hackathons = require("./routes/hackathons");
 const events = require("./routes/events");
+// const emails = require("./routes/emails");
 
 mongoose.connect(config.database);
 
@@ -42,6 +43,7 @@ app.use('/users', users);
 app.use('/hackathons', hackathons);
 app.use('/events', events);
 app.use('/admins', admins);
+// app.use('/emails', emails);
 
 
 

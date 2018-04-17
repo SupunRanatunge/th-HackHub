@@ -5,6 +5,9 @@ const jwt = require("jsonwebtoken");
 const config = require("./../config/database");
 
 const Admin = require("./../models/admin");
+var fs = require('fs');
+var configure = JSON.parse(fs.readFileSync("./config.json"));
+var nodemailer = require('nodemailer');
 
 router.post('/register', (req, res, next) => {
     let newAdmin = new Admin({
@@ -82,6 +85,52 @@ router.put('/addEmailPassword', (req, res, next) => {
 
         });
 });
+
+router.post('/sendEmail',(req, res, next) => {
+    console.log('jfnksdfjgksdjfgkdfjnkdfjnkfgnbkfjnjhdbfhsbjfhgbsjdfb')
+    var user = req.body.user;
+    var users = req.body.users;
+    var email = req.body.email;
+    var i;
+    console.log(user+"inside admins");
+    console.log(user.name+"inside admins");
+    console.log(users+"inside admins");
+    console.log(email+"inside admins");
+    let transporter = nodemailer.createTransport({
+        service: 'gmail',
+        secure: false,
+        port: 25,
+        auth: {
+            user: user.email,
+            pass: configure.password
+        },
+        tls: {
+            rejectUnauthorized: false
+        }
+    });
+    for (i=0; i< users.length; i++){
+        console.log(users[i].email+"inside for loop")
+        let HelperOptions = {
+            from: user.name+ 'supunr.15@cse.mrt.ac.lk',
+            to: users[i].email ,
+            subject: 'Hello HackHub user!!',
+            text: email
+
+        };
+        transporter.sendMail(HelperOptions, (error, info) => {
+            if (error) {
+                console.log(error)
+            }
+            console.log("The message was sent")
+            console.log(info)
+
+
+        });
+    }
+
+
+});
+
 
 // router.get('/profile', passportAdmin.authenticate('jwt',{ session: false}), (req, res, next) => {
 //
