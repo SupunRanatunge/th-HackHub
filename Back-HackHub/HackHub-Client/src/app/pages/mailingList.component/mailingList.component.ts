@@ -15,6 +15,7 @@ import {ValidationsService} from '../../services/validations.service';
 export class MailingListComponent implements OnInit {
   users: any;
   email: String;
+  subject: String;
   user: any;
   emailPassword: String;
 
@@ -25,15 +26,20 @@ export class MailingListComponent implements OnInit {
   }
 
   sendEmails() {
-    const email = this.email;
-    if (email != undefined) {
+    const emailDetails = {
+      email: this.email,
+      subject: this.subject
+    }
+
+    if (emailDetails.email != undefined) {
       console.log('inside if')
-      console.log('Your email was sent  \n' + email);
-      this.authService.sendEmail(this.user, this.users, this.email).subscribe(data => {
+      console.log('Your email was sent  \n' + emailDetails.email);
+      this.authService.sendEmail(this.user, this.users, emailDetails).subscribe(data => {
         if (data.success) {
           alert('the email was sent');
+          this.router.navigate(['/Profile']);
         } else {
-          this.router.navigate(['/MailingList']);
+          this.router.navigate(['/Profile']);
         }
       });
 
@@ -57,15 +63,33 @@ export class MailingListComponent implements OnInit {
 
       if (data.success) {
         alert('Admin Email Password is updated');
-        this.router.navigate(['/MailingList']);
+        this.router.navigate(['/profile']);
         // this.flashMessage.show("Hackathon is created", {cssClass: 'alert-success',timeout: 3000});
       } else {
         // this.flashMessage.show("Something went wrong", {cssClass: 'alert-danger',timeout: 3000});
-        this.router.navigate(['/MailingList']);
+        this.router.navigate(['/profile']);
       }
     });
 
   }
+
+  updateStatus(user) {
+    const userStatus = {
+      email: user.email,
+      isChecked: !user.isChecked
+    };
+    this.authService.updateStatus(userStatus).subscribe(data => {
+      if(data.success) {
+        alert('Changed the status');
+        this.router.navigate(['/MailingList']);
+      }else {
+        alert('coouldn\'t change the status')
+        this.router.navigate(['/MailingList']);
+      }
+    })
+
+  }
+
 
   ngOnInit() {
     this.authService.getUsers().subscribe(profile => {

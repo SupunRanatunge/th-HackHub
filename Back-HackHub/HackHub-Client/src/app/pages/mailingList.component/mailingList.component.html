@@ -9,7 +9,10 @@
   </h1>
   <div class="row" *ngIf="user">
     <div class="col-sm-8">
-      <textarea class="form-control input-lg" placeholder="Compose Your Email Here" style="height: 250px"
+      <textarea class="form-control input-lg" placeholder="Enter the Subject Here" style="height: 50px"
+                [(ngModel)]="subject" name="subject"
+                autofocus></textarea><br><br>
+      <textarea class="form-control input-lg" placeholder="Compose Your Email Here" style="height: 200px"
                 [(ngModel)]="email" name="email"
                 autofocus></textarea><br><br>
       <button class="btn btn-primary" (click)="sendEmails()">Send</button>
@@ -21,7 +24,9 @@
       <h2>User Emails</h2>
       <ul class="list-group" *ngFor="let user of users">
 
-        <li class="list-group-item"><input type="checkbox"> {{user.email}}</li>
+        <li class="list-group-item">
+          <input type="checkbox" [checked]="user.isChecked" (click)="updateStatus(user)"> {{user.email}}
+        </li>
 
       </ul>
 

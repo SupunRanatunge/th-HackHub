@@ -90,12 +90,13 @@ router.post('/sendEmail',(req, res, next) => {
     console.log('jfnksdfjgksdjfgkdfjnkdfjnkfgnbkfjnjhdbfhsbjfhgbsjdfb')
     let user = req.body.user;
     let users = req.body.users;
-    let email = req.body.email;
+    let email = req.body.emailDetails.email;
+    let subject = req.body.emailDetails.subject;
     let i;
-    console.log(user+"inside admins");
-    console.log(user.name+"inside admins");
-    console.log(users+"inside admins");
-    console.log(email+"inside admins");
+    // console.log(user+"inside admins");
+    // console.log(user.name+"inside admins");
+    // console.log(users+"inside admins");
+    // console.log(email+"inside admins");
     let transporter = nodemailer.createTransport({
         service: 'gmail',
         secure: false,
@@ -109,24 +110,27 @@ router.post('/sendEmail',(req, res, next) => {
         }
     });
     for (i=0; i< users.length; i++){
-        console.log(users[i].email+"inside for loop")
-        let HelperOptions = {
-            from: "HackHub"+ '<user.email>',
-            to: users[i].email ,
-            subject: 'Hello HackHub user!!',
-            text: email
+        if(users[i].isChecked == true){
+            console.log(users[i].email+"inside for loop")
+            let HelperOptions = {
+                from: "HackHub"+ '<user.email>',
+                to: users[i].email ,
+                subject: subject,
+                text: email
 
-        };
-        transporter.sendMail(HelperOptions, (error, info) => {
-            if (error) {
-                console.log(error)
-            }
-            console.log("The message was sent")
-            console.log(info)
-            res.json(info)
+            };
+            transporter.sendMail(HelperOptions, (error, info) => {
+                if (error) {
+                    console.log(error)
+                }
+                console.log("The message was sent")
+                console.log(info)
+                res.json(info)
 
 
-        });
+            });
+        }
+
     }
 
 

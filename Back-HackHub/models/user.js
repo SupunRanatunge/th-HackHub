@@ -20,7 +20,13 @@ const userSchema = mongoose.Schema({
     userType: {
         type: Number,
         required: true
-    }
+    },
+    isChecked: {
+        type: Boolean,
+        required: true
+    },
+
+
 
 });
 const User = module.exports = mongoose.model('User', userSchema);

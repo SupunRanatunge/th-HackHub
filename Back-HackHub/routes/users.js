@@ -12,7 +12,8 @@ router.post('/register', (req, res, next) => {
       name: req.body.name,
       email: req.body.email,
       password: req.body.password,
-      userType: 1
+      userType: 1,
+      isChecked: false
   });
   User.addUser(newUser, (err, user) =>{
       if(err){
@@ -48,7 +49,8 @@ router.post('/authenticate', (req, res, next) => {
                         id: user._id,
                         name: user.name,
                         email: user.email,
-                        userType: user.userType
+                        userType: user.userType,
+                        isChecked: user.isChecked
 
                     }
                 });
@@ -78,6 +80,24 @@ router.get('/mailingList', (req, res, next) => {
     });
 
 
+});
+
+router.put('/updateStatus', (req, res, next) => {
+    const email = req.body.email;
+    console.log(email);
+
+    console.log(req.body.email);
+    User.findOneAndUpdate({email: email},
+        {$set :{isChecked: req.body.isChecked}},
+
+        function(err, data){
+            if(err) {
+                res.json(err)
+            }else{
+                res.send(data)
+            }
+
+        });
 });
 
 

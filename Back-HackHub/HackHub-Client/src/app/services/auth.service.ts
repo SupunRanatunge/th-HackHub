@@ -92,24 +92,32 @@ export class AuthService {
   }
 
   addEmailPassword(adminEmail) {
-    console.log("in the suth service "+ adminEmail.email);
+    console.log("in the auth service "+ adminEmail.email);
     let headers = new Headers();
     headers.append('Content-type', 'application/json');
     return this.http.put('http://localhost:3000/admins/addEmailPassword', adminEmail, {headers: headers})
       .map(result => result.json());
 
   }
+  updateStatus(userStatus) {
+    console.log("in the auth service "+ userStatus.email);
+    let headers = new Headers();
+    headers.append('Content-type', 'application/json');
+    return this.http.put('http://localhost:3000/users/updateStatus', userStatus, {headers: headers})
+      .map(result => result.json());
 
-  sendEmail(user, users, email) {
+  }
 
-    console.log("inside auth service");
-    console.log(user.email+'inside auth service')
-    console.log(users+'inside auth service')
-    console.log(email)
+  sendEmail(user, users, emailDetails) {
+
+    // console.log("inside auth service");
+    // console.log(user.email+'inside auth service')
+    // console.log(users+'inside auth service')
+    // console.log(emailDetails.email())
     let headers = new Headers();
     headers.append('Content-type','application/json');
     console.log(headers);
-    return this.http.post('http://localhost:3000/admins/sendEmail',{user, users, email}, {headers: headers})
+    return this.http.post('http://localhost:3000/admins/sendEmail',{user, users, emailDetails}, {headers: headers})
       .map(result => result.json());
 
 
