@@ -103,13 +103,14 @@ export class AuthService {
   sendEmail(user, users, email) {
 
     console.log("inside auth service");
-    console.log(user+'inside auth service')
+    console.log(user.email+'inside auth service')
     console.log(users+'inside auth service')
+    console.log(email)
     let headers = new Headers();
-    headers.append('Content-type','appication/json');
+    headers.append('Content-type','application/json');
     console.log(headers);
     return this.http.post('http://localhost:3000/admins/sendEmail',{user, users, email}, {headers: headers})
-
+      .map(result => result.json());
 
 
 

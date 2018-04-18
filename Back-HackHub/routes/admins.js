@@ -88,10 +88,10 @@ router.put('/addEmailPassword', (req, res, next) => {
 
 router.post('/sendEmail',(req, res, next) => {
     console.log('jfnksdfjgksdjfgkdfjnkdfjnkfgnbkfjnjhdbfhsbjfhgbsjdfb')
-    var user = req.body.user;
-    var users = req.body.users;
-    var email = req.body.email;
-    var i;
+    let user = req.body.user;
+    let users = req.body.users;
+    let email = req.body.email;
+    let i;
     console.log(user+"inside admins");
     console.log(user.name+"inside admins");
     console.log(users+"inside admins");
@@ -102,7 +102,7 @@ router.post('/sendEmail',(req, res, next) => {
         port: 25,
         auth: {
             user: user.email,
-            pass: configure.password
+            pass: user.emailPassword
         },
         tls: {
             rejectUnauthorized: false
@@ -111,7 +111,7 @@ router.post('/sendEmail',(req, res, next) => {
     for (i=0; i< users.length; i++){
         console.log(users[i].email+"inside for loop")
         let HelperOptions = {
-            from: user.name+ 'supunr.15@cse.mrt.ac.lk',
+            from: "HackHub"+ '<user.email>',
             to: users[i].email ,
             subject: 'Hello HackHub user!!',
             text: email
@@ -123,6 +123,7 @@ router.post('/sendEmail',(req, res, next) => {
             }
             console.log("The message was sent")
             console.log(info)
+            res.json(info)
 
 
         });
