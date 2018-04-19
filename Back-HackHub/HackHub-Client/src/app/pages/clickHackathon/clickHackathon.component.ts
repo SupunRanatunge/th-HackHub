@@ -1,6 +1,6 @@
-import { Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {HackathonService} from '../../services/hackathon.service';
-
+import {AuthService} from '../../services/auth.service';
 
 
 @Component({
@@ -9,10 +9,23 @@ import {HackathonService} from '../../services/hackathon.service';
   templateUrl: `clickHackathon.component.html`,
 
 })
-export class ClickHackathonComponent {
+export class ClickHackathonComponent implements OnInit{
 
-  constructor(private hackService: HackathonService) {
+  user: String;
 
+  constructor(private hackService: HackathonService,
+              private authService: AuthService) {
+
+  }
+  ngOnInit(){
+    this.authService.getProfile().subscribe(profile => {
+
+      this.user = profile.user;
+      console.log(this.user);
+    },err =>{
+      console.log(err);
+      return false;
+    })
   }
 
 }

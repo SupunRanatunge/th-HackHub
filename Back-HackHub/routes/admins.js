@@ -125,7 +125,7 @@ router.post('/sendEmail',(req, res, next) => {
                 }
                 console.log("The message was sent")
                 console.log(info)
-                res.json(info)
+
 
 
             });

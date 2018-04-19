@@ -20,6 +20,7 @@ import {ClickHackathonComponent} from './pages/clickHackathon/clickHackathon.com
 import {CreateTeamsComponent} from './pages/createTeams/createTeams.component';
 import {MailingListComponent} from './pages/mailingList.component/mailingList.component';
 import {ClickEventComponent} from './pages/clickEvent/clickEvent.component';
+import {TeamsComponent} from './pages/teams/teams.component';
 
 const appRoutes: Routes = [
   {
@@ -105,6 +106,11 @@ const appRoutes: Routes = [
   {
     path: 'ClickEvent',
     component: ClickEventComponent,
+    canActivate: [AuthGuardService]
+  },
+  {
+    path: 'Teams',
+    component: TeamsComponent,
     canActivate: [AuthGuardService]
   }
 

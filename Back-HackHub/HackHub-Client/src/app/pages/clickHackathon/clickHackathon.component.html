@@ -21,8 +21,9 @@
 
       </h3>
     </div>
-    <div class="col-sm-6">
-      <button class="btn btn-default" routerLink="/CreateYourTeam">Create Teams</button>
+    <div class="col-sm-6" >
+      <button class="btn btn-default" *ngIf="user.userType == 1" routerLink="/CreateYourTeam">Create Teams</button>
+      <button class="btn btn-default" *ngIf="user.userType == 2" routerLink="/Teams">Created Teams</button>
       <br><br>
       <h3>
 

@@ -31,6 +31,7 @@ import {ClickHackathonComponent} from './pages/clickHackathon/clickHackathon.com
 import {ClickEventComponent} from './pages/clickEvent/clickEvent.component';
 import {CreateTeamsComponent} from './pages/createTeams/createTeams.component';
 import {MailingListComponent} from './pages/mailingList.component/mailingList.component';
+import {TeamsComponent} from './pages/teams/teams.component';
 
 
 @NgModule({
@@ -39,7 +40,7 @@ import {MailingListComponent} from './pages/mailingList.component/mailingList.co
   declarations: [ AppComponent, NavbarComponent, CarouselComponent, HomeComponent, HackathonComponent, CreateHackathonComponent,
     UpdateHackathonComponent, DeleteHackathonComponent, LoginComponent, SignupComponent, ProfileComponent, DeleteEventComponent,
     UpdateEventComponent, CreateEventComponent, EventsComponent, AddAdminComponent, PopupComponent, AddnewsComponent, ClickHackathonComponent,
-  CreateTeamsComponent, MailingListComponent, ClickEventComponent ],
+  CreateTeamsComponent, MailingListComponent, ClickEventComponent, TeamsComponent ],
 
   bootstrap:    [ AppComponent ],
 
