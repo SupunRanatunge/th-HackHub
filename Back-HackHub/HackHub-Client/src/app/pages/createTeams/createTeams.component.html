@@ -1,5 +1,29 @@
 <div class="container">
-  <h1 class="page-header">
-    Create Your Team Here
-  </h1>
+
+  <div class="row">
+    <div class="col-sm-6">
+      <h1 class="page-header">
+        Create Your Team Here
+      </h1><br><br>
+      <input class="form-control input-lg" [(ngModel)]="teamName" name="teamName" style="width: 250px"
+             placeholder="Team Name" autofocus><br>
+      <button (click)="createTeam()" class="btn btn-primary btn-block" style="width: 150px">Create Team</button>
+      <br><br>
+      <input class="form-control input-lg" [(ngModel)]="memberName" name="memberName" style="width: 350px"
+             placeholder="Member Name" autofocus><br>
+      <button (click)="addMember()" class="btn btn-primary btn-block" style="width: 150px">Add Member</button>
+    </div>
+    <div class="col-sm-6">
+      <h1 class="page-header">
+        Teams
+      </h1>
+      <ul class="list-group">
+        <!--<li class="list-group-item">Username: {{user.name}}</li>-->
+        <!--<li class="list-group-item">Email: {{user.email}}</li>-->
+        <!--<li class="list-group-item">Contact: {{user.contact}}</li>-->
+      </ul>
+    </div>
+  </div>
+
+
 </div>
