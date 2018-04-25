@@ -8,16 +8,18 @@ router.post('/createTeam', (req, res, next) => {
     let newTeam = new Team({
 
         teamName: req.body.teamName,
-        members: []
-
+        members: req.body.members
 
     });
-    Team.createTeam(newEvent, (err, team) =>{
+    Team.createTeam(newTeam, (err, team) => {
 
-        if(err) {
+        if (err) {
             res.json({success: false, msg: "failed to create the Team"})
-        }else{
-            res.json({success: true, msg: "new Team is created"+ team})
+        } else {
+            res.json({success: true, msg: "new Team is created" + team})
         }
     });
-}
+});
+
+
+module.exports = router;
