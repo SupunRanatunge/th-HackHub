@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Headers} from '@angular/http';
+import {Headers, RequestOptions} from '@angular/http';
 import {Http} from '@angular/http';
 
 @Injectable()
@@ -21,6 +21,19 @@ export class TeamsService {
     return this.http.post('http://localhost:3000/teams/createTeam', team, {headers: headers})
       .map(res => res.json());
 
+  }
+
+  removeTeam(teamName) {
+    let headers = new Headers();
+    headers.append('Content-type', 'application/json');
+    alert('Team is deleted');
+    // this.router.navigate(['/hackathons']);
+    return this.http.delete('http://localhost:3000/teams/removeTeam', new RequestOptions({
+      headers: headers,
+      body: teamName
+    }))
+
+      .map(res => res.json());
   }
 }
 

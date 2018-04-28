@@ -31,12 +31,12 @@ export class HackathonService {
   }
 
   deleteHackathon(hackName) {
-    let headers4 = new Headers();
-    headers4.append('Content-type', 'application/json');
+    let headers = new Headers();
+    headers.append('Content-type', 'application/json');
     alert('Hackathon is deleted');
     this.router.navigate(['/hackathons']);
     return this.http.delete('http://localhost:3000/hackathons/deleteHackathon', new RequestOptions({
-      headers: headers4,
+      headers: headers,
       body: hackName
     }))
 

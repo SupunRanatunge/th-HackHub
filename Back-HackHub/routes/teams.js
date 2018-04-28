@@ -31,5 +31,29 @@ router.get('/', (req, res, next) => {
     });
 });
 
+router.delete('/removeTeam', (req, res, next) => {
+
+    const teamName = req.body.teamName;
+    Team.findOne({teamName: teamName}, (err, teamObj) => {
+        if (err) {
+            console.log("Error has occurred")
+        } else {
+            if (!teamObj) {
+                console.log("Team in that name is not found")
+            } else {
+
+                teamObj.remove(function (err, removedObj) {
+                    if (err) {
+                        console.log("Team could not be removed" + err);
+                    } else {
+                        console.log(removedObj);
+
+                    }
+                })
+            }
+        }
+    })
+});
+
 
 module.exports = router;

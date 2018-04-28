@@ -15,7 +15,8 @@ export class CreateTeamsComponent implements OnInit{
 
   teams: any;
   teamName: String;
-  memberName: String;
+  memberName:String;
+
 
   constructor(private teamService: TeamsService,
               private validateService: ValidationsService,
@@ -43,6 +44,21 @@ export class CreateTeamsComponent implements OnInit{
         // this.router.navigate(['/createEvent'])
       }
     });
+  }
+
+  removeTeam() {
+    const teamName = {
+      teamName: this.teamName
+    };
+
+    if(!this.validateService.validateTeam(teamName)){
+      this.flashMessage.show("Enter the Team name you want to delete",{cssClass: 'alert-danger',timeout: 3000})
+      return false;
+    }
+    this.teamService.removeTeam(teamName).subscribe(data =>{
+
+
+    })
   }
 
   addMember(){
