@@ -73,7 +73,7 @@ export class MailingListComponent implements OnInit {
 
   }
 
-  updateStatus(user) {
+  updateStatus(user) {                          //update when user is checked/unchecked in mailing list
     const userStatus = {
       email: user.email,
       isChecked: !user.isChecked

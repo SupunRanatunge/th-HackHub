@@ -24,6 +24,7 @@ import {AuthService} from './services/auth.service';
 import {HackathonService} from './services/hackathon.service';
 import {EventService} from './services/event.service';
 import {AuthGuardService} from './guards/auth-guard.service';
+import {TeamsService} from './services/teams.service';
 import {AddAdminComponent} from './pages/addAdmin/addAdmin.component';
 import {PopupComponent} from './components/popupTest/popup.component';
 import {AddnewsComponent} from './pages/addNews/addnews.component';
@@ -45,7 +46,8 @@ import {TeamsComponent} from './pages/teams/teams.component';
   bootstrap:    [ AppComponent ],
 
   providers: [
-    appRoutingProviders, ValidationsService, FlashMessagesService, AuthService, HackathonService, EventService, AuthGuardService
+    appRoutingProviders, ValidationsService, FlashMessagesService, AuthService, HackathonService, EventService, AuthGuardService,
+    TeamsService
   ]
 })
 export class AppModule { }

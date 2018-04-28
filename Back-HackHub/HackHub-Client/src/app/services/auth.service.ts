@@ -110,10 +110,6 @@ export class AuthService {
 
   sendEmail(user, users, emailDetails) {
 
-    // console.log("inside auth service");
-    // console.log(user.email+'inside auth service')
-    // console.log(users+'inside auth service')
-    // console.log(emailDetails.email())
     let headers = new Headers();
     headers.append('Content-type','application/json');
     console.log(headers);

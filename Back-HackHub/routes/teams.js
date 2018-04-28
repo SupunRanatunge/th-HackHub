@@ -21,5 +21,15 @@ router.post('/createTeam', (req, res, next) => {
     });
 });
 
+router.get('/', (req, res, next) => {
+    Team.find({}, function (err, teams) {
+        if (err) {
+            console.log(err)
+        } else {
+            res.send(teams);
+        }
+    });
+});
+
 
 module.exports = router;

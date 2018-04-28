@@ -56,4 +56,11 @@ export class ValidationsService {
       return true;
     }
   }
+  validateTeam(team){
+    if(team.teamName == undefined){
+      return false;
+    }else{
+      return true;
+    }
+  }
 }

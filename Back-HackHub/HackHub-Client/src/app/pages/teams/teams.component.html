@@ -2,4 +2,11 @@
   <h1 class="page-header">
     Teams
   </h1>
+  <div *ngFor="let team of teams" class="container">
+    <h2 class="page-header">{{team.teamName}}</h2>
+    {{team.members}}
+    Team members are Here
+  </div>
+
+
 </div>
