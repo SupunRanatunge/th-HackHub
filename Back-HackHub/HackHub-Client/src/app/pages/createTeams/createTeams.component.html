@@ -12,18 +12,25 @@
       <button (click)="removeTeam()" class="btn btn-danger btn-block" style="width: 150px">Remove Team</button>
       <br><br>
 
-      <input class="form-control input-lg" [(ngModel)]="memberName" name="memberName" style="width: 350px"
-             placeholder="Member Name" autofocus><br>
-      <button (click)="addMember()" class="btn btn-primary btn-block" style="width: 150px">Add Member</button>
+      <!--<input class="form-control input-lg" [(ngModel)]="memberName" name="memberName" style="width: 350px"-->
+             <!--placeholder="Member Name" autofocus><br>-->
+      <!--<button (click)="addMember()" class="btn btn-primary btn-block" style="width: 150px">Add Member</button>-->
 
     </div>
     <div class="col-sm-6">
       <h1 class="page-header">
         Teams
       </h1>
-      <div  class="container">
+      <div class="container">
         <ul class="list-group" *ngFor="let team of teams">
-          <li class="list-group-item">Team : {{team.teamName}}</li>
+          <!--<button (click)="addMember()" class="btn btn-primary btn-block" style="width: 150px">Add Member</button>-->
+          <li class="list-group-item">Team : {{team.teamName}}<input class="form-control input-lg"
+                                                                     [(ngModel)]="memberName" name="memberName"
+                                                                     style="width: 350px"
+                                                                     placeholder="Member Name" autofocus><br>
+            <button (click)="addMember(team)" class="btn btn-primary btn-block" style="width: 150px">Add Member</button>
+            <button (click)="removeMember(team)" class="btn btn-danger btn-block" style="width: 150px">Remove Member</button>
+          </li>
           <li class="list-group-item">Members : {{team.members}}</li>
 
         </ul>

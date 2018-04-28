@@ -35,6 +35,16 @@ export class TeamsService {
 
       .map(res => res.json());
   }
+
+  addMember(teamMember) {
+    let headers = new Headers();
+    headers.append('Content-type', 'application/json');
+    alert('New member is added');
+    // this.router.navigate(['/hackathons']);
+    return this.http.put('http://localhost:3000/teams/addMember', teamMember, {headers: headers})
+      .map(result => result.json());
+
+  }
 }
 
 
