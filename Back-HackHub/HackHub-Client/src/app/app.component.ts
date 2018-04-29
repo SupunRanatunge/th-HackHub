@@ -1,14 +1,18 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 
 @Component({
 
   selector: 'app-app',
-  template: `<app-navbar></app-navbar>,
-  <router-outlet></router-outlet>`,
+  template: `
+    <div style="background-image:url('./../assets/images/hackhub-banner-sr.png');">
+      <app-navbar></app-navbar>
+      ,
+      <router-outlet></router-outlet>
+      <br/><br/><br/>
+    </div>`,
 })
-export class AppComponent  {
-  // constructor(private auth: AuthService) {
-  // }
+export class AppComponent {
+
 }
 

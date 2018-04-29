@@ -1,6 +1,7 @@
-<body>
+<body style="background-image: url('./../../../assets/images/hackhub-banner-sr.png');">
 <div class="container">
   <h1 class="h1">Create a Hackathon</h1>
+  <!--style="background-image:url('./../assets/images/hackhub-banner-sr.png');-->
   <div class="form-group">
     <!--inserting details for Hackathon-->
     <flash-messages></flash-messages>
@@ -9,16 +10,19 @@
     <input class="form-control input-lg" [(ngModel)]="host" name="host" placeholder="Host Company" autofocus><br><br>
     <input class="form-control input-lg" [(ngModel)]="startDate" name="startDate" placeholder="Starting Date" autofocus><br><br>
     <input class="form-control input-lg" [(ngModel)]="startTime" name="startTime" placeholder="Starting Time" autofocus><br><br>
-    <input class="form-control input-lg" [(ngModel)]="closeDate" name="closeDate" placeholder="Closing Date" autofocus><br><br>
-    <input class="form-control input-lg" [(ngModel)]="place" name="place" placeholder="Happening Place" autofocus><br><br>
+    <input class="form-control input-lg" [(ngModel)]="closeDate" name="closeDate" placeholder="Closing Date"
+           autofocus><br><br>
+    <input class="form-control input-lg" [(ngModel)]="place" name="place" placeholder="Happening Place"
+           autofocus><br><br>
     <input class="form-control input-lg" [(ngModel)]="price" name="price" placeholder="Winning price" autofocus><br><br>
-    <input class="form-control input-lg" [(ngModel)]="numbOfMems" name="numbOfMems" placeholder="Number of group members" autofocus><br><br>
+    <input class="form-control input-lg" [(ngModel)]="numbOfMems" name="numbOfMems"
+           placeholder="Number of group members" autofocus><br><br>
     <input class="form-control input-lg" [(ngModel)]="regLink" name="regLink" placeholder="Register Link" autofocus><br><br>
-    <input class="form-control input-lg" [(ngModel)]="specialNotes" name="specialNotes" placeholder="Special notes" autofocus><br><br>
+    <input class="form-control input-lg" [(ngModel)]="specialNotes" name="specialNotes" placeholder="Special notes"
+           autofocus><br><br>
 
 
     <button (click)="hackathonCreate()" class="btn btn-primary btn-block">Create Hackathon</button>
-
 
 
   </div>

@@ -7,6 +7,7 @@ import {Router} from '@angular/router';
 @Injectable()
 export class HackathonService {
   public sharedData: Object;
+
   // hackathon: any;
 
   constructor(private http: Http, private router: Router) {

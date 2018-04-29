@@ -11,7 +11,11 @@ import {AuthService} from '../../services/auth.service';
 })
 export class ClickHackathonComponent implements OnInit{
 
+
   user: String;
+  
+
+
 
   constructor(private hackService: HackathonService,
               private authService: AuthService) {
@@ -25,7 +29,11 @@ export class ClickHackathonComponent implements OnInit{
     },err =>{
       console.log(err);
       return false;
-    })
+    });
+
+
+
+
   }
 
 }

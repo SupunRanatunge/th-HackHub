@@ -16,7 +16,7 @@
 
 
   <div *ngFor="let hackathon of hackathons" id="tab-group">
-    <button class="btn btn-default" (click)="hackService.setData(hackathon)" routerLink="/ClickHackathon">
+    <button class="btn btn-default" (click)="hackService.setData(hackathon)" routerLink="/ClickHackathon" style="{width: auto}">
       <div id="tab-group-1">
         <h3 id="hackathon-1"><strong>{{hackathon.name}}</strong></h3><br>
         <p id="content-1"> {{hackathon.name}} is organized by {{hackathon.host}}. It starts at {{hackathon.place}} on
