@@ -25,10 +25,14 @@ const userSchema = mongoose.Schema({
         type: Boolean,
         required: true
     },
-
-
-
+    subscribed: {
+        type: Array
+    },
+    teamLeader: {
+        type: Array
+    }
 });
+
 const User = module.exports = mongoose.model('User', userSchema);
 
 module.exports.getUserById = function (id, callback) {

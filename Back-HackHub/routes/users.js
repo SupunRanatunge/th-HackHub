@@ -13,7 +13,9 @@ router.post('/register', (req, res, next) => {
       email: req.body.email,
       password: req.body.password,
       userType: 1,
-      isChecked: false
+      isChecked: false,
+      subscribed: Array,
+      teamLeader: Array
   });
   User.addUser(newUser, (err, user) =>{
       if(err){
@@ -50,7 +52,9 @@ router.post('/authenticate', (req, res, next) => {
                         name: user.name,
                         email: user.email,
                         userType: user.userType,
-                        isChecked: user.isChecked
+                        isChecked: user.isChecked,
+                        subscribed: user.subscribed,
+                        teamLeader: user.teamLeader
 
                     }
                 });

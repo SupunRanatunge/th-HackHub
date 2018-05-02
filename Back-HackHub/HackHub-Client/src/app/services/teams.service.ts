@@ -15,10 +15,10 @@ export class TeamsService {
         .map(res => res.json());
   }
 
-  createTeam(team) {
+  createTeam(hackathonName,team) {
     let headers = new Headers();
     headers.append('Content-type', 'application/json');
-    return this.http.post('http://localhost:3000/teams/createTeam', team, {headers: headers})
+    return this.http.put('http://localhost:3000/teams/createTeam', {hackathonName, team}, {headers: headers})
       .map(res => res.json());
 
   }

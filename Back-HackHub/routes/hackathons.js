@@ -18,7 +18,9 @@ router.post('/createHackathon', (req, res, next) => {
         numbOfMems: req.body.numbOfMems,
         regLink: req.body.regLink,
         specialNotes: req.body.specialNotes,
+        teams: Array,
         news: Array
+
 
     });
     Hackathon.createHackathon(newHackathon, (err, hackathon) => {

@@ -23,7 +23,7 @@ export class CreateTeamsComponent implements OnInit{
               private flashMessage: FlashMessagesService,
               private router: Router){}
 
-  createTeam() {
+  createTeam(hackathonName) {
     const team = {
       teamName: this.teamName,
       members: []
@@ -33,7 +33,7 @@ export class CreateTeamsComponent implements OnInit{
       this.flashMessage.show("Please enter the Team name", {cssClass: 'alert-danger',timeout: 3000});
       return false;
     }
-    this.teamService.createTeam(team).subscribe(data =>{
+    this.teamService.createTeam(hackathonName,team).subscribe(data =>{
 
       if(data.success){
         alert("New Team is created");
