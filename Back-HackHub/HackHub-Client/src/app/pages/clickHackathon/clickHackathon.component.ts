@@ -13,7 +13,7 @@ export class ClickHackathonComponent implements OnInit{
 
 
   user: String;
-  
+
 
 
 
@@ -30,6 +30,7 @@ export class ClickHackathonComponent implements OnInit{
       console.log(err);
       return false;
     });
+    this.hackService.loadHackathonData();
 
 
 

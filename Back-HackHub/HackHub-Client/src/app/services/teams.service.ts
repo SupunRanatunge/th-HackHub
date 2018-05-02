@@ -23,14 +23,14 @@ export class TeamsService {
 
   }
 
-  removeTeam(teamName) {
+  removeTeam(hackathonName, teamName) {
     let headers = new Headers();
     headers.append('Content-type', 'application/json');
     alert('Team is deleted');
     // this.router.navigate(['/hackathons']);
     return this.http.delete('http://localhost:3000/teams/removeTeam', new RequestOptions({
       headers: headers,
-      body: teamName
+      body: { teamName, hackathonName}
     }))
 
       .map(res => res.json());

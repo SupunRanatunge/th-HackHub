@@ -3,13 +3,13 @@
   <div class="row">
     <div class="col-sm-6">
       <h1 class="page-header">
-        Create Your Team Here
+        Create Your Team for {{hackService.hackathon.name}}
       </h1><br><br>
 
       <input class="form-control input-lg" [(ngModel)]="teamName" name="teamName" style="width: 250px"
              placeholder="Team Name" autofocus><br>
-      <button (click)="createTeam()" class="btn btn-primary btn-block" style="width: 150px">Create Team</button>
-      <button (click)="removeTeam()" class="btn btn-danger btn-block" style="width: 150px">Remove Team</button>
+      <button (click)="createTeam(hackService.hackathon.name)" class="btn btn-primary btn-block" style="width: 150px">Create Team</button>
+      <button (click)="removeTeam(hackService.hackathon.name)" class="btn btn-danger btn-block" style="width: 150px">Remove Team</button>
       <br><br>
 
       <!--<input class="form-control input-lg" [(ngModel)]="memberName" name="memberName" style="width: 350px"-->

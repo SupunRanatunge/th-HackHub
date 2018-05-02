@@ -11,18 +11,18 @@ const teamSchema = mongoose.Schema({
     }
 });
 const Team = module.exports = mongoose.model('Team', teamSchema);
-
-module.exports.createTeam = function(newTeam, callback) {
-    if (Team.findOne({teamName: newTeam.teamName}, (err, newTm) => {
-            if (err) {
-                console.log("Error occurred")
-            } else {
-                if (!newTm) {
-                    newTeam.save(callback)
-                } else {
-                    console.log("Team name is already in use")
-                }
-            }
-        })
-    );
-};
+//
+// module.exports.createTeam = function(newTeam, callback) {
+//     if (Team.findOne({teamName: newTeam.teamName}, (err, newTm) => {
+//             if (err) {
+//                 console.log("Error occurred")
+//             } else {
+//                 if (!newTm) {
+//                     newTeam.save(callback)
+//                 } else {
+//                     console.log("Team name is already in use")
+//                 }
+//             }
+//         })
+//     );
+// };

@@ -3,6 +3,7 @@ import {TeamsService} from '../../services/teams.service';
 import {ValidationsService} from '../../services/validations.service';
 import {FlashMessagesService} from 'angular2-flash-messages';
 import {Router} from '@angular/router';
+import {HackathonService} from '../../services/hackathon.service';
 
 
 @Component({
@@ -21,13 +22,15 @@ export class CreateTeamsComponent implements OnInit{
   constructor(private teamService: TeamsService,
               private validateService: ValidationsService,
               private flashMessage: FlashMessagesService,
-              private router: Router){}
+              private router: Router,
+              private hackService: HackathonService){}
 
   createTeam(hackathonName) {
     const team = {
       teamName: this.teamName,
       members: []
     };
+    console.log(team.teamName);
     if(!this.validateService.validateTeam(team)){                     //Make sure all the blanks are filled
 
       this.flashMessage.show("Please enter the Team name", {cssClass: 'alert-danger',timeout: 3000});
@@ -40,13 +43,13 @@ export class CreateTeamsComponent implements OnInit{
         this.router.navigate(['/CreateYourTeam'])                 //redirect to events page after successful event create
         // this.flashMessage.show("Hackathon is created", {cssClass: 'alert-success',timeout: 3000});
       }else{
-        this.flashMessage.show("Something went wrong", {cssClass: 'alert-danger',timeout: 3000});
+        // this.flashMessage.show("Something went wrong", {cssClass: 'alert-danger',timeout: 3000});
         // this.router.navigate(['/createEvent'])
       }
     });
   }
 
-  removeTeam() {
+  removeTeam(hackathonName) {
     const teamName = {
       teamName: this.teamName
     };
@@ -55,7 +58,7 @@ export class CreateTeamsComponent implements OnInit{
       this.flashMessage.show("Enter the Team name you want to delete",{cssClass: 'alert-danger',timeout: 3000})
       return false;
     }
-    this.teamService.removeTeam(teamName).subscribe(data =>{
+    this.teamService.removeTeam(hackathonName,teamName).subscribe(data =>{
 
 
     })
@@ -92,6 +95,7 @@ export class CreateTeamsComponent implements OnInit{
       console.log(err);
       return false;
     });
+    this.hackService.loadHackathonData();
   }
 
 }
