@@ -89,12 +89,12 @@ export class CreateTeamsComponent implements OnInit{
 
   ngOnInit() {
 
-    this.teamService.getTeams().subscribe(profile => {    //display the teams
-      this.teams = profile;
-    },err =>{
-      console.log(err);
-      return false;
-    });
+    // this.teamService.getTeams(this.hackService.hackathon.name).subscribe(profile => {    //display the teams
+    //   this.teams = profile;
+    // },err =>{
+    //   console.log(err);
+    //   return false;
+    // });
     this.hackService.loadHackathonData();
   }
 

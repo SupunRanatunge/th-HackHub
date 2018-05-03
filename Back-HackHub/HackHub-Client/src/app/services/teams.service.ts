@@ -8,10 +8,13 @@ export class TeamsService {
   constructor(private http: Http) {
   }
 
-  getTeams() {
+  getTeams(hackathonName) {
       let headers = new Headers();
       headers.append('Content-type', 'application/json');
-      return this.http.get('http://localhost:3000/teams', {headers: headers})
+      return this.http.get('http://localhost:3000/teams', new RequestOptions({
+        headers: headers,
+        body: hackathonName
+  }))
         .map(res => res.json());
   }
 

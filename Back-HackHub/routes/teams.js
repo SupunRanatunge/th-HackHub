@@ -23,45 +23,20 @@ router.put('/createTeam', (req, res, next) => {
             }
 
         });
-    // Hackathon.teams.push(newTeam)
-    // Hackathon.save(done)
-    // Hackathon.update(
-    //     { name: name },
-    //     { $push: { teams: newTeam } },
-    //
-    // );
-    // Hackathon.findOne({name: name}, (err, hackObj) => {
-    //     console.log(name);
-    //     console.log(newTeam.teamName);
-    //     console.log(newTeam.members);
-    //     if (err) {
-    //         console.log("Error has occurred "+ err)
-    //     } else {
-    //         if (!hackObj) {
-    //             console.log("Hackthon in that name is not found")
-    //         } else {
-    //             hackObj.teams.add(newTeam)
-    //
-    //         }
-    //     }
-    // })
+       console.log(newTeam.members);
 
-    // Team.createTeam(newTeam, (err, team) => {
-    //
-    //     if (err) {
-    //         res.json({success: false, msg: "failed to create the Team"})
-    //     } else {
-    //         res.json({success: true, msg: "new Team is created" + team})
-    //     }
-    // });
+
 });
 
 router.get('/', (req, res, next) => {
-    Team.find({}, function (err, teams) {
+    const name = req.body.hackathonName
+    console.log(name+" inside teams");
+    Hackathon.findOne({name: name }, function (err, hackathon) {
         if (err) {
             console.log(err)
         } else {
-            res.send(teams);
+            // res.send(hackathon.teams);
+            console.log(hackathon.name)
         }
     });
 });
@@ -77,25 +52,7 @@ router.delete('/removeTeam', (req, res, next) => {
         }
 
         res.json(data);
-    // Hackathon.findOne({name: name}, (err, hackObj) => {
-    //     if (err) {
-    //         console.log("Error has occurred"+ err)
-    //     } else {
-    //         if (!hackObj) {
-    //             console.log("Hackathon in that name is not found")
-    //         } else {
-    //             console.log(hackObj)
-    //             console.log(hackObj.teams.update({teamName: teamName}))
-    //             console.log(hackObj)
-                // hackObj.teams.teamName.remove(function (err, removedObj) {
-                //     if (err) {
-                //         console.log("Team could not be removed" + err);
-                //     } else {
-                //         console.log(removedObj);
-                //
-                //     }
-                // })
-        //     }
+
         // }
     })
 });

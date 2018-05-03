@@ -22,18 +22,18 @@
         Teams
       </h1>
       <div class="container">
-        <ul class="list-group" *ngFor="let team of teams">
-          <!--<button (click)="addMember()" class="btn btn-primary btn-block" style="width: 150px">Add Member</button>-->
-          <li class="list-group-item">Team : {{team.teamName}}<input class="form-control input-lg"
-                                                                     [(ngModel)]="memberName" name="memberName"
-                                                                     style="width: 350px"
-                                                                     placeholder="Member Name" autofocus><br>
-            <button (click)="addMember(team)" class="btn btn-primary btn-block" style="width: 150px">Add Member</button>
-            <button (click)="removeMember(team)" class="btn btn-danger btn-block" style="width: 150px">Remove Member</button>
-          </li>
-          <li class="list-group-item">Members : {{team.members}}</li>
+        <!--<ul class="list-group" *ngFor="let team of teams">-->
+          <!--&lt;!&ndash;<button (click)="addMember()" class="btn btn-primary btn-block" style="width: 150px">Add Member</button>&ndash;&gt;-->
+          <!--<li class="list-group-item">Team : {{team.teamName}}<input class="form-control input-lg"-->
+                                                                     <!--[(ngModel)]="memberName" name="memberName"-->
+                                                                     <!--style="width: 350px"-->
+                                                                     <!--placeholder="Member Name" autofocus><br>-->
+            <!--<button (click)="addMember(team)" class="btn btn-primary btn-block" style="width: 150px">Add Member</button>-->
+            <!--<button (click)="removeMember(team)" class="btn btn-danger btn-block" style="width: 150px">Remove Member</button>-->
+          <!--</li>-->
+          <!--<li class="list-group-item">Members : {{team.members}}</li>-->
 
-        </ul>
+        <!--</ul>-->
       </div>
     </div>
   </div>
