@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import {Headers, RequestOptions} from '@angular/http';
 import {Http} from '@angular/http';
+import {Router} from '@angular/router';
 
 @Injectable()
 export class TeamsService {
 
-  constructor(private http: Http) {
+  constructor(private http: Http,
+              private router: Router) {
   }
 
   getTeams(hackathonName) {
@@ -19,6 +21,8 @@ export class TeamsService {
   }
 
   createTeam(hackathonName,team) {
+    alert("New Team is created");
+    this.router.navigate(['/ClickHackathon']);
     let headers = new Headers();
     headers.append('Content-type', 'application/json');
     return this.http.put('http://localhost:3000/teams/createTeam', {hackathonName, team}, {headers: headers})
@@ -30,7 +34,7 @@ export class TeamsService {
     let headers = new Headers();
     headers.append('Content-type', 'application/json');
     alert('Team is deleted');
-    // this.router.navigate(['/hackathons']);
+    this.router.navigate(['/ClickHackathon']);
     return this.http.delete('http://localhost:3000/teams/removeTeam', new RequestOptions({
       headers: headers,
       body: { teamName, hackathonName}

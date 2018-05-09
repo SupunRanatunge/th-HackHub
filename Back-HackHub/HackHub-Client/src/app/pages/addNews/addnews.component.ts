@@ -10,23 +10,23 @@ import {HackathonService} from '../../services/hackathon.service';
 })
 export class AddnewsComponent {
   news: String;
-  hackathon: any;
+  newsHack: any;
 
 
   constructor(private hackService: HackathonService) {
   }
 
   addNews() {
-    console.log();
-    this.hackathon = localStorage.getItem('hackathon');
+
+    this.newsHack = localStorage.getItem('newsHack');
     // this.hackService.loadHackathonData();
-    console.log(this.hackathon['name']);
-    console.log(this.hackathon);
-    const hackNews = {
-      name: this.hackService.getData()
-
-
-    };
+    console.log(this.newsHack['name']);
+    console.log(this.newsHack);
+    // const hackNews = {
+    //   name: this.hackService.getData()
+    //
+    //
+    // };
 
 
   }

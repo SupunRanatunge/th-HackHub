@@ -28,7 +28,7 @@
         </p>
 
         <button *ngIf="authService.loggedIn() && user && user.userType===1">Subscribe</button>
-        <button *ngIf="authService.loggedIn() && user && user.userType===2" (click)="hackService.setData(hackathon);" routerLink="/AddNews">News</button>
+        <button *ngIf="authService.loggedIn() && user && user.userType===2" (click)="hackService.storeNewsHackathon(hackathon)" routerLink="/AddNews">News</button>
       </div>
     </button>
   </div>

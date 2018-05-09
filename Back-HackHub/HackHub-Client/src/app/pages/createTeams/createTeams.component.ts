@@ -39,8 +39,8 @@ export class CreateTeamsComponent implements OnInit{
     this.teamService.createTeam(hackathonName,team).subscribe(data =>{
 
       if(data.success){
-        alert("New Team is created");
-        this.router.navigate(['/CreateYourTeam'])                 //redirect to events page after successful event create
+        // alert("New Team is created");
+        // this.router.navigate(['/hackathons'])                 //redirect to events page after successful event create
         // this.flashMessage.show("Hackathon is created", {cssClass: 'alert-success',timeout: 3000});
       }else{
         // this.flashMessage.show("Something went wrong", {cssClass: 'alert-danger',timeout: 3000});

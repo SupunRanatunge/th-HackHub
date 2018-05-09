@@ -22,15 +22,6 @@ export class HackathonComponent implements OnInit{
               ){}
 
 
-    // showSample(){
-    //   this.popup.options = {
-    //     cancleBtnClass: "btn btn-default",
-    //     confirmBtnClass: "btn btn-default",
-    //     color: "#4180ab",
-    //     header: "Single Popup on a page"}
-    //   this.popup.show();
-    // }
-
 
   createHackathon() {
     alert('Now Create your Hackathon');
@@ -40,6 +31,10 @@ export class HackathonComponent implements OnInit{
   }
   deleteHackathon() {
     alert('Delete your Hackathon');
+  }
+
+  addNews(hackathon) {
+    console.log(hackathon.name);
   }
 
 

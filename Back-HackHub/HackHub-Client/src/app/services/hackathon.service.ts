@@ -9,6 +9,7 @@ export class HackathonService {
   public sharedData: Object;
 
   hackathon: any;
+  newsHack: any;
 
   constructor(private http: Http, private router: Router) {
   }
@@ -22,12 +23,16 @@ export class HackathonService {
   }
 
   updateHackathon(hackathon) {
-    alert('Hackathon is updated');
-    this.router.navigate(['/hackathons']);
+    alert("New Hackathon is updated");
+    this.router.navigate(['/hackathons'])
     let headers = new Headers();
     headers.append('Content-type', 'application/json');
     return this.http.put('http://localhost:3000/hackathons/updateHackathon', hackathon, {headers: headers})
+
       .map(result => result.json());
+
+
+
 
   }
 
@@ -69,6 +74,18 @@ export class HackathonService {
     const hackathon = localStorage.getItem( 'hackathon');
     this.hackathon = JSON.parse(hackathon);
     console.log(this.hackathon.name)
+
+  }
+  storeNewsHackathon(newsHackathon) {
+    localStorage.setItem('newsHack', JSON.stringify(newsHackathon));
+    this.newsHack = newsHackathon;
+    console.log(this.newsHack.name)
+  }
+
+  loadNewsHackathon() {
+    const newsHack = localStorage.getItem( 'newsHack');
+    this.newsHack = JSON.parse(newsHack);
+    console.log(this.newsHack.name)
 
   }
 }
