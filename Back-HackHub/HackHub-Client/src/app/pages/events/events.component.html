@@ -4,18 +4,18 @@
   <h1 class="h1">Events</h1>
   <flash-messages></flash-messages>
 
-  <button (click)="eventCreate()" class="btn btn-default" [ngStyle]="{color: 'blue'}" routerLink="/createEvents">Create
+  <button *ngIf="authService.loggedIn() && user && user.userType===2" (click)="eventCreate()" class="btn btn-default" [ngStyle]="{color: 'blue'}" routerLink="/createEvents">Create
     Event
   </button>
-  <button (click)="eventUpdate()" class="btn btn-default" [ngStyle]="{color: 'blue'}" routerLink="/updateEvents">Update
+  <button *ngIf="authService.loggedIn() && user && user.userType===2" (click)="eventUpdate()" class="btn btn-default" [ngStyle]="{color: 'blue'}" routerLink="/updateEvents">Update
     Event
   </button>
-  <button (click)="eventDelete()" class="btn btn-default" [ngStyle]="{color: 'red'}" routerLink="/deleteEvents">Delete
+  <button *ngIf="authService.loggedIn() && user && user.userType===2" (click)="eventDelete()" class="btn btn-default" [ngStyle]="{color: 'red'}" routerLink="/deleteEvents">Delete
     Event
   </button>
 
   <div *ngFor="let event of events" id="tab-group">
-    <button class="btn btn-default" routerLink="/ClickEvent">
+    <button class="btn btn-default" (click)="eventService.storeEventData(event)" routerLink="/ClickEvent">
       <div id="tab-group-1">
         <h3 id="hackathon-1"><strong>{{event.name}}</strong></h3><br>
         <p id="content-1"> {{event.name}} is organized by {{event.host}}. It starts at {{event.place}} on
@@ -25,7 +25,7 @@
         </p>
 
 
-        <button *ngIf="authService.loggedIn() && user && user.userType===2" (click)="eventService.setData(event);" routerLink="/AddNews">News</button>
+        <!--<button *ngIf="authService.loggedIn() && user && user.userType===2" (click)="eventService.setData(event);" routerLink="/AddNews">News</button>-->
       </div>
     </button>
   </div>

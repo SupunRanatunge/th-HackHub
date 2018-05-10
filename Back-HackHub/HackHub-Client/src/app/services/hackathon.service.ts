@@ -9,15 +9,15 @@ export class HackathonService {
   public sharedData: Object;
 
   hackathon: any;
-  newsHack: any;
+
 
   constructor(private http: Http, private router: Router) {
   }
 
   createHackathon(hackathon) {
-    let headers2 = new Headers();
-    headers2.append('Content-type', 'application/json');
-    return this.http.post('http://localhost:3000/hackathons/createHackathon', hackathon, {headers: headers2})
+    let headers = new Headers();
+    headers.append('Content-type', 'application/json');
+    return this.http.post('http://localhost:3000/hackathons/createHackathon', hackathon, {headers: headers})
       .map(res => res.json());
 
   }
@@ -76,16 +76,16 @@ export class HackathonService {
     console.log(this.hackathon.name)
 
   }
-  storeNewsHackathon(newsHackathon) {
-    localStorage.setItem('newsHack', JSON.stringify(newsHackathon));
-    this.newsHack = newsHackathon;
-    console.log(this.newsHack.name)
-  }
-
-  loadNewsHackathon() {
-    const newsHack = localStorage.getItem( 'newsHack');
-    this.newsHack = JSON.parse(newsHack);
-    console.log(this.newsHack.name)
-
-  }
+  // storeNewsHackathon(newsHackathon) {
+  //   localStorage.setItem('newsHack', JSON.stringify(newsHackathon));
+  //   this.newsHack = newsHackathon;
+  //   console.log(this.newsHack.name)
+  // }
+  //
+  // loadNewsHackathon() {
+  //   const newsHack = localStorage.getItem( 'newsHack');
+  //   this.newsHack = JSON.parse(newsHack);
+  //   console.log(this.newsHack.name)
+  //
+  // }
 }

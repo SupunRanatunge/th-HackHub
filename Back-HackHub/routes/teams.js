@@ -27,19 +27,28 @@ router.put('/createTeam', (req, res, next) => {
 
 
 });
-
+// router.get('/', (req, res, next) => {
+//     // const name = req.body.hackathonName;
+//     console.log(name+" inside teams");
+//     Hackathon.findOne({name: name }, function (err, hackathon) {
+//         if (err) {
+//             console.log(err)
+//         } else {
+//             // res.send(hackathon.teams);
+//             console.log(hackathon.name)
+//         }
+//     });
+// });
 router.get('/', (req, res, next) => {
-    const name = req.body.hackathonName
-    console.log(name+" inside teams");
-    Hackathon.findOne({name: name }, function (err, hackathon) {
+    Hackathon.find({}, function (err, hackathons) {
         if (err) {
             console.log(err)
         } else {
-            // res.send(hackathon.teams);
-            console.log(hackathon.name)
+            res.send(hackathons);
         }
     });
 });
+
 
 router.delete('/removeTeam', (req, res, next) => {
 
@@ -57,23 +66,23 @@ router.delete('/removeTeam', (req, res, next) => {
     })
 });
 
-router.put('/addMember', (req, res, next) => {
-    const teamName = req.body.teamName;
-    const memberName = req.body.member;
-    Team.findOne({teamName: teamName}, (err, teamObj) => {
-            if (err) {
-                console.log("Error has occurred")
-            } else {
-                if (!teamObj) {
-                    console.log("Team in that name is not found")
-                } else {
-                    if (memberName) {
-                        teamObj.members.add(memberName)
-                    }
-                }
-            }
-        })
-});
+// router.put('/addMember', (req, res, next) => {
+//     const teamName = req.body.teamName;
+//     const memberName = req.body.member;
+//     Team.findOne({teamName: teamName}, (err, teamObj) => {
+//             if (err) {
+//                 console.log("Error has occurred")
+//             } else {
+//                 if (!teamObj) {
+//                     console.log("Team in that name is not found")
+//                 } else {
+//                     if (memberName) {
+//                         teamObj.members.add(memberName)
+//                     }
+//                 }
+//             }
+//         })
+// });
 
 
 module.exports = router;

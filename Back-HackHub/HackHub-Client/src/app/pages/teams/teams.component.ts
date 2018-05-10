@@ -13,6 +13,7 @@ export class TeamsComponent implements OnInit{
 
   teams: any;
   user: String;
+  hackathons: any;
 
   constructor(private teamService: TeamsService,
               private hackService: HackathonService) {
@@ -27,6 +28,13 @@ export class TeamsComponent implements OnInit{
     //   console.log(err);
     //   return false;
     // });
+    this.hackService.getHackathon().subscribe(profile => {
+      this.hackathons = profile;
+    },err =>{
+      console.log(err);
+      return false;
+    });
+    // this.hackathon = this.hackService.hackathon;
     this.hackService.loadHackathonData();
 
   }

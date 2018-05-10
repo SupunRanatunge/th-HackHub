@@ -7,7 +7,8 @@
 
         <button class="btn btn-default" [ngStyle]="{color: 'red'}" routerLink="/AddAdmin">Add New Admin</button>
         <button class="btn btn-default" [ngStyle]="{color: 'black'}" (click)="mail()" routerLink="/MailingList">Mailing List</button>
-
+        <button class="btn btn-default" [ngStyle]="{color: 'black'}" routerLink="/AddNews">Add News</button>
+        <button class="btn btn-default"*ngIf="user.userType===1" [ngStyle]="{color: 'black'}" style="margin-left: 10px" routerLink="/News">Subscribe</button>
       </div>
     </div>
     <br>

@@ -11,6 +11,7 @@ const admins= require("./routes/admins");
 const hackathons = require("./routes/hackathons");
 const events = require("./routes/events");
 const teams = require("./routes/teams");
+const news = require('./routes/news');
 
 mongoose.connect(config.database);
 
@@ -44,6 +45,7 @@ app.use('/hackathons', hackathons);
 app.use('/events', events);
 app.use('/admins', admins);
 app.use('/teams', teams);
+app.use('/news', news);
 
 
 

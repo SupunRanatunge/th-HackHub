@@ -4,17 +4,17 @@
     <div class="col-sm-6">
       <h3 class="page-header">
         <h1 class="page-deader">
-          {{eventService.getData().name}}
+          {{eventService.event.name}}
         </h1>
 
 
-        Host Company : {{eventService.getData().host}}<br><br>
+        Host Company : {{eventService.event.host}}<br><br>
 
-         Date : {{eventService.getData().Date}}<br><br>
+         Date : {{eventService.event.date}}<br><br>
 
-        Starting Time : {{eventService.getData().Time}}<br><br>
+        Starting Time : {{eventService.event.time}}<br><br>
 
-        Place : {{eventService.getData().place}}<br><br>
+        Place : {{eventService.event.place}}<br><br>
 
 
       </h3>
@@ -23,18 +23,14 @@
 
       <h3>
 
-        Register Here : <a href={{eventService.getData().regLink}}>{{eventService.getData().regLink}}</a><br><br>
+        Register Here : <a href={{eventService.event.regLink}}>{{eventService.event.regLink}}</a><br><br>
 
-        Special Notes : {{eventService.getData().specialNotes}}
+        Special Notes : {{eventService.event.specialNotes}}
 
       </h3>
 
     </div>
-    <div>
-      <h1 class="page-header">
-        Event News :
-      </h1>
-    </div>
+
   </div>
 
 

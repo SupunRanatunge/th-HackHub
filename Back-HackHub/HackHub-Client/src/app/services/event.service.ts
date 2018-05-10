@@ -5,13 +5,14 @@ import {Router} from '@angular/router';
 
 @Injectable()
 export class EventService {
-  public sharedData: Object;
+  // public sharedData: Object;
+  event: any;
 
   constructor(private http: Http, private router: Router) { }
   createEvent(event) {
-    let headers5 = new Headers();
-    headers5.append('Content-type', 'application/json');
-    return this.http.post('http://localhost:3000/events/createEvent',event,{headers: headers5})
+    let headers = new Headers();
+    headers.append('Content-type', 'application/json');
+    return this.http.post('http://localhost:3000/events/createEvent',event,{headers: headers})
       .map(res => res.json())
 
   }
@@ -35,13 +36,26 @@ export class EventService {
     }) )
       .map(res => res.json())
   }
+  //
+  // setData(data) {
+  //   this.sharedData = data;
+  // }
+  //
+  // getData() {
+  //   return this.sharedData;
+  // }
 
-  setData(data) {
-    this.sharedData = data;
+  storeEventData(event) {
+    localStorage.setItem('event', JSON.stringify(event));
+    this.event = event;
+    console.log(event.name)
   }
 
-  getData() {
-    return this.sharedData;
+  loadEventData() {
+    const event = localStorage.getItem( 'event');
+    this.event = JSON.parse(event);
+    console.log(this.event.name)
+
   }
 
 

@@ -43,7 +43,7 @@
 }
 #tab-group-1{
   padding-bottom:15px;
-  padding-right: 100%;
+  /*padding-right: 100%;*/
 }
 .ready.active{
   background: white;
@@ -56,3 +56,5 @@
   opacity: 1.5;
   background-color: salmon;
 }
+
+

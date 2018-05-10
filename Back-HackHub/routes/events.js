@@ -11,6 +11,7 @@ router.post('/createEvent', (req, res, next) => {
         host: req.body.host,
         date: req.body.date,
         time: req.body.time,
+        regLink: req.body.regLink,
         place: req.body.place,
         specialNotes: req.body.specialNotes
 

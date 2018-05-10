@@ -21,6 +21,7 @@ import {CreateTeamsComponent} from './pages/createTeams/createTeams.component';
 import {MailingListComponent} from './pages/mailingList.component/mailingList.component';
 import {ClickEventComponent} from './pages/clickEvent/clickEvent.component';
 import {TeamsComponent} from './pages/teams/teams.component';
+import {NewsComponent} from './pages/news/news.component';
 
 const appRoutes: Routes = [
   {
@@ -112,6 +113,10 @@ const appRoutes: Routes = [
     path: 'Teams',
     component: TeamsComponent,
     canActivate: [AuthGuardService]
+  },
+  {
+    path: 'News',
+    component: NewsComponent
   }
 
 ];

@@ -14,6 +14,9 @@ const eventSchema = mongoose.Schema({
     time: {
         type: String
     },
+    regLink: {
+        type: String
+    },
     place: {
         type: String
     },

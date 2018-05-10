@@ -63,4 +63,11 @@ export class ValidationsService {
       return true;
     }
   }
+  validateNews(news){
+    if(news.topic == undefined || news.content == undefined){
+      return false;
+    }else{
+      return true;
+    }
+  }
 }

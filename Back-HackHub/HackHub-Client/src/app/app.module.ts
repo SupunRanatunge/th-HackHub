@@ -33,6 +33,8 @@ import {ClickEventComponent} from './pages/clickEvent/clickEvent.component';
 import {CreateTeamsComponent} from './pages/createTeams/createTeams.component';
 import {MailingListComponent} from './pages/mailingList.component/mailingList.component';
 import {TeamsComponent} from './pages/teams/teams.component';
+import {NewsComponent} from './pages/news/news.component';
+import {NewsService} from './services/news.service';
 
 
 @NgModule({
@@ -41,13 +43,13 @@ import {TeamsComponent} from './pages/teams/teams.component';
   declarations: [ AppComponent, NavbarComponent, CarouselComponent, HomeComponent, HackathonComponent, CreateHackathonComponent,
     UpdateHackathonComponent, DeleteHackathonComponent, LoginComponent, SignupComponent, ProfileComponent, DeleteEventComponent,
     UpdateEventComponent, CreateEventComponent, EventsComponent, AddAdminComponent, PopupComponent, AddnewsComponent, ClickHackathonComponent,
-  CreateTeamsComponent, MailingListComponent, ClickEventComponent, TeamsComponent ],
+  CreateTeamsComponent, MailingListComponent, ClickEventComponent, TeamsComponent, NewsComponent ],
 
   bootstrap:    [ AppComponent ],
 
   providers: [
     appRoutingProviders, ValidationsService, FlashMessagesService, AuthService, HackathonService, EventService, AuthGuardService,
-    TeamsService
+    TeamsService, NewsService
   ]
 })
 export class AppModule { }

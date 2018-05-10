@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import {EventService} from '../../services/event.service';
 
 
@@ -9,10 +9,14 @@ import {EventService} from '../../services/event.service';
   templateUrl: `clickEvent.component.html`,
 
 })
-export class ClickEventComponent {
+export class ClickEventComponent implements OnInit{
 
   constructor(private eventService: EventService) {
 
+  }
+
+  ngOnInit(){
+    this.eventService.loadEventData();
   }
 
 }
