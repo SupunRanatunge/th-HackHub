@@ -26,7 +26,7 @@ const userSchema = mongoose.Schema({
         required: true
     },
     subscribed: {
-        type: Array
+        type: Boolean
     },
     teamLeader: {
         type: Array

@@ -14,7 +14,7 @@ router.post('/register', (req, res, next) => {
       password: req.body.password,
       userType: 1,
       isChecked: false,
-      subscribed: Array,
+      subscribed: false,
       teamLeader: Array
   });
   User.addUser(newUser, (err, user) =>{
@@ -93,6 +93,40 @@ router.put('/updateStatus', (req, res, next) => {
     console.log(req.body.email);
     User.findOneAndUpdate({email: email},
         {$set :{isChecked: req.body.isChecked}},
+
+        function(err, data){
+            if(err) {
+                res.json(err)
+            }else{
+                res.send(data)
+            }
+
+        });
+});
+
+router.put('/updateSubscribe', (req, res, next) => {
+    const email = req.body.email;
+    console.log(email);
+
+    User.findOneAndUpdate({email: email},
+        {$set :{subscribed: req.body.subscribed}},
+
+        function(err, data){
+            if(err) {
+                res.json(err)
+            }else{
+                res.send(data)
+            }
+
+        });
+});
+
+router.put('/updateUnsubscribe', (req, res, next) => {
+    const email = req.body.email;
+    console.log(email);
+
+    User.findOneAndUpdate({email: email},
+        {$set :{subscribed: req.body.subscribed}},
 
         function(err, data){
             if(err) {

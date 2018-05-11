@@ -24,6 +24,7 @@ export class HackathonService {
 
   updateHackathon(hackathon) {
     alert("New Hackathon is updated");
+    location.reload()
     this.router.navigate(['/hackathons'])
     let headers = new Headers();
     headers.append('Content-type', 'application/json');

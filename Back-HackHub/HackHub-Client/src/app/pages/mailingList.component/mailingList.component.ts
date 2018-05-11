@@ -79,13 +79,13 @@ export class MailingListComponent implements OnInit {
       isChecked: !user.isChecked
     };
     this.authService.updateStatus(userStatus).subscribe(data => {
-      if(data.success) {
-        alert('Changed the status');
-        this.router.navigate(['/MailingList']);
-      }else {
-        alert('coouldn\'t change the status')
-        this.router.navigate(['/MailingList']);
-      }
+      // if(data.success) {
+      //   alert('Changed the status');
+      //   this.router.navigate(['/MailingList']);
+      // }else {
+      //   alert('coouldn\'t change the status')
+      //   this.router.navigate(['/MailingList']);
+      // }
     })
 
   }

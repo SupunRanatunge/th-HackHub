@@ -54,15 +54,16 @@ export class UpdateHackathonComponent  {
       return false;
     }
     this.hackService.updateHackathon(hackathon).subscribe(data =>{
-
-      if(data.success){
-        // alert("New Hackathon is updated");
-        // this.router.navigate(['/hackathons'])
-        // this.flashMessage.show("Hackathon is created", {cssClass: 'alert-success',timeout: 3000});
-      }else{
-        this.flashMessage.show("Something went wrong", {cssClass: 'alert-danger',timeout: 3000});
-        this.router.navigate(['/hackathons'])
-      }
+      
+      //
+      // if(data.success){
+      //   // alert("New Hackathon is updated");
+      //   // this.router.navigate(['/hackathons'])
+      //   // this.flashMessage.show("Hackathon is created", {cssClass: 'alert-success',timeout: 3000});
+      // }else{
+      //   this.flashMessage.show("Something went wrong", {cssClass: 'alert-danger',timeout: 3000});
+      //   this.router.navigate(['/hackathons'])
+      // }
     });
     }
 }

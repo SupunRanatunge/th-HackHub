@@ -108,6 +108,24 @@ export class AuthService {
 
   }
 
+  updateSubscribe(userSubscribe) {
+    console.log("in the auth service "+ userSubscribe.email);
+    let headers = new Headers();
+    headers.append('Content-type', 'application/json');
+    return this.http.put('http://localhost:3000/users/updateSubscribe', userSubscribe, {headers: headers})
+      .map(result => result.json());
+
+  }
+
+  updateUnsubscribe(userUnsubscribe) {
+    console.log("in the auth service "+ userUnsubscribe.email);
+    let headers = new Headers();
+    headers.append('Content-type', 'application/json');
+    return this.http.put('http://localhost:3000/users/updateUnsubscribe', userUnsubscribe, {headers: headers})
+      .map(result => result.json());
+
+  }
+
   sendEmail(user, users, emailDetails) {
 
     let headers = new Headers();
