@@ -16,7 +16,9 @@ export class CreateTeamsComponent implements OnInit{
 
   teams: any;
   teamName: String;
-  memberName:String;
+  teamName2: String;
+
+  member:String;
   hackathons: any;
 
 
@@ -65,10 +67,11 @@ export class CreateTeamsComponent implements OnInit{
     })
   }
 
-  addMember(team){        //add a member to the team
+  addMember(hackathonName){        //add a member to the team
       const teamMember = {
-        teamName: team.teamName,
-        member: this.memberName
+        hackathonName: hackathonName,
+        teamName: this.teamName2,
+        member: this.member
       }
       this.teamService.addMember(teamMember).subscribe(data => {
 

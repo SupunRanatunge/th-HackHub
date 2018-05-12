@@ -1,32 +1,39 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-6">
+      <flash-messages></flash-messages>
       <h1 class="page-header">
         Create Your Team for {{hackService.hackathon.name}}
       </h1><br><br>
       <input class="form-control input-lg" [(ngModel)]="teamName" name="teamName" style="width: 250px"
              placeholder="Team Name" autofocus><br>
-      <button (click)="createTeam(hackService.hackathon.name)" class="btn btn-primary btn-block" style="width: 150px">
-        Create Team
-      </button>
-      <button (click)="removeTeam(hackService.hackathon.name)" class="btn btn-danger btn-block" style="width: 150px">
-        Remove Team
-      </button>
-      <br><br>
+
+      <button class="btn btn-primary" (click)="createTeam(hackService.hackathon.name)">Create Team</button>
+      <button class="btn btn-danger" (click)="removeTeam(hackService.hackathon.name)">Remove Team</button>
+
+      <br><br><br>
+      <input class="form-control input-lg" [(ngModel)]="teamName2" name="teamName2" placeholder="enter the Team Name"
+             autofocus><br>
+      <input class="form-control input-lg" [(ngModel)]="member" name="member" placeholder="enter the member"
+             autofocus><br>
+
+      <button class="btn btn-primary" (click)="addMember(hackService.hackathon.name)">Add Member</button>
+      <button class="btn btn-danger" (click)="removeMember(hackService.hackathon.name)">Remove Member</button>
     </div>
-    <div class="col-sm-6" *ngFor="let hackathon of hackathons" style="background: white">
-      <h1 class="page-header">
-        Teams of {{hackathon.name}}
-      </h1>
-      <div *ngFor="let team of hackathon.teams" style="background:yellow">
-        <h3>{{team.teamName}}</h3>
-        <li *ngFor="let member of team.members">{{member}}</li>
-        <input class="form-control input-lg" [(ngModel)]="member" name="member" placeholder="enter the member"
-               autofocus><br>
-        <button class="btn btn-primary" (click)="addMember()">Add Member</button>
-        <button class="btn btn-danger" (click)="removeMember()">Remove Member</button>
+    <br><br>
+    <div class="col-sm-6" style="background: white">
+
+      <div *ngFor="let hackathon of hackathons">
+        <h1 class="page-header">
+          Teams of {{hackathon.name}}
+        </h1>
+        <div *ngFor="let team of hackathon.teams" style="background:yellow">
+          <h3>{{team.teamName}}</h3>
+          <li *ngFor="let member of team.members">{{member}}</li>
+        </div>
         <br><br>
       </div>
-    </div><br>
+    </div>
+    <br>
   </div>
 </div>

@@ -78,23 +78,37 @@ router.put('/createTeam', (req, res, next) => {
     });
 
 
-// router.put('/addMember', (req, res, next) => {
-//     const teamName = req.body.teamName;
-//     const memberName = req.body.member;
-//     Team.findOne({teamName: teamName}, (err, teamObj) => {
-//             if (err) {
-//                 console.log("Error has occurred")
-//             } else {
-//                 if (!teamObj) {
-//                     console.log("Team in that name is not found")
-//                 } else {
-//                     if (memberName) {
-//                         teamObj.members.add(memberName)
-//                     }
-//                 }
-//             }
-//         })
-// });
+router.put('/addMember', (req, res, next) => {
+    const hackathonName = req.body.hackathonName;
+    const teamName = req.body.teamName;
+    const memberName = req.body.member;
+
+    Hackathon.findOne({name: hackathonName}, (err, hackObj) => {
+            if (err) {
+                console.log("Error has occurred")
+            } else {
+                if (!hackObj) {
+                    console.log("Hackathon in that name is not found")
+                } else {
+                    if (memberName) {
+                        for (i=0;i<hackObj.teams.length;i++){
+                            if (hackObj.teams[i].teamName == teamName){
+                                console.log('dfsdjfjbg')
+                                hackObj.teams[i].members+=(memberName)
+                                console.log(memberName)
+                                console.log(hackObj.teams[i].teamName)
+                            }
+                                console.log('ddddddddddddddddd')
+
+                            }
+
+                    }
+                }
+    }
+    })
+
+
+});
 
 
 module.exports = router;
