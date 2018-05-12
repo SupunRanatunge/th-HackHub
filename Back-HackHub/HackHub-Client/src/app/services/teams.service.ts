@@ -10,15 +10,16 @@ export class TeamsService {
               private router: Router) {
   }
 
-  getTeams(hackathonName) {
-      let headers = new Headers();
-      headers.append('Content-type', 'application/json');
-      return this.http.get('http://localhost:3000/teams', new RequestOptions({
-        headers: headers,
-        body: hackathonName
-  }))
-        .map(res => res.json());
-  }
+  // getTeams(hackathonName) {
+  //   console.log('inside teamservice')
+  //     let headers = new Headers();
+  //     headers.append('Content-type', 'application/json');
+  //     return this.http.get('http://localhost:3000/teams', new RequestOptions({
+  //       headers: headers,
+  //       body: hackathonName
+  // }))
+  //       .map(res => res.json());
+  // }
 
   createTeam(hackathonName,team) {
     alert("New Team is created");

@@ -28,43 +28,55 @@ router.put('/createTeam', (req, res, next) => {
 
 });
 // router.get('/', (req, res, next) => {
-//     // const name = req.body.hackathonName;
-//     console.log(name+" inside teams");
-//     Hackathon.findOne({name: name }, function (err, hackathon) {
+//     const name = req.options.body.hackathonName;
+//     console.log(name + " inside teams");
+//     Hackathon.findOne({name: name}, function (err, hackathon) {
 //         if (err) {
 //             console.log(err)
 //         } else {
-//             // res.send(hackathon.teams);
+//             res.send(hackathon.teams);
 //             console.log(hackathon.name)
 //         }
 //     });
 // });
-router.get('/', (req, res, next) => {
-    Hackathon.find({}, function (err, hackathons) {
-        if (err) {
-            console.log(err)
-        } else {
-            res.send(hackathons);
-        }
+// router.get('/', (req, res, next) => {
+//     Hackathon.find({}, function (err, hackathons) {
+//         if (err) {
+//             console.log(err)
+//         } else {
+//             res.send(hackathons);
+//         }
+//     });
+// // });
+// router.get('/', (req, res, next) => {
+//     Hackathon.findOne({name: req.body.name}, function (err, hackathon) {
+//         if (err) {
+//             console.log(err)
+//         } else {
+//             res.send(hackathon.teams);
+//         }
+//     });
+//
+//
+// });
+
+
+    router.delete('/removeTeam', (req, res, next) => {
+
+        const teamName = req.body.teamName;
+        const name = req.body.hackathonName;
+        console.log(name);
+        Hackathon.findOneAndUpdate({name: name}, {$pull: {teams: teamName}}, function (err, data) {
+            if (err) {
+                return res.status(500).json({'error': 'error in deleting address'});
+            }
+
+            res.json(data);
+
+            // }
+        })
     });
-});
 
-
-router.delete('/removeTeam', (req, res, next) => {
-
-    const teamName = req.body.teamName;
-    const name = req.body.hackathonName;
-    console.log(name);
-    Hackathon.findOneAndUpdate({name: name}, {$pull: {teams: teamName}}, function(err, data){
-        if(err) {
-            return res.status(500).json({'error' : 'error in deleting address'});
-        }
-
-        res.json(data);
-
-        // }
-    })
-});
 
 // router.put('/addMember', (req, res, next) => {
 //     const teamName = req.body.teamName;

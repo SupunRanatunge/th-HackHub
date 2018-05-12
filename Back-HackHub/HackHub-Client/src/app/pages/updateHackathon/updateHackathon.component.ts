@@ -54,7 +54,7 @@ export class UpdateHackathonComponent  {
       return false;
     }
     this.hackService.updateHackathon(hackathon).subscribe(data =>{
-      
+
       //
       // if(data.success){
       //   // alert("New Hackathon is updated");

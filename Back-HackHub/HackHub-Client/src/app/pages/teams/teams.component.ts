@@ -14,13 +14,15 @@ export class TeamsComponent implements OnInit{
   teams: any;
   user: String;
   hackathons: any;
+  hackathon: any;
 
   constructor(private teamService: TeamsService,
               private hackService: HackathonService) {
 
   }
-  ngOnInit(){
 
+  ngOnInit(){
+    //
     // this.teamService.getTeams(this.hackService.hackathon.name).subscribe(profile => {
     //
     //   this.teams = profile;
@@ -34,8 +36,8 @@ export class TeamsComponent implements OnInit{
       console.log(err);
       return false;
     });
-    // this.hackathon = this.hackService.hackathon;
     this.hackService.loadHackathonData();
+
 
   }
 }

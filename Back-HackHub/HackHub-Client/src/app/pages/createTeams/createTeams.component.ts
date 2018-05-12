@@ -17,6 +17,7 @@ export class CreateTeamsComponent implements OnInit{
   teams: any;
   teamName: String;
   memberName:String;
+  hackathons: any;
 
 
   constructor(private teamService: TeamsService,
@@ -89,12 +90,12 @@ export class CreateTeamsComponent implements OnInit{
 
   ngOnInit() {
 
-    // this.teamService.getTeams(this.hackService.hackathon.name).subscribe(profile => {    //display the teams
-    //   this.teams = profile;
-    // },err =>{
-    //   console.log(err);
-    //   return false;
-    // });
+    this.hackService.getHackathon().subscribe(profile => {
+      this.hackathons = profile;
+    },err =>{
+      console.log(err);
+      return false;
+    });
     this.hackService.loadHackathonData();
   }
 

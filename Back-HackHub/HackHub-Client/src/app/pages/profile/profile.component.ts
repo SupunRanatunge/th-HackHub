@@ -10,6 +10,7 @@ import {Router} from '@angular/router';
 })
 export class ProfileComponent implements OnInit {
   user: any;
+  token: any;
 
 
   constructor(private authService: AuthService,
@@ -40,7 +41,7 @@ export class ProfileComponent implements OnInit {
     const userUnsubscribe = {
       email: user.email,
       subscribed: false
-    }
+    };
     this.authService.updateUnsubscribe(userUnsubscribe).subscribe(data => {
       location.reload()
 
@@ -48,14 +49,20 @@ export class ProfileComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.token = localStorage.getItem('id_token');
+    if(this.token){
 
-    this.authService.getProfile().subscribe(profile => {
+      this.authService.getProfile().subscribe(profile => {
 
         this.user = profile.user;
-        },err =>{
-      console.log(err);
-      return false;
-    })
+        console.log(this.user);
+      },err =>{
+        console.log(err);
+        return false;
+      })
+    }
+
+
   }
 }
 

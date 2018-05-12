@@ -118,6 +118,8 @@ router.get('/', (req, res, next) => {
 
 });
 
+
+
 router.put('/addNews', (req, res, next) => {
     const name = req.body.name;
     console.log(name);

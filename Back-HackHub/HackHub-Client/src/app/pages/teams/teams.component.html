@@ -1,30 +1,26 @@
 <div class="container">
-  <h1 class="page-header">
-    Teams
-  </h1>
-  <!--<div *ngFor="let team of teams" class="container">-->
-  <!--<h2 class="page-header">{{team.teamName}}</h2>-->
-  <!--{{team.members}}-->
-  <!--Team members are Here-->
-  <!--</div>-->
-  <!--<div *ngFor="let hackathon of hackathons" id="tab-group">-->
-    <!--&lt;!&ndash;<div *ngIf="hackathon.name===">&ndash;&gt;-->
-      <!--<h2 class="page-header" *ngFor="let team of hackathon.teams" >-->
+  <!--<h1 class="page-header">-->
+    <!--Teams-->
 
-      <!--{{hackService.hackathon.teams}}-->
-        <!--for (let i = 0, i < {{hackService.hackathon.teams}}.length, i++){-->
-        <!--let teamName = this.{{hackService.hackathon.teams}}[i].name;-->
-        <!--console.log(teamName);-->
-        <!---->
+  <!--</h1>-->
+  <div class="col-sm-6" *ngFor="let hackathon of hackathons" id="tab-group" style="background: white">
 
-      <!--</h2>-->
-    <!--</div>-->
-  <!--<div>-->
-    <!--Team members are Here-->
-    <!--<p>{{hackService.hackathon.name}}</p>-->
+    <h1 class="page-header">
+      Teams of {{hackathon.name}}
+
+    </h1>
+    <div *ngFor="let team of hackathon.teams" style="background:yellow">
+      <h3>{{team.teamName}}</h3><br>
+      <li *ngFor="let member of team.members">{{member}}</li>
+
+
+
+    </div>
+
+  </div>
+
 
   <!--</div>-->
-
 
 
 </div>
