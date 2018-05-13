@@ -87,16 +87,16 @@ router.put('/addEmailPassword', (req, res, next) => {
 });
 
 router.post('/sendEmail',(req, res, next) => {
-    console.log('jfnksdfjgksdjfgkdfjnkdfjnkfgnbkfjnjhdbfhsbjfhgbsjdfb')
+    console.log('inside admins js')
     let user = req.body.user;
     let users = req.body.users;
     let email = req.body.emailDetails.email;
     let subject = req.body.emailDetails.subject;
     let i;
-    // console.log(user+"inside admins");
-    // console.log(user.name+"inside admins");
-    // console.log(users+"inside admins");
-    // console.log(email+"inside admins");
+    console.log(user+"inside admins");
+    console.log(user.name+"inside admins");
+    console.log(users+"inside admins");
+    console.log(email+"inside admins");
     let transporter = nodemailer.createTransport({
         service: 'gmail',
         secure: false,
@@ -125,6 +125,7 @@ router.post('/sendEmail',(req, res, next) => {
                 }
                 console.log("The message was sent")
                 console.log(info)
+                res.send(info)
 
 
 

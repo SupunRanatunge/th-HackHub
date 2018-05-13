@@ -3,7 +3,7 @@
     <!--Teams-->
 
   <!--</h1>-->
-  <div class="col-sm-6" *ngFor="let hackathon of hackathons" id="tab-group" style="background: white">
+  <div class="col-sm-6" *ngFor="let hackathon of hackathons?.reverse()" id="tab-group" style="background: white">
 
     <h1 class="page-header">
       Teams of {{hackathon.name}}

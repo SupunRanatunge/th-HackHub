@@ -23,7 +23,7 @@
     <br><br>
     <div class="col-sm-6" style="background: white">
 
-      <div *ngFor="let hackathon of hackathons">
+      <div *ngFor="let hackathon of hackathons?.reverse()">
         <h1 class="page-header">
           Teams of {{hackathon.name}}
         </h1>

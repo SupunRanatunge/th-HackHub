@@ -15,7 +15,7 @@
   </button>
 
 
-  <div *ngFor="let hackathon of hackathons" id="tab-group">
+  <div *ngFor="let hackathon of hackathons?.reverse()" id="tab-group">
     <button class="btn btn-default" (click)="hackService.storeHackathonData(hackathon)" routerLink="/ClickHackathon" style="{width: auto}">
       <div id="tab-group-1">
         <h3 id="hackathon-1" ><strong>{{hackathon.name}}</strong></h3><br>

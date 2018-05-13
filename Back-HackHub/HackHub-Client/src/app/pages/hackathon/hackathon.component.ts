@@ -1,8 +1,17 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, Pipe} from '@angular/core';
 import {HackathonService} from '../../services/hackathon.service';
 import {AuthService} from '../../services/auth.service';
 // import { AddnewsComponent} from '../addNews/addnews.component';
 
+// @Pipe({
+//   name: 'reverse'
+//
+// })
+// export class ReversePipe {
+//   transform(value){
+//     return value.slice().reverse();
+//   }
+// }
 @Component({
   moduleId: module.id,
   selector: 'app-hackathon',

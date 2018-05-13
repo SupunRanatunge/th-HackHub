@@ -14,7 +14,7 @@
     Event
   </button>
 
-  <div *ngFor="let event of events" id="tab-group">
+  <div *ngFor="let event of events?.reverse()" id="tab-group">
     <button class="btn btn-default" (click)="eventService.storeEventData(event)" routerLink="/ClickEvent">
       <div id="tab-group-1">
         <h3 id="hackathon-1"><strong>{{event.name}}</strong></h3><br>

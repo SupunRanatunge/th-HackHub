@@ -93,7 +93,10 @@ router.put('/addMember', (req, res, next) => {
                     if (memberName) {
                         for (i=0;i<hackObj.teams.length;i++){
                             if (hackObj.teams[i].teamName == teamName){
+
                                 console.log('dfsdjfjbg')
+                                console.log(hackObj.teams[i].members)
+                                hackObj.teams[i].members.push({name:memberName})
                                 hackObj.teams[i].members+=(memberName)
                                 console.log(memberName)
                                 console.log(hackObj.teams[i].teamName)

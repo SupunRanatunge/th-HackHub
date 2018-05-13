@@ -53,7 +53,8 @@ export class CreateHackathonComponent implements OnInit{
       price: this.price,
       numbOfMems: this.numbOfMems,
       regLink: this.regLink,
-      specialNotes: this.specialNotes
+      specialNotes: this.specialNotes,
+      teams: []
     };
     if(!this.validateService.validateHackathon(hackathon)){           //Make sure all the blanks are filled
 

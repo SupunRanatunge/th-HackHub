@@ -44,9 +44,6 @@ const hackathonSchema = mongoose.Schema({
     },
     teams: {
         type: Array
-    },
-    news: {
-        type: Array
     }
 
 });
